@@ -1,0 +1,33 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "description": "A color palette generator social media.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ATy117/prisma.git"
+  },
+  "keywords": [
+    "prisma",
+    "color",
+    "color-palette"
+  ],
+  "author": "Adrian Ty, Rebecalyn Lao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ATy117/prisma/issues"
+  },
+  "homepage": "https://github.com/ATy117/prisma#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "hbs": "^4.0.4",
+    "mongoose": "^5.6.6",
+    "nodemon": "^1.19.1"
+  }
+}
