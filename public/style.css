@@ -1,0 +1,110 @@
+@font-face{
+    font-family: "font";
+    src:url(./assets/GothamBook.ttf);
+}
+
+:root{
+    --gray-bg: #efefed;
+    --accent-pink: #d2aca6;
+    --accent-light-pink: #f3c6b7;
+
+    --box-R: #f69679;
+    --box-O: #fdc689;
+    --box-Y: #fff799;
+    --box-G: #a3d39c;
+    --box-B: #7da7d9;
+}
+
+body{
+    margin: 0;
+    background-color: var(--gray-bg);
+    width: 100%;
+}
+
+/* NAV BAR */
+.navbar{
+    position: fixed;
+    background-color:var(--gray-bg);
+    width: 100%;
+    height: 55px;
+    filter: drop-shadow(3px 3px 3px #0000003d);
+
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar.scrolled{
+    background-color: var(--gray-bg);
+    transition: background-color 200ms linear;
+}
+
+.nav_list{
+    display: inline-flex;
+    width: 300px;
+
+    background-color: var(--gray-bg);
+    animation: slideIn .5s forwards;
+}
+
+.nav_settings{
+    display: block;
+    flex: 0 1 auto;
+    width: 80px;
+
+    font-family: font;
+    color: black;
+    text-decoration: none;  
+    text-align: center;
+}
+
+#nav_wall{
+    margin-top: 0px;
+}
+
+/* END OF NAVBAR */
+
+/*HOME*/
+/*--title container--*/
+.title_container{
+    padding-top: 100px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: inline-block;
+    text-align: center;
+}
+
+.logo{
+    width: 23rem;
+    height: auto;
+}
+
+
+.title_bio{
+    font-family: "font";
+    font-size: 18px;
+
+}
+
+#bio_1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    padding-left: 7rem;
+}
+
+#bio_2{
+    margin-top: 0px;
+    padding-left: 9rem;
+}
+
+/*-- login container --*/
+.login_home_container{
+    background-image: linear-gradient(to top right, var(--accent-light-pink), white);
+    width: 80%;
+    height: 15rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+
+    filter: drop-shadow(0px 1px 3px #0000002c);
+}
