@@ -3,8 +3,6 @@ window.onload = function(){
     $(".input_username").focusout(function(){
         let usernameTest = $(".input_username").val();
         
-        
-
         if (usernameTest ==""){
             $(".register_username_message").remove();
             userExists = true;
@@ -23,6 +21,7 @@ window.onload = function(){
                 $(".input_username").after('<span class="register_username_message">Username is goods for use.</span>');
             } else if (data == "Exists"){
                 userExists = true;
+                //Create the error message div here
                 $(".input_username").after('<span class="register_username_message">Username is taken.</span>');
             }
         });
