@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="anime.min.js"></script>
     <script src="jquery.js"></script>
+    <script src="register.js"></script>
 </head>
 <body>
     <div class="navbar" id="#navbar_id">
@@ -21,13 +22,13 @@
     </div>
     <div class="loginPage_registerContainer">
         <h2> Register </h2>
-        <form>
-            firstname <input type="text"> <br>
-            lastname <input type="text"> <br>
-            username <input type="text"> <br>
-            password <input type="password"> <br>
-            re-confirm password <input type="password"> <br>
-            <input type="submit">
+        <form action="register_process" method="POST">
+            firstname <input type="text" name="firstname" required> <br>
+            lastname <input type="text" name="lastname" required> <br>
+            username <input type="text" name="username" required class="input_username"> <br>
+            password <input type="password" name="password" required class="input_password"> <br>
+            re-confirm password <input type="password" name="repassword" required class="input_pass_confirm"> <br>
+            <input type="submit" class="register_submit">
         </form>
     </div>
     <h2>Already have an account?</h2>

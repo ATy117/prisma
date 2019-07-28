@@ -8,7 +8,7 @@ const urlencoder = bodyparser.urlencoded({
 //DBS and Mongoose
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/users", {
+mongoose.connect("mongodb://localhost:27017/prisma", {
     useNewUrlParser: true
 });
 
@@ -53,8 +53,51 @@ app.get("/login", function(req,res){
     res.sendFile(__dirname + "/public/Login.html");
 });
 
+
+//Register
 app.get("/register", function(req,res){
     res.sendFile(__dirname + "/public/Register.html");
+});
+
+app.post("/register_username_test", urlencoder, function(req,res){
+	console.log(req.body.usernameTest);
+	let usernameTest = req.body.usernameTest;
+
+    Account.findOne({
+        username : usernameTest
+    }, (error, document)=>{
+        if (error){
+            res.send(error);
+        } else if (document) {
+            res.send("Exists")
+        } else {
+            res.send("Available");
+        }
+    });
+});
+
+app.post("/register_process", urlencoder, function (req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var firstname = req.body.firstname;
+    var lastname = req.body.lastname;
+
+    let account = new Account({
+        username : username,
+        password : password,
+        firstname: firstname,
+        lastname: lastname,
+        followers: []
+    }); 
+
+    account.save().then((document)=>{
+        // ALl goes well
+        console.log(document);
+        res.send("Registered Successfully\n");
+    }, (error)=>{
+        //all goes to hell
+        res.send(error);
+    });
 });
 
 
