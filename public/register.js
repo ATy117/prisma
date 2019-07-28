@@ -28,7 +28,7 @@ window.onload = function(){
         });
     });
 
-    $(".register_submit").click(async function(){
+    $(".register_submit").click(async function(e){
         $(".pass_error").remove();
         var hasError = false;
         var passwordVal = $(".input_password").val();
@@ -40,7 +40,7 @@ window.onload = function(){
 
         await $(".input_username").trigger("focusout");
         if(hasError || userExists) {
-            return false;
+            e.preventDefault();
         }
     });
 };

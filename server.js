@@ -48,9 +48,46 @@ app.get("/", function(req,res){
 app.get("/about", function(req,res){
     res.sendFile(__dirname + "/public/About.html");
 });
- 
+
+
+
+// LOGIN
 app.get("/login", function(req,res){
     res.sendFile(__dirname + "/public/Login.html");
+});
+
+app.post("/login_username_test", urlencoder, function(req,res){
+    let usernameTest = req.body.usernameTest;
+    let passwordTest = req.body.passwordTest;
+    
+    Account.findOne({
+        username : usernameTest,
+        password: passwordTest
+    }, (error, document)=>{
+        if (error){
+            res.send(error);
+        } else if (document) {
+            res.send("Exists")
+        } else {
+            res.send("NotExists");
+        }
+    });
+});
+
+app.post("/login_process", urlencoder, function(req, res){
+    var username = req.body.username;
+    var password = req.body.password;
+
+    Account.findOne({
+        username : username,
+        password: password
+    }, (error, document)=>{
+        if (error){
+            res.send(error);
+        } else if (document) {
+            res.send("Welcome" + document.username)
+        }
+    });
 });
 
 
@@ -77,6 +114,7 @@ app.post("/register_username_test", urlencoder, function(req,res){
 });
 
 app.post("/register_process", urlencoder, function (req, res){
+    console.log("in server");
     var username = req.body.username;
     var password = req.body.password;
     var firstname = req.body.firstname;
