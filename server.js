@@ -46,11 +46,15 @@ app.get("/", function(req,res){
 });
 
 app.get("/about", function(req,res){
-        res.sendFile(__dirname + "/public/About.html");
+    res.sendFile(__dirname + "/public/About.html");
 });
  
 app.get("/login", function(req,res){
     res.sendFile(__dirname + "/public/Login.html");
+});
+
+app.get("/register", function(req,res){
+    res.sendFile(__dirname + "/public/Register.html");
 });
 
 
