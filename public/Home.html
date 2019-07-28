@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prisma | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/eyedropperLogoPink.png" type="image" sizes="16x16">
     <script src="anime.min.js"></script>
     <script src="jquery.js"></script>
 </head>
@@ -20,27 +21,48 @@
         </ul>
     </div>
     <div class="title_container">
-        <img src="assets/PrismaShadow.png" class="logo">
-        <div class="title_bio_container">
-            <p class="title_bio" id="bio_1"> Your goto </p>
-            <p class="title_bio" id="bio_2"> Color Palette Generator!</p>
+        <img src="./assets/PrismaShadow.png" class="logo">
+        <div class="title_details">
+            <div class="tagline"> Your goto <br> Color Palette Generator!</div>
+            <div class="title_register_container">
+                <div class="title_register_details"> Start yours Now! </div>
+                <div class="register_button"> Register! </div>
+            </div>
         </div>
     </div>
-    <div class="login_home_container">
-        <ul class="login_words">
-            <div class="login_start">
-                <div class="login_details_left"> Start yours Now! </div>
-                <div class="login_button"> Login! </div>
-            </div>
-            <div class="login_details_right"> Start creating your own color palette and imagine what it's like to see your favorite color altogehter!</div>
-        </ul>
+    <div class="display_rainbow_container">
+        <div class="red_rainbow"></div>
+        <div class="orange_rainbow"></div>
+        <div class="yellow_rainbow"></div>
+        <div class="green_rainbow"></div>
+        <div class="blue_rainbow"></div>
     </div>
-    <div class="rainbow_sample_container">
-        <div class="red"></div>
-        <div class="orange"></div>
-        <div class="yellow"></div>
-        <div class="green"></div>
-        <div class="blue"></div>
+    <div class="stats_display_container">
+        <div class="indiv_stats" id="user_stats">
+            <div class="indiv_num_stats"> 500 </div>
+            <div class="indiv_label_stats"> users </div>
+        </div>
+        <div class="indiv_stats">
+            <div class="indiv_num_stats"> 10, 000</div>
+            <div class="indiv_label_stats"> palettes </div>
+        </div>
+    </div>
+    <div class="sample_palette_container">
+        <div class="sample_palette_details">
+            <div class="sample_details_top">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis excepturi dolorem illum modi odio ducimus beatae nam, dicta tempore aspernatur pariatur dolorum ab nostrum tenetur labore at error maiores laboriosam.</div>
+            <div class="sample_details_bottom"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam et rerum natus alias! Vitae est fugit at minima, laborum iure dicta? Quae dolore qui rerum accusantium ad illo enim voluptatem!</div>
+        </div>
+        <div class="sample_palette_set">
+            <div class="sample_name"> Rainbow </div>
+            <div class="sample_rainbow">
+                <div class="red_sample"></div>
+                <div class="orange_sample"></div>
+                <div class="yellow_sample"></div>
+                <div class="green_sample"></div>
+                <div class="blue_sample"></div>
+            </div>
+            <div class="sample_made_by"> by @prisma </div>
+        </div>
     </div>
 </body>
 </html>
