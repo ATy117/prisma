@@ -21,15 +21,19 @@
         </ul>
     </div>
     <div class="loginPage_loginContainer">
-        <h1> Login </h1>
         <form class="login_form" action="login_process" method="POST">
-            username <input type="text" name="username" class="input_username"> <br>
-            password <input type="password" name="password" class="input_password"> <br>
-            <input type="submit" class="login_submit">
+            <p class="user_pw_label"> username </p>
+            <input type="text" name="username" class="input_username"> <br>
+            <p class="user_pw_label"> password </p>
+            <input type="password" name="password" class="input_password"> <br>
+            <input type="submit" class="login_submit" value="Login!">
         </form>
+        <div class="loginPage_registerContainer">
+            <div class="login_details"> Start creating your palettes by logging into your account!And maybe potentially add more words here to fill it up</div>
+            <div class="register_details"> Don't have an account?</div>
+            <div class="login_register_button"><a href="register"> Register</a></div>
+        </div>
     </div>
-    <h2>Don't have an account yet?</h2>
-    <h3><a href="register">Register Now</a></h3>
     
 </body>
 </html>
