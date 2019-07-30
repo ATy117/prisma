@@ -38,10 +38,10 @@ app.set("view engine", "hbs");
 
 // Home Pages
 app.get("/", function(req,res){
-    if (!req.session.userid){
+    if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        
+        res.send(req.session.username + "is currently logged in");
     }
 });
 
@@ -85,7 +85,8 @@ app.post("/login_process", urlencoder, function(req, res){
         if (error){
             res.send(error);
         } else if (document) {
-            res.send("Welcome" + document.username)
+            req.session.username = document.username;
+            res.redirect("/");
         }
     });
 });
@@ -136,6 +137,13 @@ app.post("/register_process", urlencoder, function (req, res){
         //all goes to hell
         res.send(error);
     });
+});
+
+app.get("/logout", (req,res) =>{
+    req.session.destroy((error)=>{
+        console.log("Logged Out");
+    });
+    res.redirect("/");
 });
 
 
