@@ -6,6 +6,7 @@
 :root{
     --gray-bg: #efefed;
     --gray-dark: #e0e0dd;
+    --gray-hover: #ccccca;
     --accent-pink: #d2aca6;
     --accent-light-pink: #f3c5b8;
 
@@ -93,7 +94,7 @@ body{
 /* ADD PALETTE */
 .color_palette_container{
     width: 100%;
-    height: 40rem;
+    height: 36rem;
     display: flex;
 }
 
@@ -179,6 +180,31 @@ body{
     margin-top: 5rem;
 }
 
+#styleInput:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 4px #00000048);
+}
+
+#styleInput1:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 4px #00000048);
+}
+
+#styleInput2:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 4px #00000048);
+}
+
+#styleInput3:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 4px #00000048);
+}
+
+#styleInput4:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 4px #00000048);
+}
+
 .hex_numbers{
     font-family: "font";
     font-size: 20px;
@@ -196,6 +222,48 @@ body{
     text-align: center;
     background-color: var(--gray-bg);
 
+}
+
+/*-- palette name ---*/
+.palette_details_container{
+    width: 100%;
+    height: 20rem;
+
+    margin-left: 10rem;
+}
+
+.palette_name_label{
+    font-family: "font";
+    font-size: 20px;
+}
+
+.palette_name_field{
+    font-family: "font";
+    font-size: 20px;
+    width: 30rem;
+    height: 2rem;
+}
+
+.extra_buttons_filed{
+    display: flex;
+}
+
+.done_button{
+    background-color: var(--gray-dark);
+    font-family: "font";
+    font-size: 20px;
+    font-weight: bold;
+    width: 10rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    filter: drop-shadow(0px 1px 2px #0000002c);
+
+    margin-left: 15rem;
+}
+
+.done_button:hover{
+    cursor: pointer;
+    background-color: var(--gray-hover);
 }
 
 
