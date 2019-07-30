@@ -161,6 +161,10 @@ app.get("/logout", (req,res) =>{
     res.redirect("/");
 });
 
+app.get("/palettes", (req, res)=>{
+    res.render("palettes.hbs");
+});
+
 
 
 

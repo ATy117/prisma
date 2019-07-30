@@ -66,3 +66,26 @@ body{
 }
 
 /* END OF NAVBAR */
+
+/* MY PALETTES */
+.add_palette_button{
+
+    font-family: "font";
+    display: flex;
+}
+
+.add_button{
+    width: 200px;
+    height: 40px;
+    background-color: var(--gray-dark);
+    filter: drop-shadow(0px 1px 4px #0000002c);
+    position: fixed;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 100px;
+}
+
+/* END OF MY PALETTES */
