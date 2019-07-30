@@ -23,19 +23,19 @@
     <div class="title_container">
         <img src="./assets/PrismaShadow.png" class="logo">
         <div class="title_details">
-            <div class="tagline"> Your goto <br> Color Palette Generator!</div>
+            <div class="tagline"> Your go-to <br> Color Palette Maker!</div>
             <div class="title_register_container">
                 <div class="title_register_details"> Start yours Now! </div>
-                <div class="register_button"><a href="register"> Register! </a></div>
+                <div class="register_button"><a href="register" class="register_button_link"> Register! </a></div>
             </div>
         </div>
     </div>
     <div class="display_rainbow_container">
-        <div class="red_rainbow"></div>
-        <div class="orange_rainbow"></div>
-        <div class="yellow_rainbow"></div>
-        <div class="green_rainbow"></div>
-        <div class="blue_rainbow"></div>
+        <div class="red_rainbow" id="red_display"></div>
+        <div class="orange_rainbow" id="orange_display"></div>
+        <div class="yellow_rainbow" id="yellow_display"></div>
+        <div class="green_rainbow" id="green_display"></div>
+        <div class="blue_rainbow" id="blue_display"></div>
     </div>
     <div class="stats_display_container">
         <div class="indiv_stats" id="user_stats">
@@ -64,5 +64,6 @@
             <div class="sample_made_by"> by @prisma </div>
         </div>
     </div>
+    <script src="./animate.js"></script>
 </body>
 </html>
