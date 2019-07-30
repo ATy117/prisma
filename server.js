@@ -41,7 +41,22 @@ app.get("/", function(req,res){
     if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        res.send(req.session.username + "is currently logged in");
+        let firstname;
+
+        Account.findOne({
+            username: req.session.username
+        }, (error, document)=>{
+            if (error){
+                res.send(error);
+            } else if (document) {
+                firstname = document.firstname;
+                res.render("feed.hbs",{
+                    username: req.session.username,
+                    firstname: firstname
+                });
+            } 
+        });
+        
     }
 });
 
