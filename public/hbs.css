@@ -89,3 +89,113 @@ body{
 }
 
 /* END OF MY PALETTES */
+
+/* ADD PALETTE */
+.color_palette_container{
+    width: 100%;
+    height: 40rem;
+    display: flex;
+}
+
+.indiv_color_container{
+    margin-left: 1rem;
+}
+
+.color_container{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+#styleInput{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+#styleInput1{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+#styleInput2{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+#styleInput3{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+#styleInput4{
+    background-color: #ffffff;
+    border: solid;
+    border-color: var(--gray-bg);
+    border-width: 0.5rem;
+    filter: drop-shadow(0px 1px 4px #0000002c);
+
+    height: 25rem;
+    width: 14rem;
+
+    margin-top: 5rem;
+}
+
+.hex_numbers{
+    font-family: "font";
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--gray-dark);
+    border: none;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+#input_hex{
+    border: none;
+    font-family: "font";
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--gray-bg);
+
+}
+
+

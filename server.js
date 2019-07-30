@@ -165,6 +165,9 @@ app.get("/palettes", (req, res)=>{
     res.render("palettes.hbs");
 });
 
+app.get("/addPalette", (req, res)=>{
+    res.render("addpalette.hbs");
+});
 
 
 
