@@ -166,7 +166,7 @@ app.get("/logout", (req,res) =>{
 app.get("/palettes", (req, res)=>{
 
     if (!req.session.username){
-        res.sendFile(__dirname + "/public/Home.html");
+        res.redirect("/");
     } else {
         let firstname;
 
@@ -191,7 +191,7 @@ app.get("/palettes", (req, res)=>{
 // Add a palette
 app.get("/addPalette", (req, res)=>{
     if (!req.session.username){
-        res.sendFile(__dirname + "/public/Home.html");
+        res.redirect("/");
     } else {
         let firstname;
 
