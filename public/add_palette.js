@@ -8,8 +8,6 @@ window.onload = function(){
         } else {
             console.log(palette_name);
         }
-
-
         
     });
 
