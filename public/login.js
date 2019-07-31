@@ -17,7 +17,7 @@ window.onload = function(){
             if (data =="NotExists"){
                 accountExists = false;
                 // Create the error message div here
-                $("h1").after('<h2 class="login_message">Account Does Not Exist</h2>');
+                $(".login_submit").after('<h2 class="login_message">Account Does Not Exist</h2>');
             } else {
                 accountExists = true;
             }

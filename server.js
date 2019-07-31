@@ -214,6 +214,6 @@ app.get("/addPalette", (req, res)=>{
 
 
 
-app.listen(9090, function(){
+app.listen(3000, function(){
     console.log("Port is Live");
 });
