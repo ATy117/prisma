@@ -371,7 +371,7 @@ body{
 /*-- palette name ---*/
 .palette_details_container{
     width: 100%;
-    height: 20rem;
+    height: auto;
 
 }
 

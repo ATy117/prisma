@@ -34,6 +34,11 @@ const paletteSchema = new Schema({
 });
 
 
+//User for adding accounts, given account object, then return that object
+paletteSchema.statics.addAccount = function(palette, callback){
+    palette.save().then(callback);
+};
+
 const Palette = mongoose.model("Palette", paletteSchema);
 
 module.exports = {

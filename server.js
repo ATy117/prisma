@@ -43,9 +43,21 @@ app.get("/", function(req,res){
     } else {
         let firstname;
 
-        Account.findOne({
-            username: req.session.username
-        }, (error, document)=>{
+        // Account.findOne({
+        //     username: req.session.username
+        // }, (error, document)=>{
+        //     if (error){
+        //         res.send(error);
+        //     } else if (document) {
+        //         firstname = document.firstname;
+        //         res.render("feed.hbs",{
+        //             username: req.session.username,
+        //             firstname: firstname
+        //         });
+        //     } 
+        // });
+        
+        Account.getAccountByUsername(req.session.username, function(error, document){
             if (error){
                 res.send(error);
             } else if (document) {
@@ -56,7 +68,6 @@ app.get("/", function(req,res){
                 });
             } 
         });
-        
     }
 });
 
@@ -75,10 +86,20 @@ app.post("/login_username_test", urlencoder, function(req,res){
     let usernameTest = req.body.usernameTest;
     let passwordTest = req.body.passwordTest;
     
-    Account.findOne({
-        username : usernameTest,
-        password: passwordTest
-    }, (error, document)=>{
+    // Account.findOne({
+    //     username : usernameTest,
+    //     password: passwordTest
+    // }, (error, document)=>{
+    //     if (error){
+    //         res.send(error);
+    //     } else if (document) {
+    //         res.send("Exists")
+    //     } else {
+    //         res.send("NotExists");
+    //     }
+    // });
+
+    Account.checkAccountExists(usernameTest, passwordTest, function(error, document){
         if (error){
             res.send(error);
         } else if (document) {
@@ -93,14 +114,24 @@ app.post("/login_process", urlencoder, function(req, res){
     var username = req.body.username;
     var password = req.body.password;
 
-    Account.findOne({
-        username : username,
-        password: password
-    }, (error, document)=>{
+    // Account.findOne({
+    //     username : username,
+    //     password: password
+    // }, (error, document)=>{
+    //     if (error){
+    //         res.send(error);
+    //     } else if (document) {
+    //         req.session.username = document.username;
+    //         res.redirect("/");
+    //     }
+    // });
+
+    Account.login(username, password, function(error, document){
         if (error){
             res.send(error);
         } else if (document) {
             req.session.username = document.username;
+            console.log(typeof document._id);
             res.redirect("/");
         }
     });
@@ -113,12 +144,21 @@ app.get("/register", function(req,res){
 });
 
 app.post("/register_username_test", urlencoder, function(req,res){
-	console.log(req.body.usernameTest);
 	let usernameTest = req.body.usernameTest;
 
-    Account.findOne({
-        username : usernameTest
-    }, (error, document)=>{
+    // Account.findOne({
+    //     username : usernameTest
+    // }, (error, document)=>{
+    //     if (error){
+    //         res.send(error);
+    //     } else if (document) {
+    //         res.send("Exists")
+    //     } else {
+    //         res.send("Available");
+    //     }
+    // });
+
+    Account.checkUniqueUsername(usernameTest, function(error, document){
         if (error){
             res.send(error);
         } else if (document) {
@@ -144,14 +184,35 @@ app.post("/register_process", urlencoder, function (req, res){
         followers: []
     }); 
 
-    account.save().then((document)=>{
+    // account.save().then((document)=>{
+    //     // ALl goes well
+    //     console.log(document);
+    //     res.send("Registered Successfully\n");
+    // }, (error)=>{
+    //     //all goes to hell
+    //     res.send(error);
+    // });
+
+    Account.addAccount(account,(document)=>{
         // ALl goes well
         console.log(document);
+        // Sample following
+        // document.followAccount(document, function(document){
+        //     console.log(document.followers);
+        //     document.getFollowers(function(error, followers){
+        //         console.log(followers.followers[0]);
+        //     });
+        //     res.send("Registered Successfully\n");
+        // }, function(error){
+
+        // });
+
         res.send("Registered Successfully\n");
+        
     }, (error)=>{
         //all goes to hell
         res.send(error);
-    });
+    })
 });
 
 app.get("/logout", (req,res) =>{
@@ -166,7 +227,7 @@ app.get("/logout", (req,res) =>{
 app.get("/palettes", (req, res)=>{
 
     if (!req.session.username){
-        res.sendFile(__dirname + "/public/Home.html");
+        res.redirect("/");
     } else {
         let firstname;
 
@@ -191,7 +252,7 @@ app.get("/palettes", (req, res)=>{
 // Add a palette
 app.get("/addPalette", (req, res)=>{
     if (!req.session.username){
-        res.sendFile(__dirname + "/public/Home.html");
+        res.redirect("/");
     } else {
         let firstname;
 
@@ -214,6 +275,6 @@ app.get("/addPalette", (req, res)=>{
 
 
 
-app.listen(9090, function(){
+app.listen(3000, function(){
     console.log("Port is Live");
 });
