@@ -70,9 +70,21 @@ accountSchema.methods.getFollowed = function(callback){
 
 // Follow an account
 accountSchema.methods.followAccount = function(followedAccount, callback){
-    this.followers.push(followedAccount._id);
-    this.save().then(callback);
+    let me = this;
+    let id = this._id;
+    this.followed.push(followedAccount._id);
+    // Save urself as follower of the other account
+    Account.findOne({
+        username: this.username
+    }, function(error, document){
+        document.followers.push(id);
+        document.save().then((document)=>{
+            me.save().then(callback);
+        });
+    });
 };
+
+
 
 const Account = mongoose.model("Account", accountSchema);
 

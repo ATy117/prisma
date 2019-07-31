@@ -207,7 +207,6 @@ app.post("/register_process", urlencoder, function (req, res){
 
         // });
 
-
         res.send("Registered Successfully\n");
         
     }, (error)=>{
