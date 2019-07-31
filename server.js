@@ -161,12 +161,55 @@ app.get("/logout", (req,res) =>{
     res.redirect("/");
 });
 
+// Profile Navigating
+
 app.get("/palettes", (req, res)=>{
-    res.render("palettes.hbs");
+
+    if (!req.session.username){
+        res.sendFile(__dirname + "/public/Home.html");
+    } else {
+        let firstname;
+
+        Account.findOne({
+            username: req.session.username
+        }, (error, document)=>{
+            if (error){
+                res.send(error);
+            } else if (document) {
+                firstname = document.firstname;
+                res.render("palettes.hbs",{
+                    username: req.session.username,
+                    firstname: firstname
+                });
+            } 
+        });
+        
+    }
 });
 
+
+// Add a palette
 app.get("/addPalette", (req, res)=>{
-    res.render("addpalette.hbs");
+    if (!req.session.username){
+        res.sendFile(__dirname + "/public/Home.html");
+    } else {
+        let firstname;
+
+        Account.findOne({
+            username: req.session.username
+        }, (error, document)=>{
+            if (error){
+                res.send(error);
+            } else if (document) {
+                firstname = document.firstname;
+                res.render("addpalette.hbs",{
+                    username: req.session.username,
+                    firstname: firstname
+                });
+            } 
+        });
+        
+    }
 });
 
 
