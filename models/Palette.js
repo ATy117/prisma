@@ -7,6 +7,7 @@ const paletteSchema = new Schema({
         ref: "Account"
     },
     name: String,
+    dateCreated: String,
     color1: {
         type: String,
         uppercase: true
@@ -34,8 +35,8 @@ const paletteSchema = new Schema({
 });
 
 
-//User for adding accounts, given account object, then return that object
-paletteSchema.statics.addAccount = function(palette, callback){
+//User for adding palettes given palette object, then return that object
+paletteSchema.statics.addPalette = function(palette, callback){
     palette.save().then(callback);
 };
 
