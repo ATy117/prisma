@@ -5,7 +5,7 @@
 
 :root{
     --gray-bg: #efefed;
-    --gray-dark: #e0e0dd;
+    --gray-dark: #dbdbd8;
     --gray-hover: #ccccca;
     --accent-pink: #d2aca6;
     --accent-light-pink: #f3c5b8;
@@ -79,15 +79,60 @@ body{
     width: 200px;
     height: 40px;
     background-color: var(--gray-dark);
-    filter: drop-shadow(0px 1px 4px #0000002c);
+
     position: fixed;
-    text-align: center;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
+    
+    font-weight: bold;
+    text-decoration: none;
+    color: #272626;
 
-    margin-top: 100px;
+    margin-top: 43%;
+    margin-left: 82%;
+    filter: drop-shadow(0px 1px 2px #0000004d);
 }
+
+.add_button:hover{
+    cursor: pointer;
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 2px #0000005d);
+    text-decoration: none;
+    color: #272626;
+}
+
+.add_palette_button:link{
+    text-decoration: none;
+    color: #272626;
+}
+
+.add_palette_button:any-link{
+    text-decoration: none;
+    color: #272626;
+}
+
+.add_palette_button:visited{
+    text-decoration: none;
+    color: #272626;
+}
+
+.palette_indiv_container{
+    width:50%;
+    height: 10rem;
+    padding-top: 5rem;
+}
+
+.palette_header{
+    display: flex;
+}
+
+.palette_name{
+    font-family: "font";
+    font-size: 20px;
+}
+
 
 /* END OF MY PALETTES */
 
