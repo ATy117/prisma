@@ -444,11 +444,15 @@ body{
     filter: drop-shadow(0px 1px 2px #00000062);
 }
 
+.login_register_button:visited{
+    color: var(--font-color);
+}
+
 /* END OF LOGIN*/
 
 /* REGISTER */
 .registerPage_registerContainer{
-    padding-top: 6rem;
+    padding-top: 5rem;
     margin-left: 12rem;
 
     font-family: "font";
@@ -459,7 +463,7 @@ body{
 }
 .register_form{
     background-color: var(--gray-dark);
-    height: 37rem;
+    height: 35rem;
     width: 30rem;
 }
 
@@ -486,7 +490,7 @@ body{
     height: 1.8rem;
     width: 15rem;
     margin-left: 2rem;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
 
     font-family: "font";
 }
@@ -498,10 +502,35 @@ body{
     height: 1.8rem;
     width: 15rem;
     margin-left: 2rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 
     font-family: "font";
 }
+
+.input_username_register{
+    background-color: var(--gray-bg);
+    border: solid;
+    border-color: #d6d6d6;
+    height: 2rem;
+    width: 15rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+
+    font-family: "font";
+}
+
+.input_password_register{
+    background-color: var(--gray-bg);
+    border: solid;
+    border-color: #d6d6d6;
+    height: 2rem;
+    width: 15rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+
+    font-family: "font";
+}
+
 
 .register_submit{
     width: 10rem;
@@ -519,6 +548,8 @@ body{
 
 .register_submit:hover{
     cursor: pointer;
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 2px #00000049);
 }
 
 .registerPage_loginPane{
@@ -527,18 +558,32 @@ body{
     font-size: 20px;
 }
 
-.login_button{
-    width: 10rem;
+.reg_loginDetails{
+    margin-bottom: 2rem;
+}
+
+.login_button:link{
     background-color: var(--gray-dark);
-    height: 2rem;
     text-align: center;
     font-weight: bold;
     font-family: "font";
     font-size: 20px;
+    padding: 0.4rem 2rem;
+    text-decoration: none;
+    color: var(--font-color);
+    
     filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-top: 1rem;
-    margin-left: 2.3rem;
-    padding-top: 0.5rem;
+    margin-left: 2rem;
+}
+
+.login_button:hover{
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 3px #00000049);
+}
+
+.login_button:visited{
+    text-decoration: none;
+    color: var(--font-color);
 }
 
 
