@@ -29,18 +29,10 @@ accountSchema.statics.getAccountByUsername = function (username, callback){
     }, callback);
 };
 // Use for checking if username exists
-accountSchema.statics.checkUniqueUsername = function(usernameTest){
+accountSchema.statics.checkUniqueUsername = function(usernameTest, callback){
     this.findOne({
         username : usernameTest
-    }, function(error, document){
-        if (error){
-            return false;
-        } else if (document) {
-            return true;
-        } else {
-            return falase;
-        }
-    });
+    }, callback);
 };
 
 // Use for checking if account exists

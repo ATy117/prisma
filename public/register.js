@@ -11,7 +11,7 @@ window.onload = function(){
 
         let data = {};
         data.usernameTest = usernameTest;
-        $.post("/register_username_test", data, function(data, status){
+        $.post("/register/username_test", data, function(data, status){
             console.log(data);
             //Hide existing messages dito kung meron
             $(".register_username_message").remove();
