@@ -129,12 +129,17 @@ body{
 }
 
 .left_side_palettes{
-    width: 50%;
+    width: 33.33%;
     margin-top: 1rem;
 }
 
 .right_side_palettes{
-    width: 50%;
+    width: 33.33%;
+    margin-top: 1rem;
+}
+
+.middle_side_palettes{
+    width: 33.33%;
     margin-top: 1rem;
 }
 
@@ -143,8 +148,8 @@ body{
     padding-top: 0.5rem;
 }
 
-.left_indiv_palette{
-    width: 30rem;
+.indiv_palette{
+    width: 27rem;
     height: 13rem;
 
     background-color: var(--gray-dark);
@@ -194,19 +199,19 @@ body{
 
 .palette_color_container{
     display: flex;
-    margin-left: 0.1rem;
+    margin-left: 0.2rem;
 }
 
 .left_color_container{
-    width: 5.3rem;
-    height: 5.3rem;
+    width: 4.8rem;
+    height: 4.8rem;
     border: solid;
     border-width: 0.2rem;
     border-color: var(--gray-bg);
     background-color: var(--box-R);
     filter: drop-shadow(0px 1px 2px #0000003f);
 
-    margin-left: 0.2rem;
+    margin-left: 0.1rem;
 }
 
 .other_information{
