@@ -29,20 +29,17 @@ app.use(session({
     cookie: {
         maxAge: 1000*60*60*24*365*2
     }
-}))
+}));
 
 // HBS
 const hbs = require('hbs');
 app.set("view engine", "hbs");
-
-
 
 // LOGIN - route
 app.use('/login', require('./routes/login'));
 
 //REGISTER - Route
 app.use('/register', require('./routes/register'));
-
 
 // Home Pages
 app.get("/", function(req,res){
