@@ -586,5 +586,28 @@ body{
     color: var(--font-color);
 }
 
+/* JS */
+.pass_error{
+    font-family: "font";
+    font-size: 14px;
+    color: red;
+    margin-left: 0.3rem;
+    font-weight: bold;
+}
+
+.register_username_message{
+    font-family: "font";
+    font-size: 14px;
+    color: red;
+    margin-left: 0.3rem;
+    font-weight: bold;
+}
+
+.login_message{
+    font-family: "font";
+    font-size: 18px;
+    color: red;
+    margin-left: 3.4rem;
+}
 
 
