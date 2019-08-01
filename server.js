@@ -43,15 +43,22 @@ app.use('/login', require('./routes/login'));
 //REGISTER - Route
 app.use('/register', require('./routes/register'));
 
-// Feed - route
-app.use('/feed', require('./routes/feed'));
 
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        res.redirect("/feed");
+        let username = req.session.username;
+        let firstname;
+
+        Account.getAccountByUsername(username, function(error, user){
+            firstname = user.firstname;
+            res.render("feed.hbs",{
+                username: username,
+                firstname: firstname
+            });
+        });
     }
 });
 
