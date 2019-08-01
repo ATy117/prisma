@@ -32,7 +32,7 @@ accountSchema.statics.getAccountByUsername = function (username, callback){
 accountSchema.statics.checkUniqueUsername = function(usernameTest, callback){
     this.findOne({
         username : usernameTest
-    }, callback);
+    }, callback); 
 };
 
 // Use for checking if account exists
@@ -55,9 +55,6 @@ accountSchema.statics.login = function(username, password, callback){
         password: password
     }, callback);
 };
-
-
-
 
 // METHODS ---------------------------------------------------------------
 //Retrieve followers

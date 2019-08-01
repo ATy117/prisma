@@ -10,6 +10,7 @@ const urlencoder = bodyparser.urlencoded({
 const {Account} = require("../models/Account");
 const {Palette} = require("../models/Palette");
 
+
 router.get("/", function(req,res){
     res.sendFile(path.join(__dirname, '../public', 'Login.html'));
 });

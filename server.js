@@ -41,6 +41,9 @@ app.use('/login', require('./routes/login'));
 //REGISTER - Route
 app.use('/register', require('./routes/register'));
 
+//REGISTER - Route
+app.use('/palettes', require('./routes/palettes'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){

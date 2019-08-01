@@ -29,9 +29,11 @@ window.onload = function(){
             data.color3 = color3;
             data.color4 = color4;
             data.color5 = color5;
-            // $.post("/add_palette_process", data, function (data, success){
-
-            // })
+            $.post("/palettes/add_process", data, function (data, success){
+                if (data.message == "Success"){
+                    window.location.href = data.redirect;
+                }
+            })
         }
         
     });
