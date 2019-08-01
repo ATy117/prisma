@@ -10,6 +10,8 @@
     --accent-pink: #d2aca6;
     --accent-light-pink: #f3c5b8;
 
+    --font-color: #272626;
+
     --box-R: #f69679;
     --box-O: #fdc689;
     --box-Y: #fff799;
@@ -400,6 +402,13 @@ body{
 
     margin-top: 3rem;
     margin-left: 5rem;
+
+    cursor: pointer;
+}
+
+.login_submit:hover{
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 2px #00000046);
 }
 
 .loginPage_registerContainer{
@@ -414,17 +423,25 @@ body{
 .register_details{
     margin-top: 3rem;
     margin-left: 2rem;
+    margin-bottom: 1rem;
 }
 
-.login_register_button{
-    width: 10rem;
-    background-color: var(--gray-dark);
-    height: 2rem;
+.login_register_button:link{
+    padding: 0.4rem 2rem;
+    color: var(--font-color);
     text-align: center;
-    margin-top: 1rem;
-    padding-top: 0.5rem;
-    margin-left: 4rem;
     font-weight: bold;
+    text-decoration: none;
+    background-color: var(--gray-dark);
+    filter: drop-shadow(0px 1px 2px #00000046);
+
+    margin-top: 10rem;
+    margin-left: 4rem;
+}
+
+.login_register_button:hover{
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 2px #00000062);
 }
 
 /* END OF LOGIN*/
