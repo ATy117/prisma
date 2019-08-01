@@ -131,7 +131,6 @@ app.post("/login_process", urlencoder, function(req, res){
             res.send(error);
         } else if (document) {
             req.session.username = document.username;
-            console.log(typeof document._id);
             res.redirect("/");
         }
     });
@@ -250,7 +249,7 @@ app.get("/palettes", (req, res)=>{
 
 
 // Add a palette
-app.get("/addPalette", (req, res)=>{
+app.get("/add_palette", (req, res)=>{
     if (!req.session.username){
         res.redirect("/");
     } else {
@@ -273,6 +272,22 @@ app.get("/addPalette", (req, res)=>{
     }
 });
 
+// Add palette process
+app.post("/add_palette_process", urlencoder, (req, res)=>{
+    let name = req.body.name;
+    let dateCreated = req.body.dateCreated;
+    let color1 = req.body.color1;
+    let color2 = req.body.color2;
+    let color3 = req.body.color3;
+    let color4 = req.body.color4;
+    let color5 = req.body.color5;
+
+    let id;
+
+    Account.getAccountByUsername(req.session.username, function(error, document){
+        id = document._id;
+    });
+});
 
 
 app.listen(3000, function(){

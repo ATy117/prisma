@@ -13,6 +13,10 @@ const accountSchema = new Schema({
     followers: [{
         type: Schema.Types.ObjectId,
         ref: "Account"
+    }],
+    likedPalettes: [{
+        type: Schema.Types.ObjectId,
+        ref: "Palette"
     }]
 });
 
@@ -84,6 +88,13 @@ accountSchema.methods.followAccount = function(followedAccount, callback){
     });
 };
 
+// Unfollow
+
+
+// Like Palatte
+
+
+// Unlike Palette
 
 
 const Account = mongoose.model("Account", accountSchema);
