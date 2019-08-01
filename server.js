@@ -35,63 +35,28 @@ app.use(session({
 const hbs = require('hbs');
 app.set("view engine", "hbs");
 
+
+
+// LOGIN - route
+app.use('/login', require('./routes/login'));
+
+//REGISTER - Route
+app.use('/register', require('./routes/register'));
+
+// Feed - route
+app.use('/feed', require('./routes/feed'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        let username = req.session.username;
-        let firstname;
-        
-        let user = Account.getAccountByUsername(username);
-
-        firstname = user.firstname;
-        res.render("feed.hbs",{
-            username: username,
-            firstname: firstname
-        });
+        res.redirect("/feed");
     }
 });
 
-// LOGIN - route
-app.use('/login', require('./routes/login'));
-
-
-
 app.get("/about", function(req,res){
     res.sendFile(__dirname + "/public/About.html");
-});
-
-
-
-
-
-
-
-app.post("/login_process", urlencoder, function(req, res){
-    var username = req.body.username;
-    var password = req.body.password;
-
-    // Account.findOne({
-    //     username : username,
-    //     password: password
-    // }, (error, document)=>{
-    //     if (error){
-    //         res.send(error);
-    //     } else if (document) {
-    //         req.session.username = document.username;
-    //         res.redirect("/");
-    //     }
-    // });
-
-    Account.login(username, password, function(error, document){
-        if (error){
-            res.send(error);
-        } else if (document) {
-            req.session.username = document.username;
-            res.redirect("/");
-        }
-    });
 });
 
 app.listen(3000, function(){

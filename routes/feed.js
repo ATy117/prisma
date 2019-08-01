@@ -34,31 +34,17 @@ const {Palette} = require("../models/Palette");
 
 
 router.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, '../public', 'Login.html'));
-});
-
-router.post("/account_test", urlencoder, function(req,res){
-    let usernameTest = req.body.usernameTest;
-    let passwordTest = req.body.passwordTest;
-    Account.checkAccountExists(usernameTest, passwordTest, function (error, document){
-        if (document){
-            res.send("Exists");
-        } else {
-            res.send("NotExists");
-        }
+    let username = req.session.username;
+    let firstname;
+    
+    Account.getAccountByUsername(username, function(error, user){
+        firstname = user.firstname;
+        res.render("feed.hbs",{
+            username: username,
+            firstname: firstname
+        });
     });
-});
 
-router.post("/process", urlencoder, function(req, res){
-    var username = req.body.username;
-    var password = req.body.password;
-
-    Account.login(username, password, function(error, account){
-        if (account){
-            req.session.username = account.username;
-            res.redirect("/");
-        } 
-    });
     
 });
 
