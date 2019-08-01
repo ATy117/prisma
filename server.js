@@ -29,13 +29,11 @@ app.use(session({
     cookie: {
         maxAge: 1000*60*60*24*365*2
     }
-}))
+}));
 
 // HBS
 const hbs = require('hbs');
 app.set("view engine", "hbs");
-
-
 
 // LOGIN - route
 app.use('/login', require('./routes/login'));
@@ -43,15 +41,24 @@ app.use('/login', require('./routes/login'));
 //REGISTER - Route
 app.use('/register', require('./routes/register'));
 
-// Feed - route
-app.use('/feed', require('./routes/feed'));
+//REGISTER - Route
+app.use('/palettes', require('./routes/palettes'));
 
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        res.redirect("/feed");
+        let username = req.session.username;
+        let firstname;
+
+        Account.getAccountByUsername(username, function(error, user){
+            firstname = user.firstname;
+            res.render("feed.hbs",{
+                username: username,
+                firstname: firstname
+            });
+        });
     }
 });
 
