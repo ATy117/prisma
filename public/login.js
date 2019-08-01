@@ -10,7 +10,7 @@ window.onload = function(){
         let data = {};
         data.usernameTest = usernameTest;
         data.passwordTest = passwordTest;
-        await $.post("/login_username_test", data, function(data, status){
+        await $.post("/login/username_test", data, function(data, status){
             console.log(data);
             //Hide existing messages dito kung meron
             $(".login_message").remove();

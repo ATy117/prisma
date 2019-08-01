@@ -21,19 +21,48 @@ const accountSchema = new Schema({
 });
 
 // STATICS -----------------------------------------------------
+
+//Retrieve account given ID, navigation purposes
+accountSchema.statics.getAccountByUsername = function (username){
+    this.findOne({
+        username: username
+    }, function(error, document){
+        if (error){
+            return;
+        } else if (document) {
+            return document;
+        } 
+    });
+};
 // Use for checking if username exists
-accountSchema.statics.checkUniqueUsername = function(usernameTest, callback){
+accountSchema.statics.checkUniqueUsername = function(usernameTest){
     this.findOne({
         username : usernameTest
-    }, callback);
+    }, function(error, document){
+        if (error){
+            return false;
+        } else if (document) {
+            return true;
+        } else {
+            return falase;
+        }
+    });
 };
 
 // Use for checking if account exists
-accountSchema.statics.checkAccountExists = function(usernameTest, passwordTest, callback){
+accountSchema.statics.checkAccountExists = function(usernameTest, passwordTest){
     this.findOne({
         username : usernameTest,
         password : passwordTest
-    }, callback);
+    }, function(error, document){
+        if (error){
+            return false;
+        } else if (document) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 }
 
 //User for adding accounts, given account object, then return that object
@@ -49,12 +78,7 @@ accountSchema.statics.login = function(username, password, callback){
     }, callback);
 };
 
-//Retrieve account given ID, navigation purposes
-accountSchema.statics.getAccountByUsername = function (username, callback){
-    this.findOne({
-        username: username
-    }, callback);
-};
+
 
 
 // METHODS ---------------------------------------------------------------
