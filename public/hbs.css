@@ -69,6 +69,7 @@ body{
 /* END OF NAVBAR */
 
 /* MY PALETTES */
+/*-- Add Palette Button --*/
 .add_palette_button{
 
     font-family: "font";
@@ -118,118 +119,113 @@ body{
     color: #272626;
 }
 
-.palette_indiv_container{
-    width:28rem;
-    height: 15rem;
-    padding-top: 5rem;
-    padding-left: 1.3rem;
-    background-color: var(--gray-dark);
+/*--Display of Palettes --*/
+.all_palettes_container{
+    width: 100%;
+    display: flex;
+    padding-top: 3.5rem;
 
-    margin-left: 2rem;
+    font-family: "font";
 }
 
-.palette_header{
+.left_side_palettes{
+    width: 33.33%;
+    margin-top: 1rem;
+}
+
+.right_side_palettes{
+    width: 33.33%;
+    margin-top: 1rem;
+}
+
+.middle_side_palettes{
+    width: 33.33%;
+    margin-top: 1rem;
+}
+
+.header_information{
     display: flex;
-    margin-bottom: 0.2rem;
+    padding-top: 0.5rem;
+}
+
+.indiv_palette{
+    width: 27rem;
+    height: 13rem;
+
+    background-color: var(--gray-dark);
+    border-radius: 2px;
+    filter: drop-shadow(0px 1px 1px #0000002c);
+
+    margin: 0 auto;
+}
+
+.right_indiv_palette{
+    width: 30rem;
+    height: 13rem;
+
+    background-color: var(--gray-dark);
+    border-radius: 2px;
+    filter: drop-shadow(0px 1px 1px #0000002c);
+
+    margin: 0 auto;
+}
+
+.palette_icons{
+    display: flex;
+    margin-left: auto;
+    margin-right: 0.5rem;
 }
 
 .palette_name{
-    font-family: "font";
     font-size: 20px;
-    margin-left: 0.2rem;
-    margin-bottom: 0.3rem;
-    margin-top: 0px;
-}
-
-.palette_colors_container{
-    width: 25rem    ;
-    height: 10rem;
-    display: flex;
-    margin-right: 0px;
-}
-
-.color_box_1{
-    height: 9rem;
-    width: 10rem;
-    background-color:var(--box-G);
-    border: solid;
-    border-width: 0.4rem;
-    border-color: var(--gray-bg);
-    filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-left: 0.2rem;
-
-}
-.color_box_2{
-    height: 9rem;
-    width: 10rem;
-    background-color:var(--box-R);
-    border: solid;
-    border-width: 0.4rem;
-    border-color: var(--gray-bg);
-    filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-left: 0.2rem;
-}
-
-.color_box_3{
-    height: 9rem;
-    width: 10rem;
-    background-color:var(--box-B);
-    border: solid;
-    border-width: 0.4rem;
-    border-color: var(--gray-bg);
-    filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-left: 0.2rem;
-}
-
-.color_box_4{
-    height: 9rem;
-    width: 10rem;
-    background-color:var(--box-O);
-    border: solid;
-    border-width: 0.4rem;
-    border-color: var(--gray-bg);
-    filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-left: 0.2rem;
-}
-
-.color_box_5{
-    height: 9rem;
-    width: 10rem;
-    background-color:var(--box-Y);
-    border: solid;
-    border-width: 0.4rem;
-    border-color: var(--gray-bg);
-    filter: drop-shadow(0px 1px 3px #0000002c);
-    margin-left: 0.2rem;
-}
-
-.palette_creator{
-    margin-top: 0rem;
-    margin-left: 0.3rem;
-    height: 20px;
-    font-family: "font";
-    font-size: 15px;
-}
-
-.like_button{
-    width: 25px;
-    height: 25px;
-    margin-left: 10rem;
-    opacity: 0.8;
+    font-weight: bold;
+    margin-top: 0.3rem;
+    margin-left: 0.4rem;
 }
 
 .edit_button{
-    width: 25px;
-    height: 25px;
-    margin-left: 0.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
     opacity: 0.8;
+    
 }
 
 .delete_button{
-    width: 22px;
-    height: 22px;
+    width: 1.4rem;
+    height: 1.4rem;
     margin-left: 0.5rem;
-    opacity: 0.7;
+    opacity: 0.7
+}
+
+.palette_color_container{
+    display: flex;
+    margin-left: 0.2rem;
+}
+
+.left_color_container{
+    width: 4.8rem;
+    height: 4.8rem;
+    border: solid;
+    border-width: 0.2rem;
+    border-color: var(--gray-bg);
+    background-color: var(--box-R);
+    filter: drop-shadow(0px 1px 2px #0000003f);
+
+    margin-left: 0.1rem;
+}
+
+.other_information{
+    font-size: 14px;
+    margin-left: 0.4rem;
+}
+
+.created_by{
+    margin-top: 0.4rem;;
+    margin-bottom: 0;
+}
+
+.date_created{
+    margin-top: 0.2rem;
 }
 
 /* END OF MY PALETTES */
