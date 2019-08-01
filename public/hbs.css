@@ -488,4 +488,33 @@ body{
     background-color: var(--gray-dark);
 }
 
+.profile_left_side_palettes{
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.profile_right_side_palettes{
+    width: 50%;
+    margin-top: 1rem;
+}
+
+.profile_indiv_palette{
+    width: 27rem;
+    height: 13rem;
+
+    background-color: var(--gray-bg);
+    border-radius: 2px;
+    filter: drop-shadow(0px 1px 1px #0000002c);
+
+    margin: 0 auto;
+}
+
+.like_palette{
+    width: 1.3rem;
+    height: 1.3rem;
+
+    padding-top: 0.3rem;
+    cursor: pointer;
+}
+
 
