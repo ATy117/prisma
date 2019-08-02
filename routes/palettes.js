@@ -10,47 +10,31 @@ const urlencoder = bodyparser.urlencoded({
 const {Account} = require("../models/Account");
 const {Palette} = require("../models/Palette");
 
-router.get("/", urlencoder, function(req,res){
-    if (!req.session.username){
-        res.redirect("/");
-    } else {
-        let username = req.session.username;
-        let firstname;
+//Middleware
+const login_checker = require("../middleware/check_user");
+const account_getter = require("../middleware/get_user");
 
-        Account.getAccountByUsername(username, function(error, user){
-            if (error){
-                res.send(error);
-            } else if (user) {
-                firstname = user.firstname;
-                res.render("palettes.hbs",{
-                    username: username,
-                    firstname: firstname
-                });
-            } 
-        });
-    }
+router.use(login_checker);
+router.use(account_getter);
+
+router.get("/", function(req,res){
+    let username = req.session.username;
+    let firstname = req.account.firstname;
+
+    res.render("palettes.hbs",{
+        username: username,
+        firstname: firstname
+    });
 });
 
 // Add a palette page
 router.get("/add", (req, res)=>{ 
-    if (!req.session.username){
-        res.redirect("/");
-    } else {
-        let firstname;
-
-        Account.getAccountByUsername(req.session.username, function(error, user){
-            if (error){
-                res.send(error);
-            } else if (user) {
-                firstname = user.firstname;
-                res.render("addpalette.hbs",{
-                    username: req.session.username,
-                    firstname: firstname
-                });
-            } 
-        });
-        
-    }
+    let username = req.session.username;
+    let firstname = req.account.firstname;
+    res.render("addpalette.hbs",{
+        username: username,
+        firstname: firstname
+    });
 });
 
 
@@ -64,36 +48,27 @@ router.post("/add_process", urlencoder, function(req,res){
     let color3 = req.body.color3;
     let color4 = req.body.color4;
     let color5 = req.body.color5;
-    let creator;
+    let creator  = req.account._id;
 
-    Account.getAccountByUsername(req.session.username, function(error, user){
-        if (error){
-            res.send(error);
-        } else if (user) {
-            creator = user._id;
-
-            let palette = new Palette({
-                creator: creator,
-                name: name,
-                dateCreated: dateCreated,
-                color1: color1,
-                color2: color2,
-                color3: color3,
-                color4: color4,
-                color5: color5,
-                likers: []
-            });
-
-            Palette.addPalette(palette, function(palette){
-                console.log(palette._id);
-                res.send({
-                    message: "Success",
-                    redirect: "/palettes"
-                });
-            });
-        } 
+    let palette = new Palette({
+        creator: creator,
+        name: name,
+        dateCreated: dateCreated,
+        color1: color1,
+        color2: color2,
+        color3: color3,
+        color4: color4,
+        color5: color5,
+        likers: []
     });
 
+    Palette.addPalette(palette, function(palette){
+        console.log(palette._id);
+        res.send({
+            message: "Success",
+            redirect: "/palettes"
+        });
+    });
 });
 
 
