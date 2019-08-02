@@ -678,19 +678,21 @@ body{
       font-family: "font";
       font-size: 16px;
       color: #646363;
+      margin-left: 1rem;
   }
 
   .search_results_user_container{
       display: flex;
+      flex-wrap: wrap;
       white-space: normal;
   }
   
   .search_user_results{
       font-family: "font";
-      font-size: 18px;
+      font-size: 16px;
       color:var(--font-color);
       background-color: var(--gray-dark);
-      width: 100rem;
+      width: 21rem;
       height: 4rem;
 
       display: flex;
@@ -727,5 +729,10 @@ body{
 
       filter: drop-shadow(0px 1px 2px #0000002c);
       cursor: pointer;
+  }
+
+  .follow_user_button:hover{
+      background-color: var(--gray-hover);
+      filter: drop-shadow(0px 1px 2px #0000004d);
   }
 
