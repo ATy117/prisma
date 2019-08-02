@@ -187,6 +187,8 @@ body{
     width: 1.4rem;
     height: 1.4rem;
     opacity: 0.8;
+
+    cursor: pointer;
     
 }
 
@@ -194,7 +196,23 @@ body{
     width: 1.4rem;
     height: 1.4rem;
     margin-left: 0.5rem;
-    opacity: 0.7
+    opacity: 0.7;
+
+    cursor: pointer;
+}
+
+.delete_confirmation_button{
+    background-color: var(--gray-bg);
+    height: 1.2rem;
+    width: 5rem;
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 0.4rem;
+    margin-right: 0.6rem;
+    filter: drop-shadow(0px 1px 2px #0000003b);
+
+    cursor: pointer;
 }
 
 .palette_color_container{
