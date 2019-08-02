@@ -1,10 +1,11 @@
-window.onload = function(){
+
+/*window.onload = function(){
 
     console.log("palette.js");
 
-    $(".delete_button").click(async function(e){
+    $("#delete_button_id").click(async function(e){
         console.log("Pressed Delete");
-        $(".delete_button").remove();
+        $("#delete_button_id").remove();
         $(".edit_button").remove();
 
         var confirm_button = document.createElement('div');
@@ -17,4 +18,10 @@ window.onload = function(){
         document.getElementById('icons_container').append(confirm_button);
         document.getElementById('icons_container').append(cancel_button);
     })
-}
+}*/
+
+$(document).on("click", "#delete_button_id", function(){
+    $(this).remove();
+    $("#edit_button_id").remove();
+
+})
