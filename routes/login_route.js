@@ -8,7 +8,6 @@ const urlencoder = bodyparser.urlencoded({
 
 //Models
 const {Account} = require("../models/Account");
-const {Palette} = require("../models/Palette");
 
 
 router.get("/", function(req,res){
