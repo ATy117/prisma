@@ -126,9 +126,11 @@ body{
 .all_palettes_container{
     width: 100%;
     display: flex;
-    padding-top: 3.5rem;
+    padding-top: 4.5rem;
 
     font-family: "font";
+    flex-wrap: wrap;
+
 }
 
 .left_side_palettes{
@@ -152,6 +154,7 @@ body{
 }
 
 .indiv_palette{
+    font-family: "font";
     width: 27rem;
     height: 13rem;
 
@@ -160,6 +163,7 @@ body{
     filter: drop-shadow(0px 1px 1px #0000002c);
 
     margin: 0 auto;
+    margin-top: 1rem;
 }
 
 .right_indiv_palette{
@@ -286,7 +290,7 @@ body{
     height: 25rem;
     width: 16rem;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 #styleInput1{
@@ -299,7 +303,7 @@ body{
     height: 25rem;
     width: 16rem;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 #styleInput2{
@@ -312,7 +316,7 @@ body{
     height: 25rem;
     width: 16rem;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 #styleInput3{
@@ -325,7 +329,7 @@ body{
     height: 25rem;
     width: 16rem;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 #styleInput4{
@@ -338,7 +342,7 @@ body{
     height: 25rem;
     width: 16rem;
 
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 #styleInput:hover{
@@ -372,7 +376,7 @@ body{
     background-color: var(--gray-dark);
     border: none;
     height: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
@@ -389,6 +393,7 @@ body{
 .palette_details_container{
     width: 100%;
     height: auto;
+    padding-top: 3rem;
 
 }
 
@@ -407,7 +412,7 @@ body{
     height: 2rem;
 
     margin-left: 10rem;
-    margin-top: 0rem;
+    margin-top: 0rem;   
 }
 
 .extra_buttons_filed{
@@ -735,4 +740,29 @@ body{
       background-color: var(--gray-hover);
       filter: drop-shadow(0px 1px 2px #0000004d);
   }
+
+  .search_indiv_palette{
+    font-family: "font";
+    width: 30rem;
+    height: 13rem;
+
+    background-color: var(--gray-dark);
+    border-radius: 2px;
+    filter: drop-shadow(0px 1px 1px #0000002c);
+
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.search_color_container{
+    width: 5rem;
+    height: 4.8rem;
+    border: solid;
+    border-width: 0.2rem;
+    border-color: var(--gray-bg);
+    background-color: var(--box-R);
+    filter: drop-shadow(0px 1px 2px #0000003f);
+
+    margin-left:0.4rem;    
+}
 
