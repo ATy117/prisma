@@ -12,7 +12,11 @@ const {Palette} = require("../models/Palette");
 
 
 router.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, '../public', 'Login.html'));
+    if (!req.session.username){
+        res.sendFile(path.join(__dirname, '../public', 'Login.html'));
+    } else {
+        res.redirect("/");
+    }
 });
 
 router.post("/account_test", urlencoder, function(req,res){
