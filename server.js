@@ -36,13 +36,13 @@ const hbs = require('hbs');
 app.set("view engine", "hbs");
 
 // LOGIN - route
-app.use('/login', require('./routes/login'));
+app.use('/login', require('./routes/login_route'));
 
 //REGISTER - Route
-app.use('/register', require('./routes/register'));
+app.use('/register', require('./routes/register_route'));
 
 //REGISTER - Route
-app.use('/palettes', require('./routes/palettes'));
+app.use('/palettes', require('./routes/palettes_route'));
 
 // Home Pages
 app.get("/", function(req,res){
