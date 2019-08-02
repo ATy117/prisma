@@ -72,5 +72,15 @@ router.post("/add_process", urlencoder, function(req,res){
 });
 
 
+// Edit a palette
+router.get("/:palette_id/edit", (req, res)=>{ 
+    let palette_id = req.params.palette_id;
+});
+
+// Processing of editing a palette
+router.post("/:palette_id/edit_process", (req, res)=>{ 
+    let palette_id = req.params.palette_id;
+});
+
 
 module.exports = router;

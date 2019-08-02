@@ -12,9 +12,8 @@ mongoose.connect("mongodb://localhost:27017/prisma", {
     useNewUrlParser: true
 });
 
-//Models
-const {Account} = require("./models/Account");
-const {Palette} = require("./models/Palette");
+//Middlewares
+const account_getter = require(__dirname+"/middleware/get_user");
 
 //SESSION AND COOKIES
 const session = require("express-session");
@@ -44,22 +43,26 @@ app.use('/register', require('./routes/register_route'));
 //REGISTER - Route
 app.use('/palettes', require('./routes/palettes_route'));
 
+//PROFILE - Route
+app.use('/profile', require('./routes/profile_route'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
         res.sendFile(__dirname + "/public/Home.html");
     } else {
-        let username = req.session.username;
-        let firstname;
-
-        Account.getAccountByUsername(username, function(error, user){
-            firstname = user.firstname;
-            res.render("feed.hbs",{
-                username: username,
-                firstname: firstname
-            });
-        });
+        res.redirect("/home");
     }
+});
+
+app.get("/home", account_getter,function(req,res){
+    let username = req.session.username;
+    let firstname = req.account.firstname;
+
+    res.render("feed.hbs",{
+        username: username,
+        firstname: firstname
+    });
 });
 
 app.get("/about", function(req,res){
