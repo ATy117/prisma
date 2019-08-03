@@ -217,25 +217,22 @@ body{
     display: flex;
     font-family: "font";
     text-align: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .indiv_stats{
     height: 8rem;
     width: 20rem;
-    background-image: linear-gradient(58deg, var(--accent-light-pink),white);
     filter: drop-shadow(0px 1px 3px #0000003d);
     text-align: center;
-    margin-left: 8rem;
 }
 
-#user_stats{
-    margin-left: 18rem;
-}
 
 .indiv_num_stats{
     font-size: 40px;
     font-weight: bold;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .indiv_label_stats{
@@ -248,6 +245,7 @@ body{
     width: 100%;
     height: 25rem;
     display: flex;
+    margin-top: 2rem;
 }
 
 .sample_palette_details{
@@ -683,7 +681,6 @@ body{
 .eyedropper_container{
     width: 100%;
     height: 15rem;
-    background-color: var(--accent-pink);
     display: flex;
 }
 
@@ -711,5 +708,22 @@ body{
 
 .eyedropper_details_container{
     margin-top: 4rem;
+}
+
+.border_divider{
+    display: block;
+    width: 80%;
+    border: none;
+    border-style: inset;
+    border-width: 2px;
+    
+}
+
+.vertical_bars{
+    top:0;
+    bottom:0;
+    border-width: 1.5px;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }
 
