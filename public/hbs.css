@@ -459,6 +459,8 @@ body{
 .profile_name{
     margin:0;
     padding-left: 50%;
+    padding-bottom: 0.5rem;
+    
 }
 
 .profile_information_container{
@@ -766,3 +768,25 @@ body{
     margin-left:0.4rem;    
 }
 
+.logout_button{
+    font-family: "font";
+    color: var(--font-color);
+    background-color: var(--gray-dark);
+    filter:drop-shadow(0px 1px 2px #0000005d);
+    margin-left: 50%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-decoration: none;
+}
+
+.generate_button{
+    width: 6rem;
+    height: 3rem;
+    padding-top: 5rem;
+    margin-left: 5rem;
+    font-family: "font";
+    background-color: var(--gray-hover);
+    filter:drop-shadow(0px 1px 2px #0000005d);
+    cursor: pointer;
+    text-align: center;
+}
