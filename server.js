@@ -46,6 +46,9 @@ app.use('/palettes', require('./routes/palettes_route'));
 //PROFILE - Route
 app.use('/profile', require('./routes/profile_route'));
 
+//SEARCH - Route
+app.use('/search', require('./routes/search_route'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
