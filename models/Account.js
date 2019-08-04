@@ -56,6 +56,18 @@ accountSchema.statics.login = function(username, password, callback){
     }, callback);
 };
 
+//Search for an account
+accountSchema.statics.searchAccount = function(query, callback){
+    this.findOne({
+        $or: [
+            { "username": { "$regex": query, "$options": "i" }},
+            { "firstname": { "$regex": query, "$options": "i" }},
+            { "lastname": { "$regex": query, "$options": "i" }}
+        ]}, callback);
+};
+
+
+
 // METHODS ---------------------------------------------------------------
 //Retrieve followers
 accountSchema.methods.getFollowers = function(callback){
