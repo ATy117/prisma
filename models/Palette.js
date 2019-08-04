@@ -49,9 +49,12 @@ paletteSchema.statics.getPalettes = function(creator, callback){
 
 //Search for a palette
 paletteSchema.statics.searchPalette = function(query, callback){
-    this.findOne({
+    this.find({
         "name": { "$regex": query, "$options": "i" }
-    }, callback);
+    }, function(error, results){
+        //Pre process results here
+        callback();
+    });
 };
 
 //Update a palette and edit it
@@ -72,6 +75,7 @@ paletteSchema.statics.updatePalette = function(paletteID, updated, callback){
 
 //Delete a palette
 paletteSchema.statics.deletePalette = function(paletteID, callback){
+    // remember to delete this from the liked palettes as well where it exists.
     this.deleteOne({
         _id : paletteID
     }, callback); // callback is error and document

@@ -81,17 +81,26 @@ router.post("/add_process", urlencoder, function(req,res){
 // Edit a palette
 router.get("/:palette_id/edit", (req, res)=>{ 
     let palette_id = req.params.palette_id;
+
+    console.log("In Edit" + palette_id);
+
+    // Render the edit palette page here
 });
 
 // Processing of editing a palette
 router.post("/:palette_id/edit_process", (req, res)=>{ 
     let palette_id = req.params.palette_id;
+
+    // call method here
+    res.redirect("/palettes");
 });
 
 
 // Delete a palette
 router.post("/:palette_id/delete", (req, res)=>{ 
     let palette_id = req.params.palette_id;
+
+    // return the results here (close the modal)
 });
 
 
