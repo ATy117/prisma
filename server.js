@@ -58,7 +58,7 @@ app.get("/", function(req,res){
 app.get("/home", account_getter,function(req,res){
     let username = req.session.username;
     let firstname = req.account.firstname;
-
+ 
     res.render("feed.hbs",{
         username: username,
         firstname: firstname

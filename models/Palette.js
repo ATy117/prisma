@@ -35,11 +35,17 @@ const paletteSchema = new Schema({
 });
 
 
-//User for adding palettes given palette object, then return that object
+//Used for adding palettes given palette object, then return that object
 paletteSchema.statics.addPalette = function(palette, callback){
     palette.save().then(callback);
 };
 
+//Used for rerieving all palettes given an ID
+paletteSchema.statics.getPalettes = function(creator, callback){
+    this.find({
+        creator: creator
+    }, callback);
+};
 const Palette = mongoose.model("Palette", paletteSchema);
 
 module.exports = {

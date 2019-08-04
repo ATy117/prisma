@@ -20,10 +20,16 @@ router.use(account_getter);
 router.get("/", function(req,res){
     let username = req.session.username;
     let firstname = req.account.firstname;
+ 
+    let creator = req.account._id;
 
-    res.render("palettes.hbs",{
-        username: username,
-        firstname: firstname
+    Palette.getPalettes(creator, function(error, palette){    
+
+        res.render("palettes.hbs",{
+            username: username,
+            firstname: firstname,
+            palette: palette
+        });
     });
 });
 
@@ -81,6 +87,13 @@ router.get("/:palette_id/edit", (req, res)=>{
 router.post("/:palette_id/edit_process", (req, res)=>{ 
     let palette_id = req.params.palette_id;
 });
+
+
+// Delete a palette
+router.post("/:palette_id/delete", (req, res)=>{ 
+    let palette_id = req.params.palette_id;
+});
+
 
 
 module.exports = router;

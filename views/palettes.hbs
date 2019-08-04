@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prisma | {{username}}</title>  
     <link rel="stylesheet" href="/hbs.css">
-    <link rel="icon" href="assets/eyedropperLogoPink.png" type="image" sizes="16x16">
-    <script src="jquery.js"></script>
-    <script src="palettes.js"></script>
+    <link rel="icon" href="/assets/eyedropperLogoPink.png" type="image" sizes="16x16">
+    <script src="/jquery.js"></script>
+    <script src="/palettes.js"></script>
 </head>
 <body>
     <div class="navbar" id="#navbar_id">
@@ -24,7 +24,28 @@
     </div>
     <div class="add_button"> <a href="/palettes/add" class="add_palette_button"> + Add Palette </a> </div> 
     <div class="all_palettes_container" id="all_palettes">
+        {{#each palette}}
         <div class="indiv_palette">
+                <div class="header_information">
+                    <p class="palette_name">{{name}}</p>
+                    <div class="palette_icons" id="icons_container">
+                        <img src="/assets/pencil.png" class="edit_button" id="edit_button_id">
+                        <img src="/assets/delete.png" class="delete_button" id="delete_button_id">
+                    </div>
+                </div>
+                <div class="palette_color_container">
+                    <div class="left_color_container" id="color_1" style="background-color:{{color1}};"></div>
+                    <div class="left_color_container" id="color_1" style="background-color:{{color2}};"></div>
+                    <div class="left_color_container" id="color_1" style="background-color:{{color3}};"></div>
+                    <div class="left_color_container" id="color_1" style="background-color:{{color4}};"></div>
+                    <div class="left_color_container" id="color_1" style="background-color:{{color5}};"></div>
+                </div>
+                <div class="other_information">
+                    <p class="date_created"> {{dateCreated}}</p>
+                </div>
+        </div>
+        {{/each}}
+        {{!-- <div class="indiv_palette">
                 <div class="header_information">
                     <p class="palette_name">Rainbow</p>
                     <div class="palette_icons" id="icons_container">
@@ -143,27 +164,7 @@
                     <p class="created_by">by Rebecalyn Lao</p>
                     <p class="date_created"> Aug 01, 2019</p>
                 </div>
-        </div>
-        <div class="indiv_palette">
-                <div class="header_information">
-                    <p class="palette_name">Rainbow</p>
-                    <div class="palette_icons" id="icons_container">
-                        <img src="/assets/pencil.png" class="edit_button" id="edit_button_id">
-                        <img src="/assets/delete.png" class="delete_button" id="delete_button_id">
-                    </div>
-                </div>
-                <div class="palette_color_container">
-                    <div class="left_color_container" id="color_1"></div>
-                    <div class="left_color_container" id="color_1"></div>
-                    <div class="left_color_container" id="color_1"></div>
-                    <div class="left_color_container" id="color_1"></div>
-                    <div class="left_color_container" id="color_1"></div>
-                </div>
-                <div class="other_information">
-                    <p class="created_by">by Rebecalyn Lao</p>
-                    <p class="date_created"> Aug 01, 2019</p>
-                </div>
-        </div>
+        </div> --}}
     </div>
     <div id="myModal" class="modal">
 

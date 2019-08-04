@@ -12,7 +12,7 @@ window.onload = function(){
             console.log("Required");
             return;
         } else {
-            date = moment().format();
+            date = moment().format("MMM DD, YYYY");
             console.log(color1);
             console.log(color2);
             console.log(color3);
