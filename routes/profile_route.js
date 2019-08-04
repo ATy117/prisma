@@ -17,9 +17,19 @@ const account_getter = require("../middleware/get_user");
 router.use(login_checker);
 router.use(account_getter);
 
+// View the profile
 router.get("/", function(req,res){
-    let username = req.session.username;
-    let firstname = req.account.firstname;
+    // render the profile
+});
+
+
+//get my followers
+router.get("/my_followers", function(req,res){
+
+});
+
+//get accounts I follow
+router.get("/followed_accounts", function(req,res){
 
 });
 
