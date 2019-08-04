@@ -156,7 +156,7 @@ body{
 .indiv_palette{
     font-family: "font";
     width: 27rem;
-    height: 13rem;
+    height: 11rem;
 
     background-color: var(--gray-dark);
     border-radius: 2px;
@@ -427,7 +427,22 @@ body{
     display: flex;
 }
 
-.done_button{
+#palette_done_button{
+    margin-left: 10rem;
+}
+
+#palette_cancel_button{
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+#palette_cancel_button:visited{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.palette_generate_button{
     background-color: var(--gray-dark);
     font-family: "font";
     font-size: 20px;
@@ -436,11 +451,9 @@ body{
     text-align: center;
     padding-top: 0.5rem;
     filter: drop-shadow(0px 1px 2px #0000002c);
-
-    margin-left: 15rem;
 }
 
-.done_button:hover{
+.palette_generate_button:hover{
     cursor: pointer;
     background-color: var(--gray-hover);
 }
@@ -817,8 +830,7 @@ body{
     background-color: var(--gray-dark);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    width: 20%; /* Could be more or less, depending on screen size */
-    display: flex;
+    width: 20%; 
     text-align: center;
     padding-left: 5%;
     border-radius: 7px;
@@ -837,4 +849,13 @@ body{
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .modal_details{
+      font-family: "font";
+      font-size: 18px;
+  }
+
+  .modal_inside_container{
+      display: flex;
   }

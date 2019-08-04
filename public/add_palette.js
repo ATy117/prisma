@@ -1,5 +1,5 @@
 window.onload = function(){
-    $(".done_button").click(function(){
+    $("#palette_done_button").click(function(){
         let palette_name = $(".palette_name_field").val();
         let color1 = $("#valueInput4").val();
         let color2 = $("#valueInput3").val();
@@ -37,6 +37,7 @@ window.onload = function(){
         }
         
     });
+
 
 
 };
