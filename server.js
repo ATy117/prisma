@@ -65,6 +65,13 @@ app.get("/home", account_getter,function(req,res){
     });
 });
 
+app.get("/logout", (req,res) =>{
+    req.session.destroy((error)=>{
+        console.log("Logged Out");
+    });
+    res.redirect("/");
+});
+
 app.get("/about", function(req,res){
     res.sendFile(__dirname + "/public/About.html");
 });

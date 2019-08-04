@@ -4,44 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Prisma | username's</title>
-    <link rel="stylesheet" href="hbs.css">
+    <title>Prisma | {{username}}'s</title>
+    <link rel="stylesheet" href="/hbs.css">
     <link rel="icon" href="assets/eyedropperLogoPink.png" type="image" sizes="16x16">
-    <script src="anime.min.js"></script>
-    <script src="jquery.js"></script>
+    <script src="/anime.min.js"></script>
+    <script src="/jquery.js"></script>
 </head>
 <body>
     <div class="navbar" id="#navbar_id">
         <ul class="nav_list" id="nav_list_id">
             <a href="/" class="nav_settings"> Home </a>
             <p class="nav_settings" id="nav_wall"> | </p>
-            <a href="about" class="nav_settings"> About </a>
+            <a href="/profile" class="nav_settings"> {{firstname}}'s </a>
             <p class="nav_settings" id="nav_wall"> | </p>
-            <a href="login" class="nav_settings"> Login </a>
+            <a href="/palettes" class="nav_settings"> Palettes </a>
             <p class="nav_settings" id="nav_wall"> | </p>
             <a href="/search" class="nav_settings"> Search </a>
         </ul>
     </div>
     <div class="profile_header_container">
         <div class="profile_name_container">
-            <p class="profile_name" id="profile_firstname"> Rebecalyn Lao </p>
-            <p class="profile_name" id="profile_username"> @rebecabecalyn </p>
-            <a href="./Home.html" class="logout_button">Logout</a>
+            <p class="profile_name" id="profile_firstname"> {{firstname}} {{lastname}} </p>
+            <p class="profile_name" id="profile_username"> @{{username}} </p>
+            <a href="/logout" class="logout_button">Logout</a>
         </div>
         
         <div class="profile_information_container">
             <div class="profile_details_container">
-                <p class="profile_details_num"> 24 </p>
+                <p class="profile_details_num"> {{followers}} </p>
                 <p class="profile_details_word">followers</p>
             </div>
             <p class="profile_details_divider">|</p>
             <div class="profile_details_container">
-                <p class="profile_details_num"> 30 </p>
+                <p class="profile_details_num"> {{following}} </p>
                 <p class="profile_details_word">following</p>
             </div>
             <p class="profile_details_divider">|</p>
             <div class="profile_details_container">
-                <p class="profile_details_num"> 10 </p>
+                <p class="profile_details_num"> {{likedPalettes}} </p>
                 <p class="profile_details_word">liked palettes</p>
             </div>
         </div>
