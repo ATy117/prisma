@@ -156,7 +156,7 @@ body{
 .indiv_palette{
     font-family: "font";
     width: 27rem;
-    height: 11rem;
+    height: 11.5rem;
 
     background-color: var(--gray-dark);
     border-radius: 2px;
