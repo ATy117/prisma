@@ -101,6 +101,13 @@ router.post("/:palette_id/delete", (req, res)=>{
     let palette_id = req.params.palette_id;
 
     // return the results here (close the modal)
+    Palette.deletePalette(palette_id, function(error, document){
+        if (error){
+            res.send(error);
+        } else {
+            res.send("Success");
+        }
+    });
 });
 
 
