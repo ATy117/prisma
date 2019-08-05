@@ -498,6 +498,16 @@ body{
     margin-top: 0.7rem;
 }
 
+#followers_container:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 2px #0000002c);
+}
+
+#following_container:hover{
+    cursor: pointer;
+    filter: drop-shadow(0px 1px 2px #0000002c);
+}
+
 .profile_details_num{
     font-size: 24px;
 
@@ -532,20 +542,12 @@ body{
 
 .profile_palettes_container{
     width: 90%;
-    height: 50rem;
+    height: auto;
     display: flex;
 
     background-color: var(--gray-dark);
-}
-
-.profile_left_side_palettes{
-    width: 50%;
-    margin-top: 1rem;
-}
-
-.profile_right_side_palettes{
-    width: 50%;
-    margin-top: 1rem;
+    padding-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .profile_indiv_palette{
@@ -557,6 +559,7 @@ body{
     filter: drop-shadow(0px 1px 1px #0000002c);
 
     margin: 0 auto;
+    margin-bottom: 1rem;
 }
 
 .like_palette{

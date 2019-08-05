@@ -20,6 +20,7 @@ router.use(account_getter);
 // View the profile
 router.get("/", function(req,res){
     // render the profile
+    res.render("myprofile.hbs");
 });
 
 
