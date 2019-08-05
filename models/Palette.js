@@ -65,7 +65,7 @@ paletteSchema.statics.searchPalette = function(query, callback){
 
 //Update a palette and edit it
 paletteSchema.statics.updatePalette = function(paletteID, updated, callback){
-    this.update({
+    this.updateOne({
         _id: paletteID
     }, {
         name : updated.name,
