@@ -402,7 +402,6 @@ body{
     width: 100%;
     height: auto;
     padding-top: 3rem;
-
 }
 
 .palette_name_label{
@@ -428,11 +427,13 @@ body{
 }
 
 #palette_done_button{
-    margin-left: 10rem;
+    margin-left: 5rem;
 }
 
 #palette_cancel_button{
     margin-left: 2rem;
+    margin-right: 0;
+
     text-decoration: none;
     color: var(--font-color);
 }
@@ -771,6 +772,25 @@ body{
       background-color: var(--gray-hover);
       filter: drop-shadow(0px 1px 2px #0000004d);
   }
+
+  .follow_user_button_clicked{
+    background-color: var(--gray-hover);
+    height: 1.6rem;
+    width: 6rem;
+
+    text-align: center;
+    margin-left: 5rem;
+    margin-top: 0.7rem;
+    padding-top: 0.5rem;
+
+    filter: drop-shadow(0px 1px 2px #0000002c);
+    cursor: pointer;
+}
+
+.follow_user_button_clicked:hover{
+    background-color: var(--gray-bg);
+    filter: drop-shadow(0px 1px 2px #0000004d);
+}
 
   .search_indiv_palette{
     font-family: "font";
