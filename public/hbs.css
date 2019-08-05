@@ -566,6 +566,14 @@ body{
     cursor: pointer;
 }
 
+.like_palette_color{
+    width: 1.5rem;
+    height: 1.5rem;
+
+    padding-top: 0.3rem;
+    cursor: pointer;
+}
+
 /* SEARCH PAGE */
 .search_logo_container{
     width: 100%;
