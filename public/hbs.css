@@ -890,3 +890,67 @@ body{
   .modal_inside_container{
       display: flex;
   }
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content-followers {
+    background-color: var(--gray-bg);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 27%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal_header{
+      font-family: "font";
+      font-size: 18px;
+      font-weight: bold;
+  }
+
+  .list_indiv_follower{
+      width: 20rem;
+      background-color: var(--gray-hover);
+      font-family: "font";
+      font-size: 18px;
+      filter: drop-shadow(0px 1px 2px #0000002c);
+  }
+
+  .follower_name{
+      margin-bottom: 0;
+      margin-left: 0.5rem;
+      padding-top: 0.5rem;
+  }
+
+  .follower_username{
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+      padding-bottom: 0.5rem;
+  }
