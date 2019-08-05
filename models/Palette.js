@@ -33,6 +33,12 @@ const paletteSchema = new Schema({
         ref: "Account"
     }]
 });
+// Retrieve palette given id
+paletteSchema.statics.getPaletteByID = function(id, callback){
+    this.findById({
+        _id: id
+    }, callback);
+};
 
 
 //Used for adding palettes given palette object, then return that object

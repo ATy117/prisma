@@ -81,10 +81,23 @@ router.post("/add_process", urlencoder, function(req,res){
 // Edit a palette
 router.get("/:palette_id/edit", (req, res)=>{ 
     let palette_id = req.params.palette_id;
-
-    console.log("In Edit" + palette_id);
+    let username = req.session.username;
+    let firstname = req.account.firstname;
 
     // Render the edit palette page here
+    Palette.getPaletteByID(palette_id, function(error, palette){
+        res.render("editpalette.hbs", {
+            username: username,
+            firstname: firstname,
+            paletteName: palette.name,
+            color1: palette.color1,
+            color2: palette.color2,
+            color3: palette.color3,
+            color4: palette.color4,
+            color5: palette.color5
+        });
+    });
+    
 });
 
 // Processing of editing a palette

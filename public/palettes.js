@@ -30,16 +30,15 @@ $(document).ready(function(){
             });
         });
         console.log(paletteID);
-    })
+    });
 
-    // // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //  modal.style.display = "none";
-    // }
-
-    $("#confirm_button").click(function(){
-        modal.style.display = "none";
-    })
+    $("#edit_button_id").click(function(){
+        let parentdiv = $(this).parent().parent().parent();
+        let paletteID = $(parentdiv).attr("data-palette-id");
+        
+        let path = `/palettes/${paletteID}/edit`;
+        window.location.href = path;
+    });
 
     $("#cancel_button").click(function(){
         modal.style.display = "none";
