@@ -17,6 +17,15 @@ const account_getter = require("../middleware/get_user");
 router.use(login_checker);
 router.use(account_getter);
 
+// View the base search page
+router.get("/", function(req,res){
+    // render the profile
+    res.render("search.hbs", {
+        username: req.account.username,
+        firstname: req.account.firstname
+    });
+});
+
 //search for a palette
 router.get("/palette/:keyword" , function(req,res){
     let keyword = req.params.keyword;
