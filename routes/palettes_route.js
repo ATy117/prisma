@@ -81,18 +81,53 @@ router.post("/add_process", urlencoder, function(req,res){
 // Edit a palette
 router.get("/:palette_id/edit", (req, res)=>{ 
     let palette_id = req.params.palette_id;
-
-    console.log("In Edit" + palette_id);
+    let username = req.session.username;
+    let firstname = req.account.firstname;
 
     // Render the edit palette page here
+    Palette.getPaletteByID(palette_id, function(error, palette){
+        res.render("editpalette.hbs", {
+            username: username,
+            firstname: firstname,
+            paletteName: palette.name,
+            color1: palette.color1,
+            color2: palette.color2,
+            color3: palette.color3,
+            color4: palette.color4,
+            color5: palette.color5
+        });
+    });
+    
 });
 
 // Processing of editing a palette
-router.post("/:palette_id/edit_process", (req, res)=>{ 
+router.post("/:palette_id/edit_process", urlencoder, (req, res)=>{ 
     let palette_id = req.params.palette_id;
 
-    // call method here
-    res.redirect("/palettes");
+    let name = req.body.name;
+    let color1 = req.body.color1;
+    let color2 = req.body.color2;
+    let color3 = req.body.color3;
+    let color4 = req.body.color4;
+    let color5 = req.body.color5;
+
+    let palette = {
+        name: name,
+        color1: color1,
+        color2: color2,
+        color3: color3,
+        color4: color4,
+        color5: color5
+    };
+
+    Palette.updatePalette(palette_id, palette, function(error, document){
+        res.send({
+            message: "Success",
+            redirect: "/palettes"
+        });
+    });
+
+    
 });
 
 
@@ -101,6 +136,13 @@ router.post("/:palette_id/delete", (req, res)=>{
     let palette_id = req.params.palette_id;
 
     // return the results here (close the modal)
+    Palette.deletePalette(palette_id, function(error, document){
+        if (error){
+            res.send(error);
+        } else {
+            res.send("Success");
+        }
+    });
 });
 
 

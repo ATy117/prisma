@@ -4,21 +4,41 @@ $(document).ready(function(){
     
     var modal = document.getElementById("myModal");
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("delete_confirmation_button")[0];
+    // // Get the <span> element that closes the modal
+    // var span = document.getElementsByClassName("delete_confirmation_button")[0];
 
     $(document).on("click", "#delete_button_id", function(){
+        let parentdiv = $(this).parent().parent().parent();
+        let palettename = $(parentdiv).attr("data-palette-name");
+        let paletteID = $(parentdiv).attr("data-palette-id");
+
+        $(".to-be-deleted").text(palettename);
+
         modal.style.display = "block";
-    })
 
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
+        $("#confirm_button").unbind("click");
 
-    $("#confirm_button").click(function(){
-        modal.style.display = "none";
-    })
+        $("#confirm_button").click(async function(){
+            let path = `/palettes/${paletteID}/delete`;
+            let data = {};
+
+            await $.post(path, data, function(data, status){
+                if (data =="Success"){
+                    modal.style.display = "none";
+                    $(parentdiv).remove();
+                } 
+            });
+        });
+        console.log(paletteID);
+    });
+
+    $("#edit_button_id").click(function(){
+        let parentdiv = $(this).parent().parent().parent();
+        let paletteID = $(parentdiv).attr("data-palette-id");
+        
+        let path = `/palettes/${paletteID}/edit`;
+        window.location.href = path;
+    });
 
     $("#cancel_button").click(function(){
         modal.style.display = "none";
