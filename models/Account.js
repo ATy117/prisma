@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const {Palette} = require("../models/Palette");
@@ -24,6 +25,15 @@ const accountSchema = new Schema({
 
 // STATICS -----------------------------------------------------
 
+// Hashes on save
+accountSchema.pre('save', function(next) {
+    if(!this.isModified("password")) {
+        return next();
+    }
+    this.password = Bcrypt.hashSync(this.password, 10);
+    next();
+});
+
 //Retrieve account given ID, navigation purposes
 accountSchema.statics.getAccountByUsername = function (username, callback){
     this.findOne({
@@ -38,24 +48,31 @@ accountSchema.statics.checkUniqueUsername = function(usernameTest, callback){
 };
 
 // Use for checking if account exists
-accountSchema.statics.checkAccountExists = function(usernameTest, passwordTest, callback){
-    this.findOne({
-        username : usernameTest,
-        password : passwordTest
-    }, callback);
+accountSchema.statics.checkAccountExists = async function(usernameTest, passwordTest){
+    let user = await this.findOne({ 
+        username: usernameTest 
+    }).exec();
+
+    if(!user) {
+        return false;
+    }
+    let goods;
+    await user.comparePassword(passwordTest, (error, match) => {
+        if(!match) {
+            goods = false;
+        } else {
+            goods = true;
+        }
+    });
+
+    return goods;
+
 };
+
 
 //User for adding accounts, given account object, then return that object
 accountSchema.statics.addAccount = function(account, callback){
     account.save().then(callback);
-};
-
-//Logging in retrieve of account
-accountSchema.statics.login = function(username, password, callback){
-    this.findOne({
-        username : username,
-        password: password
-    }, callback);
 };
 
 //Search for an account
@@ -74,6 +91,11 @@ accountSchema.statics.searchAccount = function(query, callback){
 
 
 // METHODS ---------------------------------------------------------------
+
+// Comparing passwords
+accountSchema.methods.comparePassword = function(plaintext, callback) {
+    return callback(null, Bcrypt.compareSync(plaintext, this.password));
+};
 //Retrieve followers
 accountSchema.methods.getFollowers = function(callback){
     Account.findOne({

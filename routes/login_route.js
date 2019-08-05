@@ -18,29 +18,27 @@ router.get("/", function(req,res){
     }
 });
 
-router.post("/account_test", urlencoder, function(req,res){
+router.post("/account_test", urlencoder, async function(req,res){
     let usernameTest = req.body.usernameTest;
     let passwordTest = req.body.passwordTest;
-    Account.checkAccountExists(usernameTest, passwordTest, function (error, document){
-        if (document){
-            res.send("Exists");
-        } else {
-            res.send("NotExists");
-        }
-    });
+    let exists = await Account.checkAccountExists(usernameTest, passwordTest);
+
+    if (exists){
+        res.send("Exists");
+    } else {
+        res.send("NotExists");
+    }
 });
 
 router.post("/process", urlencoder, function(req, res){
-    var username = req.body.username;
-    var password = req.body.password;
-
-    Account.login(username, password, function(error, account){
-        if (account){
+    Account.getAccountByUsername(req.body.username, function(error, account){
+        if (error){
+            res.send(error);
+        } else if (account) {
             req.session.username = account.username;
             res.redirect("/");
         } 
     });
-    
 });
 
 module.exports = router;

@@ -6,7 +6,7 @@ window.onload = function(){
         event.preventDefault();
         let usernameTest = $(".input_username").val();
         let passwordTest = $(".input_password").val();
-
+ 
         let data = {};
         data.usernameTest = usernameTest;
         data.passwordTest = passwordTest;
