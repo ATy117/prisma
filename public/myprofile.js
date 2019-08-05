@@ -34,4 +34,9 @@ $(document).ready(function(){
         modal2.style.display = "none";
     }
     }
+
+    $(document).on("click", "#like_palette_id", function(){
+        $(this).toggleClass("like_palette");
+        $(this).attr("src", "./assets//heart.png");
+    })
 })
