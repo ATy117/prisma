@@ -14,6 +14,7 @@ mongoose.connect("mongodb://localhost:27017/prisma", {
 
 //Middlewares
 const account_getter = require(__dirname+"/middleware/get_user");
+const login_checker = require(__dirname+"/middleware/check_user");
 
 //SESSION AND COOKIES
 const session = require("express-session");
@@ -58,7 +59,7 @@ app.get("/", function(req,res){
     }
 });
 
-app.get("/home", account_getter,function(req,res){
+app.get("/home",login_checker, account_getter,function(req,res){
     let username = req.session.username;
     let firstname = req.account.firstname;
  

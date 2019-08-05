@@ -38,11 +38,14 @@ router.post("/process", urlencoder, function (req, res){
         password : password,
         firstname: firstname,
         lastname: lastname,
-        followers: []
+        followed: [],
+        followers: [],
+        likedPalettes: []
     }); 
 
-    Account.addAccount(account, (document)=>{
-        res.send("Registered Successfully\n");
+    Account.addAccount(account, function(account){
+        req.session.username = account.username;
+        res.redirect("/");
     }, (error)=>{
         res.send(error);
     })
