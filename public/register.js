@@ -1,7 +1,7 @@
 window.onload = function(){
     let userExists = false;
     $(".input_username_register").focusout(function(){
-        let usernameTest = $(".input_username").val();
+        let usernameTest = $(".input_username_register").val();
         
         if (usernameTest ==""){
             $(".register_username_message").remove();
