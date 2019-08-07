@@ -32,7 +32,7 @@ $(document).ready(function(){
         console.log(paletteID);
     });
 
-    $("#edit_button_id").click(function(){
+    $(".edit_button").click(function(){
         let parentdiv = $(this).parent().parent().parent();
         let paletteID = $(parentdiv).attr("data-palette-id");
         
