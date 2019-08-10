@@ -63,17 +63,24 @@ body{
     color: black;
     text-decoration: none;  
     text-align: center;
+    margin-left: 1.3rem;
 }
 
 #nav_wall{
     margin-top: 0px;
 }
 
-#home_prisma{
+/*#home_prisma{
     background-image: url("./assets/PrismaShadow.png");
     background-size: 60px;
     background-repeat: no-repeat;
     background-position: center;
+}*/
+
+.nav_search_form{
+    display: inline-flex;
+    margin-left: 35rem;
+
 }
 
 /* END OF NAVBAR */
@@ -133,7 +140,7 @@ body{
 .all_palettes_container{
     width: 100%;
     display: flex;
-    padding-top: 1rem;
+    padding-top: 4rem;
 
     font-family: "font";
     flex-wrap: wrap;
@@ -658,7 +665,7 @@ body{
     font-family: "font";
     color: var(--font-color);
     font-size: 16px;
-    height: 1.8rem;
+    height:1.5rem;
     width: 5rem;
 
     border: none;
@@ -666,6 +673,10 @@ body{
 
     filter: drop-shadow(0px 1px 2px #00000034);
     margin-right: 0.2rem;
+
+    background-color: var(--gray-dark);
+    text-decoration: none;
+    padding-top: 0.3rem;
 
     cursor: pointer;
 }
@@ -676,11 +687,12 @@ body{
 }
 
 .search_text_input{
-    width: 25rem;
+    width: 15rem;
     height: 1.8rem;
 
     font-family: "font";
     font-size: 20px;
+    margin-left: 0.5rem;
 
     border-radius: 10px;
     border:none;
@@ -758,6 +770,7 @@ body{
     height: 40rem;
     margin-left: 10%;
     margin-right: 10%;
+    padding-top: 6rem;
   }
 
   .search_results_header{
