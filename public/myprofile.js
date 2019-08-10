@@ -14,9 +14,9 @@ $(document).ready(function(){
     })
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 
      // When the user clicks on the button, open the modal 
@@ -30,13 +30,20 @@ $(document).ready(function(){
     })
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
     }
 
-    $(document).on("click", "#like_palette_id", function(){
-        $(this).toggleClass("like_palette");
-        $(this).attr("src", "./assets//heart.png");
-    })
+    var flag = 0;  
+    $(".like_palette_color").click(function(){
+        if(flag == 0) {
+            $(".like_palette_color").attr("src","/assets/heart.png");
+            flag = 1;
+        }
+        else if(flag == 1) {
+            $(".like_palette_color").attr("src","/assets/heart_pink.png");
+            flag = 0;
+        }
+    });
 })
