@@ -35,15 +35,17 @@ $(document).ready(function(){
         }
     }
 
-    var flag = 0;  
-    $(".like_palette_color").click(function(){
-        if(flag == 0) {
-            $(".like_palette_color").attr("src","/assets/heart.png");
-            flag = 1;
+    // The heart/unheart method
+    $(document).on("click", "#like_palette_id", function(){
+        if($(this).attr("data-liked") == "liked") {
+            $(this).attr("src","/assets/heart.png");
+            $(this).attr("data-liked", "unliked");
+            // unlike it here
         }
-        else if(flag == 1) {
-            $(".like_palette_color").attr("src","/assets/heart_pink.png");
-            flag = 0;
+        else {
+            $(this).attr("src","/assets/heart_pink.png");
+            $(this).attr("data-liked", "liked");
+            // like it here
         }
     });
 })
