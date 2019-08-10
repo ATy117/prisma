@@ -110,40 +110,119 @@ accountSchema.methods.getFollowed = function(callback){
     }).populate('followed').exec(callback);
 };
 
+// FOLLOW------------------------------------------------------------
 // Follow an account
-accountSchema.methods.followAccount = function(accountID, callback){
-    let me = this;
-    let id = this._id;
-    this.followed.push(accountID);
-    // Save urself as follower of the other account
-    Account.findById(accountID, function(error, account){
-        account.followers.push(id);
-        account.save().then((document)=>{
-            me.save().then(callback);
-        });
+accountSchema.methods.addToFollowed = function(accountID, callback){
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $push: {
+            followed: accountID
+        }
+    }, {
+        new: true
+    }, function (error, oneWhoFollowed){
+        // After saving
+        Account.findById({
+            _id: accountID
+        }, function (error, oneHeFollowed){
+            //Add this user to the followers of the other account
+            oneHeFollowed.addToFollowers(this.id, callback); // callback is error, account followed
+        })
     });
 };
 
-// Unfollow
+// Supplementary to follow account
+accountSchema.methods.addToFollowers = function(accountID, callback){
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $push: {
+            followers: accountID
+        }
+    }, {
+        new: true
+    }, callback);
+};
 
+// UNFOLLOW------------------------------------------------------------
+// UnFollow an account
+accountSchema.methods.removeFromFollowed = function(accountID, callback){
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $pull: {
+            followed: accountID
+        }
+    }, {
+        new: true
+    }, function (error, oneWhoFollowed){
+        // After saving
+        Account.findById({
+            _id: accountID
+        }, function (error, oneHeFollowed){
+            //Remove this user from the followers of the other account
+            oneHeFollowed.removeFromFollowers(this.id, callback); // callback is error, account followed
+        })
+    });
+};
+
+// Supplementary to unfollow account
+accountSchema.methods.removeFromFollowers = function(accountID, callback){
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $pull: {
+            followers: accountID
+        }
+    }, {
+        new: true
+    }, callback);
+};
 
 // Like Palatte
 accountSchema.methods.likePalette = function(paletteID, callback){
-    let me = this;
-    let id = this._id;
-    this.likedPalettes.push(paletteID);
-    // Save urself as follower of the other account
-    Palette.findById(paletteID, function(error, palette){
-        palette.likers.push(id);
-        palette.save().then((document)=>{
-            me.save().then(callback);
-        });
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $push: {
+            likedPalettes: paletteID
+        }
+    }, {
+        new: true
+    }, function (error, account){
+        // After saving
+        Palette.findById({
+            _id: paletteID
+        }, function (error, likedPalette){
+            //Add this user to the likers of that palette
+            likedPalette.addToLikers(this.id, callback); // callback is error, paletteLiked
+        })
     });
 };
 
 
 // Unlike Palette
-
+// Like Palatte
+accountSchema.methods.unlikePalette = function(paletteID, callback){
+    Account.updateOne({
+        _id: this.id
+    }, {
+        $pull: {
+            likedPalettes: paletteID
+        }
+    }, {
+        new: true
+    }, function (error, account){
+        // After saving
+        Palette.findById({
+            _id: paletteID
+        }, function (error, unlikedPalette){
+            //Add this user to the likers of that palette
+            unlikedPalette.removeFromLikers(this.id, callback); // callback is error, paletteLiked
+        })
+    });
+};
 
 const Account = mongoose.model("Account", accountSchema);
 

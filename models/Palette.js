@@ -87,6 +87,34 @@ paletteSchema.statics.deletePalette = function(paletteID, callback){
     }, callback); // callback is error and document
 };
 
+// METHODS ---------------------------------------------------------------
+
+// Supplementary to like palettes in account model
+paletteSchema.methods.addToLikers = function(accountID, callback){
+    Palette.updateOne({
+        _id: this.id
+    }, {
+        $push: {
+            likers: accountID
+        }
+    }, {
+        new: true
+    }, callback);
+};
+
+// Supplementary to unlike palettes in account model
+paletteSchema.methods.removeFromLikers = function(accountID, callback){
+    Palette.updateOne({
+        _id: this.id
+    }, {
+        $pull: {
+            likers: accountID
+        }
+    }, {
+        new: true
+    }, callback);
+};
+
 
 const Palette = mongoose.model("Palette", paletteSchema);
 
