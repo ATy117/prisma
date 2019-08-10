@@ -133,7 +133,17 @@ body{
 .all_palettes_container{
     width: 100%;
     display: flex;
-    padding-top: 4.5rem;
+    padding-top: 1rem;
+
+    font-family: "font";
+    flex-wrap: wrap;
+
+}
+
+.all_mypalettes_container{
+    width: 100%;
+    display: flex;
+    padding-top: 4rem;
 
     font-family: "font";
     flex-wrap: wrap;
@@ -640,15 +650,16 @@ body{
 }
 
 .search_container{
+    padding-top: 6rem;
     text-align: center;
 }
 
 .search_submit_button{
     font-family: "font";
     color: var(--font-color);
-    font-size: 20px;
-    height: 2.2rem;
-    width: 6rem;
+    font-size: 16px;
+    height: 1.8rem;
+    width: 5rem;
 
     border: none;
     border-radius: 10px;
@@ -665,8 +676,8 @@ body{
 }
 
 .search_text_input{
-    width: 35rem;
-    height: 2.2rem;
+    width: 25rem;
+    height: 1.8rem;
 
     font-family: "font";
     font-size: 20px;
@@ -736,7 +747,7 @@ body{
 
   .toggle_label{
       font-family: "font";
-      font-size: 18px;
+      font-size: 16px;
       margin-top: 2.4rem;
       margin-left: 1rem;
       margin-right: 1rem;
