@@ -816,6 +816,39 @@ body{
       margin-bottom: 0;
   }
 
+  .folow_button_profile{
+      display: flex;
+      height: 2.3rem;
+  }
+
+  .profile_follow_user_button{
+    background-color: var(--gray-bg);
+    height: 1.4rem;
+    width: 6rem;
+
+    text-align: center;
+    margin-left: 3.8rem;
+    margin-top: 0rem;
+    padding-top: 0.2rem;
+
+    filter: drop-shadow(0px 1px 2px #0000002c);
+    cursor: pointer;
+}
+
+.profile_unfollow_user_button{
+    background-color: var(--accent-light-pink);
+    height: 1.6rem;
+    width: 6rem;
+
+    text-align: center;
+    margin-left: 5rem;
+    margin-top: 0.7rem;
+    padding-top: 0.5rem;
+
+    filter: drop-shadow(0px 1px 2px #0000002c);
+    cursor: pointer;
+  }
+
   .follow_user_button{
       background-color: var(--gray-bg);
       height: 1.6rem;
@@ -831,17 +864,17 @@ body{
   }
 
   .unfollow_user_button{
-    background-color: var(--accent-light-pink);
-    height: 1.6rem;
-    width: 6rem;
+      background-color: var(--accent-light-pink);
+      height: 1.6rem;
+      width: 6rem;
 
-    text-align: center;
-    margin-left: 5rem;
-    margin-top: 0.7rem;
-    padding-top: 0.5rem;
+      text-align: center;
+      margin-left: 5rem;
+      margin-top: 0.7rem;
+      padding-top: 0.5rem;
 
-    filter: drop-shadow(0px 1px 2px #0000002c);
-    cursor: pointer;
+      filter: drop-shadow(0px 1px 2px #0000002c);
+      cursor: pointer;
   }
 
   .unfollow_user_button:hover{
@@ -853,6 +886,17 @@ body{
       background-color: var(--gray-hover);
       filter: drop-shadow(0px 1px 2px #0000004d);
   }
+
+  
+  .profile_unfollow_user_button:hover{
+    background-color: var(--accent-pink);
+    filter: drop-shadow(0px 1px 2px #0000004d);
+}
+
+ .profile_follow_user_button:hover{
+    background-color: var(--gray-hover);
+    filter: drop-shadow(0px 1px 2px #0000004d);
+}
 
   .follow_user_button_clicked{
     background-color: var(--gray-hover);
@@ -1019,6 +1063,7 @@ body{
       font-family: "font";
       font-size: 18px;
       filter: drop-shadow(0px 1px 2px #0000002c);
+      
   }
 
   .follower_name{

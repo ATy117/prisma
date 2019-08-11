@@ -48,4 +48,22 @@ $(document).ready(function(){
             // like it here
         }
     });
+
+    var check = 0;
+
+    $(document).on("click", "#follow_button", function(){
+        if(check==0) {
+            $("#follow_span").text("Unfollow");
+            check=1;
+            $(this).className = "profile_unfollow_user_button";
+            // unlike it here
+        }
+        else {
+            $("#follow_span").text("Follow");
+            check = 0;
+            $(this).className = "profile_follow_user_button";
+           
+            // like it here
+        }
+    });
 })
