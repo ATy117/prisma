@@ -98,16 +98,29 @@ accountSchema.methods.comparePassword = function(plaintext, callback) {
 };
 //Retrieve followers
 accountSchema.methods.getFollowers = function(callback){
-    Account.findOne({
-        username: this.username
-    }).populate('followers').exec(callback);
+    Account.find({
+        followed: {
+            $elemMatch: this._id
+        }
+    }, callback);
 };
 
 //Retrieve followed
 accountSchema.methods.getFollowed = function(callback){
-    Account.findOne({
-        username: this.username
-    }).populate('followed').exec(callback);
+    Account.find({
+        followers: {
+            $elemMatch: this._id
+        }
+    }, callback);
+};
+
+//Retrieve liked palettes
+accountSchema.methods.getLikedPalettes = function(callback){
+    Palette.find({
+        likers: {
+            $elemMatch: this._id
+        }
+    }, callback);
 };
 
 // FOLLOW------------------------------------------------------------

@@ -50,6 +50,9 @@ app.use('/profile', require('./routes/profile_route'));
 //SEARCH - Route
 app.use('/search', require('./routes/search_route'));
 
+// HOME - Route
+app.use('/home', require('./routes/home_route'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){
@@ -57,16 +60,6 @@ app.get("/", function(req,res){
     } else {
         res.redirect("/home");
     }
-});
-
-app.get("/home",login_checker, account_getter,function(req,res){
-    let username = req.session.username;
-    let firstname = req.account.firstname;
- 
-    res.render("feed.hbs",{
-        username: username,
-        firstname: firstname
-    });
 });
 
 app.get("/logout", (req,res) =>{
@@ -83,159 +76,3 @@ app.get("/about", function(req,res){
 app.listen(3000, function(){
     console.log("Port is Live");
 });
-
-
-
-
-
-// //Register
-// app.get("/register", function(req,res){
-//     res.sendFile(__dirname + "/public/Register.html");
-// });
-
-// app.post("/register_username_test", urlencoder, function(req,res){
-// 	let usernameTest = req.body.usernameTest;
-
-//     // Account.findOne({
-//     //     username : usernameTest
-//     // }, (error, document)=>{
-//     //     if (error){
-//     //         res.send(error);
-//     //     } else if (document) {
-//     //         res.send("Exists")
-//     //     } else {
-//     //         res.send("Available");
-//     //     }
-//     // });
-
-//     Account.checkUniqueUsername(usernameTest, function(error, document){
-//         if (error){
-//             res.send(error);
-//         } else if (document) {
-//             res.send("Exists")
-//         } else {
-//             res.send("Available");
-//         }
-//     });
-// });
-
-// app.post("/register_process", urlencoder, function (req, res){
-//     console.log("in server");
-//     var username = req.body.username;
-//     var password = req.body.password;
-//     var firstname = req.body.firstname;
-//     var lastname = req.body.lastname;
-
-//     let account = new Account({
-//         username : username,
-//         password : password,
-//         firstname: firstname,
-//         lastname: lastname,
-//         followers: []
-//     }); 
-
-//     // account.save().then((document)=>{
-//     //     // ALl goes well
-//     //     console.log(document);
-//     //     res.send("Registered Successfully\n");
-//     // }, (error)=>{
-//     //     //all goes to hell
-//     //     res.send(error);
-//     // });
-
-//     Account.addAccount(account,(document)=>{
-//         // ALl goes well
-//         console.log(document);
-//         // Sample following
-//         // document.followAccount(document, function(document){
-//         //     console.log(document.followers);
-//         //     document.getFollowers(function(error, followers){
-//         //         console.log(followers.followers[0]);
-//         //     });
-//         //     res.send("Registered Successfully\n");
-//         // }, function(error){
-
-//         // });
-
-//         res.send("Registered Successfully\n");
-        
-//     }, (error)=>{
-//         //all goes to hell
-//         res.send(error);
-//     })
-// });
-
-// app.get("/logout", (req,res) =>{
-//     req.session.destroy((error)=>{
-//         console.log("Logged Out");
-//     });
-//     res.redirect("/");
-// });
-
-// // Profile Navigating
-
-// app.get("/palettes", (req, res)=>{
-
-//     if (!req.session.username){
-//         res.redirect("/");
-//     } else {
-//         let firstname;
-
-//         Account.findOne({
-//             username: req.session.username
-//         }, (error, document)=>{
-//             if (error){
-//                 res.send(error);
-//             } else if (document) {
-//                 firstname = document.firstname;
-//                 res.render("palettes.hbs",{
-//                     username: req.session.username,
-//                     firstname: firstname
-//                 });
-//             } 
-//         });
-        
-//     }
-// });
-
-
-// // Add a palette
-// app.get("/add_palette", (req, res)=>{
-//     if (!req.session.username){
-//         res.redirect("/");
-//     } else {
-//         let firstname;
-
-//         Account.findOne({
-//             username: req.session.username
-//         }, (error, document)=>{
-//             if (error){
-//                 res.send(error);
-//             } else if (document) {
-//                 firstname = document.firstname;
-//                 res.render("addpalette.hbs",{
-//                     username: req.session.username,
-//                     firstname: firstname
-//                 });
-//             } 
-//         });
-        
-//     }
-// });
-
-// // Add palette process
-// app.post("/add_palette_process", urlencoder, (req, res)=>{
-//     let name = req.body.name;
-//     let dateCreated = req.body.dateCreated;
-//     let color1 = req.body.color1;
-//     let color2 = req.body.color2;
-//     let color3 = req.body.color3;
-//     let color4 = req.body.color4;
-//     let color5 = req.body.color5;
-
-//     let id;
-
-//     Account.getAccountByUsername(req.session.username, function(error, document){
-//         id = document._id;
-//     });
-// });
