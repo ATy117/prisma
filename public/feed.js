@@ -11,4 +11,11 @@ $(document).ready(function(){
             // like it here
         }
     });
+
+    $(".nav_search_form").submit(function(e){
+        e.preventDefault();
+    })
+    $(".search_submit_button").click(function(){
+        console.log("triggered");
+    });
 })
