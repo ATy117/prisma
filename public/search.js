@@ -22,6 +22,9 @@ $(document).ready(function(){
             //Show palette Results
             $(".search_indiv_palette").toggle();
             $(".search_user_results").toggle();
+            //SHow Palette Header
+            $("#palette_results_header").toggle();
+            $("#user_results_header").toggle();
         }
     });
 
@@ -32,6 +35,22 @@ $(document).ready(function(){
             //Show user results
             $(".search_indiv_palette").toggle();
             $(".search_user_results").toggle();
+            //SHow User Header
+            $("#palette_results_header").toggle();
+            $("#user_results_header").toggle();
+        }
+    });
+
+    
+    $(document).on("mouseenter", "#follow_button", function(){
+        if($(this).attr("data-following") == "following") {
+            $(this).children().text("Unfollow");
+        }
+    });
+
+    $(document).on("mouseleave", "#follow_button", function(){
+        if($(this).attr("data-following") == "following") {
+            $(this).children().text("Following");
         }
     });
 
