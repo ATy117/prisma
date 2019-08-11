@@ -94,64 +94,48 @@ accountSchema.methods.comparePassword = function(plaintext, callback) {
     return callback(null, Bcrypt.compareSync(plaintext, this.password));
 };
 //Retrieve followers
-accountSchema.methods.getFollowers = function(callback){
-    Account.find({
+accountSchema.methods.getFollowers = async function(){
+    return await Account.find({
         followed: {
             $elemMatch: this._id
         }
-    }, callback);
+    });
 };
 
 //Retrieve followed
-accountSchema.methods.getFollowed = function(callback){
-    Account.find({
+accountSchema.methods.getFollowed = async function(){
+    return await Account.find({
         followers: {
             $elemMatch: this._id
         }
-    }, callback);
+    });
 };
 
 // Check if following
-accountSchema.methods.checkIfFollowing = async function(accountID, callback){
-    Account.findOne({
+accountSchema.methods.checkIfFollowing = async function(accountID){
+    return await Account.findOne({
         _id: this._id,
         followed: {
             $elemMatch: accountID
-        }
-    }, function(error, account){
-        if (error){
-            return false;
-        } else if (account){
-            return true;
-        } else {
-            return false;
         }
     });
 };
 
 //Retrieve liked palettes
-accountSchema.methods.getLikedPalettes = function(callback){
-    Palette.find({
+accountSchema.methods.getLikedPalettes = async function(){
+    return await Palette.find({
         likers: {
             $elemMatch: this._id
         }
-    }, callback);
+    });
 };
 
 // Check if liked
-accountSchema.methods.checkIfLiked = async function(paletteID, callback){
-    Account.findOne({
+accountSchema.methods.checkIfLiked = async function(paletteID){
+    return await Account.findOne({
         _id: this._id,
         likedPalettes: {
             $elemMatch: paletteID
-        }
-    }, function(error, account){
-        if (error){
-            return false;
-        } else if (account){
-            return true;
-        } else {
-            return false;
         }
     });
 };
