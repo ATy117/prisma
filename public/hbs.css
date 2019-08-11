@@ -770,7 +770,7 @@ body{
     height: 40rem;
     margin-left: 10%;
     margin-right: 10%;
-    padding-top: 6rem;
+    padding-top: 1rem;
   }
 
   .search_results_header{
@@ -919,27 +919,28 @@ body{
 
   .search_indiv_palette{
     font-family: "font";
-    width: 30rem;
+    width: 27rem;
     height: 13rem;
 
-    background-color: var(--gray-dark);
+    background-color: white;
     border-radius: 2px;
     filter: drop-shadow(0px 1px 1px #0000002c);
 
+    margin: 0 auto;
     margin-top: 1rem;
-    margin-left: 1rem;
 }
 
 .search_color_container{
-    width: 5rem;
-    height: 4.8rem;
-    border: solid;
-    border-width: 0.2rem;
-    border-color: var(--gray-bg);
-    background-color: var(--box-R);
-    filter: drop-shadow(0px 1px 2px #0000003f);
 
-    margin-left:0.4rem;    
+    width: 5.3rem;
+    height: 6.4rem;
+    /*border: solid;
+    border-width: 0.2rem;
+    border-color: var(--gray-bg);*/
+    background-color: var(--box-R);
+    filter: drop-shadow(0px 1px 2px #0000002c);
+
+    /*margin-left: 0.1rem;*/
 }
 
 .logout_button{
@@ -1076,4 +1077,20 @@ body{
       margin-top: 0.5rem;
       margin-left: 0.5rem;
       padding-bottom: 0.5rem;
+  }
+
+  .search_list_navbar{
+      display: inline-flex;
+  }
+
+  .search_min_navbar{
+      padding-top: 4rem;
+      font-family: "font";
+      font-size: 20px;
+      text-align: center;
+  }
+  
+  .search_nav_setting{
+      padding-right: 2rem;
+      cursor: pointer;
   }
