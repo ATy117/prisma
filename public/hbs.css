@@ -1094,3 +1094,7 @@ body{
       padding-right: 2rem;
       cursor: pointer;
   }
+
+  .bold_util{
+      font-weight: bold;
+  }
