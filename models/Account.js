@@ -114,6 +114,24 @@ accountSchema.methods.getFollowed = function(callback){
     }, callback);
 };
 
+// Check if following
+accountSchema.methods.checkIfFollowing = async function(accountID, callback){
+    Account.findOne({
+        _id: this._id,
+        followed: {
+            $elemMatch: accountID
+        }
+    }, function(error, account){
+        if (error){
+            return false;
+        } else if (account){
+            return true;
+        } else {
+            return false;
+        }
+    });
+};
+
 //Retrieve liked palettes
 accountSchema.methods.getLikedPalettes = function(callback){
     Palette.find({
@@ -121,6 +139,24 @@ accountSchema.methods.getLikedPalettes = function(callback){
             $elemMatch: this._id
         }
     }, callback);
+};
+
+// Check if liked
+accountSchema.methods.checkIfLiked = async function(paletteID, callback){
+    Account.findOne({
+        _id: this._id,
+        likedPalettes: {
+            $elemMatch: paletteID
+        }
+    }, function(error, account){
+        if (error){
+            return false;
+        } else if (account){
+            return true;
+        } else {
+            return false;
+        }
+    });
 };
 
 // FOLLOW------------------------------------------------------------
