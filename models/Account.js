@@ -76,16 +76,13 @@ accountSchema.statics.addAccount = function(account, callback){
 };
 
 //Search for an account
-accountSchema.statics.searchAccount = function(query, callback){
-    this.find({
+accountSchema.statics.searchAccount = async function(query){
+    return await this.find({
         $or: [
             { "username": { "$regex": query, "$options": "i" }},
             { "firstname": { "$regex": query, "$options": "i" }},
             { "lastname": { "$regex": query, "$options": "i" }}
-        ]}, function(error, results){
-            // Pre process here
-            callback();
-        });
+        ]});
 };
 
 

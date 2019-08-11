@@ -18,34 +18,26 @@ router.use(login_checker);
 router.use(account_getter);
 
 // View the base search page
-router.get("/", function(req,res){
+router.get("/:query", async function(req,res){
     // render the profile
+    let query = req.params.query;
+    console.log("in here " + query);
+
+    let userResults = await Account.searchAccount(query);
+
+    let paletteResults = await Palette.searchPalette(query);
+
+    console.log(userResults);
+    console.log(paletteResults);
     res.render("search.hbs", {
         username: req.account.username,
-        firstname: req.account.firstname
+        firstname: req.account.firstname,
+        query: query,
     });
 });
 
-//search for a palette
-router.get("/palette/:keyword" , function(req,res){
-    let keyword = req.params.keyword;
 
-});
 
-//search for an account
-router.get("/account/:keyword", function(req,res){
-    let keyword = req.params.keyword;
-});
 
-//like a palette
-router.post("/palette/like/:palette_id", function (req,res){
-    let palette_id = req.params.palette_id;
-
-});
-
-//follow a user
-router.post("/account/follow/:account_id", function(req,res){
-
-});
 
 module.exports = router;

@@ -54,12 +54,9 @@ paletteSchema.statics.getPalettes = function(creator, callback){
 };
 
 //Search for a palette
-paletteSchema.statics.searchPalette = function(query, callback){
-    this.find({
+paletteSchema.statics.searchPalette = async function(query){
+    return await this.find({
         "name": { "$regex": query, "$options": "i" }
-    }, function(error, results){
-        //Pre process results here
-        callback();
     });
 };
 
