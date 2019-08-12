@@ -46,6 +46,7 @@ $(document).ready(function(){
                 if (data == "Success"){
                     $(like).attr("src","/assets/heartGray.png");
                     $(like).attr("data-liked", "unliked");
+                    changeLikes(-1);
                 }
             });
         }
@@ -58,6 +59,7 @@ $(document).ready(function(){
                 if (data == "Success"){
                     $(like).attr("src","/assets/hearPink.png");
                     $(like).attr("data-liked", "liked");
+                    changeLikes(1);
                 }
             });
         }
@@ -117,4 +119,13 @@ $(document).ready(function(){
             window.location.href = `/search/${query}`;
         }
     });
+
+    function changeLikes (value){
+        let numString = $("#liked_count").text();
+        let number = parseInt(numString, 10);
+
+        number = number + value;
+
+        $("#liked_count").text(number);
+    };
 })
