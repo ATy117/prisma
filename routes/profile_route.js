@@ -69,6 +69,33 @@ router.get("/", async function(req,res){
         followings.push(soloUser);
         followingCount++;
     }
+
+    // get accounts FOLLOWING YOU
+    let followerResults = await account.getFollowers();
+    let followers = [];
+    let followerCount = 0;
+    for (let i= 0; i< followerResults.length; i++){
+        // User json object
+        let oneResult = followerResults[i];
+
+        //Check if you are following this user
+        let following = null;
+        let isFollowing = await account.checkIfFollowing(oneResult._id);
+        if (isFollowing){
+            following = "notNull";
+        }
+
+        // The user info to be rendered
+        let soloUser = {
+            "id" : oneResult._id,
+            "firstname": oneResult.firstname,
+            "lastname" : oneResult.lastname,
+            "username" : oneResult.username,
+            "following" : following
+        };
+        followers.push(soloUser);
+        followerCount++;
+    }
     // render the profile
     res.render("myprofile.hbs", {
         username: req.account.username,
@@ -77,7 +104,9 @@ router.get("/", async function(req,res){
         likedCount: palettesCount,
         palettes: palettes,
         followingCount: followingCount,
-        followings: followings
+        followings: followings,
+        followerCount: followerCount,
+        followers: followers,
     });
 });
 
