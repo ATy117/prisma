@@ -97,9 +97,7 @@ accountSchema.methods.comparePassword = function(plaintext, callback) {
 accountSchema.methods.getFollowers = async function(){
     return await Account.find({
         followed: {
-            $elemMatch: {
-                _id : this._id
-            }
+            "$in": [this._id]
         }
     });
 };
@@ -108,9 +106,7 @@ accountSchema.methods.getFollowers = async function(){
 accountSchema.methods.getFollowed = async function(){
     return await Account.find({
         followers: {
-            $elemMatch: {
-                _id : this._id
-            }
+            "$in": [this._id]
         }
     });
 };
@@ -120,9 +116,7 @@ accountSchema.methods.checkIfFollowing = async function(accountID){
     return await Account.findOne({
         _id: this._id,
         followed: {
-            $elemMatch: {
-                _id: accountID
-            }
+            "$in": [accountID]
         }
     });
 };
@@ -131,9 +125,7 @@ accountSchema.methods.checkIfFollowing = async function(accountID){
 accountSchema.methods.getLikedPalettes = async function(){
     return await Palette.find({
         likers: {
-            $elemMatch: {
-                _id : this._id
-            }
+            "$in": [this._id]
         }
     });
 };
@@ -143,9 +135,7 @@ accountSchema.methods.checkIfLiked = async function(paletteID){
     return await Account.findOne({
         _id: this._id,
         likedPalettes: {
-            $elemMatch: {
-                _id : paletteID
-            }
+            "$in": [paletteID]
         }
     });
 };
@@ -153,8 +143,9 @@ accountSchema.methods.checkIfLiked = async function(paletteID){
 // FOLLOW------------------------------------------------------------
 // Follow an account
 accountSchema.methods.addToFollowed = function(accountID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $push: {
             followed: accountID
@@ -167,15 +158,16 @@ accountSchema.methods.addToFollowed = function(accountID, callback){
             _id: accountID
         }, function (error, oneHeFollowed){
             //Add this user to the followers of the other account
-            oneHeFollowed.addToFollowers(this.id, callback); // callback is error, account followed
+            oneHeFollowed.addToFollowers(id, callback); // callback is error, account followed
         })
     });
 };
 
 // Supplementary to follow account
 accountSchema.methods.addToFollowers = function(accountID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $push: {
             followers: accountID
@@ -188,8 +180,9 @@ accountSchema.methods.addToFollowers = function(accountID, callback){
 // UNFOLLOW------------------------------------------------------------
 // UnFollow an account
 accountSchema.methods.removeFromFollowed = function(accountID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $pull: {
             followed: accountID
@@ -202,15 +195,16 @@ accountSchema.methods.removeFromFollowed = function(accountID, callback){
             _id: accountID
         }, function (error, oneHeFollowed){
             //Remove this user from the followers of the other account
-            oneHeFollowed.removeFromFollowers(this.id, callback); // callback is error, account followed
+            oneHeFollowed.removeFromFollowers(id, callback); // callback is error, account followed
         })
     });
 };
 
 // Supplementary to unfollow account
 accountSchema.methods.removeFromFollowers = function(accountID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $pull: {
             followers: accountID
@@ -222,8 +216,9 @@ accountSchema.methods.removeFromFollowers = function(accountID, callback){
 
 // Like Palatte
 accountSchema.methods.likePalette = function(paletteID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $push: {
             likedPalettes: paletteID
@@ -236,7 +231,7 @@ accountSchema.methods.likePalette = function(paletteID, callback){
             _id: paletteID
         }, function (error, likedPalette){
             //Add this user to the likers of that palette
-            likedPalette.addToLikers(this.id, callback); // callback is error, paletteLiked
+            likedPalette.addToLikers(id, callback); // callback is error, paletteLiked
         })
     });
 };
@@ -245,8 +240,9 @@ accountSchema.methods.likePalette = function(paletteID, callback){
 // Unlike Palette
 // Like Palatte
 accountSchema.methods.unlikePalette = function(paletteID, callback){
+    let id = this._id;
     Account.updateOne({
-        _id: this.id
+        _id: id
     }, {
         $pull: {
             likedPalettes: paletteID
@@ -259,7 +255,7 @@ accountSchema.methods.unlikePalette = function(paletteID, callback){
             _id: paletteID
         }, function (error, unlikedPalette){
             //Add this user to the likers of that palette
-            unlikedPalette.removeFromLikers(this.id, callback); // callback is error, paletteLiked
+            unlikedPalette.removeFromLikers(id, callback); // callback is error, paletteLiked
         })
     });
 };

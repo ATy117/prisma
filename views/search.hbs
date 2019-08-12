@@ -46,7 +46,7 @@
                     {{#if following}}
                         <div class="unfollow_user_button" id="follow_button" data-following="following" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Following</span></div>
                     {{else}}
-                        <div class="follow_user_button" id="follow_button" data-following="notfollowing"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
+                        <div class="follow_user_button" id="follow_button" data-following="notfollowing" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
                     {{/if}}
                 {{/unless}}
             </div>
@@ -77,45 +77,6 @@
                 </div>
             </div>
             {{/each}}
-            {{!-- <div class="search_indiv_palette">
-                <div class="header_information">
-                    <p class="palette_name">Rainbow</p>
-                    <div class="palette_icons" id="icons_container">
-                        <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id">
-                    </div>
-                </div>
-                <div class="palette_color_container">
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                </div>
-                <div class="other_information">
-                    <p class="created_by">by Rebecalyn Lao</p>
-                    <p class="date_created"> Aug 01, 2019</p>
-                </div>
-            </div>
-            <div class="search_indiv_palette">
-                <div class="header_information">
-                    <p class="palette_name">Rainbow</p>
-                    <div class="palette_icons" id="icons_container">
-                        <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id">
-                    </div>
-                </div>
-                <div class="palette_color_container">
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                    <div class="search_color_container" id="color_1"></div>
-                </div>
-                <div class="other_information">
-                    <p class="created_by">by Rebecalyn Lao</p>
-                    <p class="date_created"> Aug 01, 2019</p>
-                </div>
-            </div> --}}
-
         </div>
     </div>
 </body>

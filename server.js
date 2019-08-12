@@ -53,6 +53,9 @@ app.use('/search', require('./routes/search_route'));
 // HOME - Route
 app.use('/home', require('./routes/home_route'));
 
+// SOCIAL - Route
+app.use('/social', require('./routes/social_route'));
+
 // Home Pages
 app.get("/", function(req,res){
     if (!req.session.username){

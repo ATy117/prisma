@@ -22,7 +22,6 @@ router.get("/:query", async function(req,res){
     // render the profile
     let account = req.account;
     let query = req.params.query;
-    console.log("in here " + query);
 
     let userResults = await Account.searchAccount(query);
     let paletteResults = await Palette.searchPalette(query);

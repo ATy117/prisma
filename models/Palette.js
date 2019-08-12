@@ -89,7 +89,7 @@ paletteSchema.statics.deletePalette = function(paletteID, callback){
 // Supplementary to like palettes in account model
 paletteSchema.methods.addToLikers = function(accountID, callback){
     Palette.updateOne({
-        _id: this.id
+        _id: this._id
     }, {
         $push: {
             likers: accountID
@@ -102,7 +102,7 @@ paletteSchema.methods.addToLikers = function(accountID, callback){
 // Supplementary to unlike palettes in account model
 paletteSchema.methods.removeFromLikers = function(accountID, callback){
     Palette.updateOne({
-        _id: this.id
+        _id: this._id
     }, {
         $pull: {
             likers: accountID
@@ -115,7 +115,7 @@ paletteSchema.methods.removeFromLikers = function(accountID, callback){
 // Populate creator
 paletteSchema.methods.populateCreator = async function(){
     return await Palette.findOne({
-        _id: this.id
+        _id: this._id
     }).populate("creator");
 };
 

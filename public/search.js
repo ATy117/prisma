@@ -1,19 +1,4 @@
 $(document).ready(function(){
-    // var check = 0;
-    // $("#follow_button").click(function(){
-    //     if (check==0){
-    //         $("#follow_span").text("Unfollow");
-    //         check = 1;
-    //         this.className = "unfollow_user_button";
-    //         //change class to -> follow_user_button_clicked
-    //     } else{
-    //         $("#follow_span").text("Follow");
-    //         check = 0;
-    //         this.className = "follow_user_button";
-    //         //change class to -> follow_user_button_clicked
-    //     }
-        
-    // })
 
     $(".nav_search_form").submit(function(e){
         e.preventDefault();
@@ -67,31 +52,59 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on("click", "#follow_button", function(){
+    $(document).on("click", "#follow_button", async function(){
         if($(this).attr("data-following") == "notfollowing") {
-            $(this).children().text("Following");
-            this.className = "unfollow_user_button";
-            $(this).attr("data-following", "following");
             // follow it here
+            let id = $(this).attr("data-id");
+            let follow = this;
+
+            await $.post(`/social/follow_account/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(follow).children().text("Following");
+                    follow.className = "unfollow_user_button";
+                    $(follow).attr("data-following", "following");
+                }
+            });
         }
         else {
-            $(this).children().text("Follow");
-            this.className = "follow_user_button";
-            $(this).attr("data-following", "notfollowing");
             // unfollow it here
+            let id = $(this).attr("data-id");
+            let follow = this;
+
+            await $.post(`/social/unfollow_account/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(follow).children().text("Follow");
+                    follow.className = "follow_user_button";
+                    $(follow).attr("data-following", "notfollowing");
+                }
+            });
         }
     });
 
-    $(document).on("click", "#like_palette_id", function(){
+    $(document).on("click", "#like_palette_id", async function(){
         if($(this).attr("data-liked") == "liked") {
-            $(this).attr("src","/assets/heartGray.png");
-            $(this).attr("data-liked", "unliked");
             // unlike it here
+            let id = $(this).attr("data-id");
+            let like = this;
+
+            await $.post(`/social/unlike_palette/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(like).attr("src","/assets/heartGray.png");
+                    $(like).attr("data-liked", "unliked");
+                }
+            });
         }
         else {
-            $(this).attr("src","/assets/hearPink.png");
-            $(this).attr("data-liked", "liked");
             // like it here
+            let id = $(this).attr("data-id");
+            let like = this;
+
+            await $.post(`/social/like_palette/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(like).attr("src","/assets/hearPink.png");
+                    $(like).attr("data-liked", "liked");
+                }
+            });
         }
     });
 
