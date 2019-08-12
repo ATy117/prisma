@@ -112,6 +112,13 @@ paletteSchema.methods.removeFromLikers = function(accountID, callback){
     }, callback);
 };
 
+// Populate creator
+paletteSchema.methods.populateCreator = async function(){
+    return await Palette.findOne({
+        _id: this.id
+    }).populate("creator");
+};
+
 
 const Palette = mongoose.model("Palette", paletteSchema);
 

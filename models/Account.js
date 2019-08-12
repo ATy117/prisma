@@ -97,7 +97,9 @@ accountSchema.methods.comparePassword = function(plaintext, callback) {
 accountSchema.methods.getFollowers = async function(){
     return await Account.find({
         followed: {
-            $elemMatch: this._id
+            $elemMatch: {
+                _id : this._id
+            }
         }
     });
 };
@@ -106,7 +108,9 @@ accountSchema.methods.getFollowers = async function(){
 accountSchema.methods.getFollowed = async function(){
     return await Account.find({
         followers: {
-            $elemMatch: this._id
+            $elemMatch: {
+                _id : this._id
+            }
         }
     });
 };
@@ -116,7 +120,9 @@ accountSchema.methods.checkIfFollowing = async function(accountID){
     return await Account.findOne({
         _id: this._id,
         followed: {
-            $elemMatch: accountID
+            $elemMatch: {
+                _id: accountID
+            }
         }
     });
 };
@@ -125,7 +131,9 @@ accountSchema.methods.checkIfFollowing = async function(accountID){
 accountSchema.methods.getLikedPalettes = async function(){
     return await Palette.find({
         likers: {
-            $elemMatch: this._id
+            $elemMatch: {
+                _id : this._id
+            }
         }
     });
 };
@@ -135,7 +143,9 @@ accountSchema.methods.checkIfLiked = async function(paletteID){
     return await Account.findOne({
         _id: this._id,
         likedPalettes: {
-            $elemMatch: paletteID
+            $elemMatch: {
+                _id : paletteID
+            }
         }
     });
 };

@@ -841,9 +841,9 @@ body{
     width: 6rem;
 
     text-align: center;
-    margin-left: 5rem;
-    margin-top: 0.7rem;
-    padding-top: 0.5rem;
+    margin-left: 3.8rem;
+    margin-top: 0rem;
+    padding-top: 0.2rem;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;

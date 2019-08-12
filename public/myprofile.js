@@ -49,21 +49,43 @@ $(document).ready(function(){
         }
     });
 
-    var check = 0;
+    $(document).on("mouseenter", "#follow_button", function(){
+        if($(this).attr("data-following") == "following") {
+            $(this).children().text("Unfollow");
+        }
+    });
+
+    $(document).on("mouseleave", "#follow_button", function(){
+        if($(this).attr("data-following") == "following") {
+            $(this).children().text("Following");
+        }
+    });
 
     $(document).on("click", "#follow_button", function(){
-        if(check==0) {
-            $("#follow_span").text("Unfollow");
-            check=1;
-            $(this).className = "profile_unfollow_user_button";
-            // unlike it here
+        if($(this).attr("data-following") == "notfollowing") {
+            $(this).children().text("Following");
+            this.className = "profile_unfollow_user_button";
+            $(this).attr("data-following", "following");
+            // follow it here
         }
         else {
-            $("#follow_span").text("Follow");
-            check = 0;
-            $(this).className = "profile_follow_user_button";
-           
-            // like it here
+            $(this).children().text("Follow");
+            this.className = "profile_follow_user_button";
+            $(this).attr("data-following", "notfollowing");
+            // unfollow it here
+        }
+    });
+
+    $(".nav_search_form").submit(function(e){
+        e.preventDefault();
+    })
+    $(".search_submit_button").click(function(){
+        console.log("triggered");
+        let query = $(".search_text_input").val();
+
+        if (query){
+            console.log("may query");
+            window.location.href = `/search/${query}`;
         }
     });
 })

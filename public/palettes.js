@@ -46,9 +46,22 @@ $(document).ready(function(){
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
-    }
+
+    $(".nav_search_form").submit(function(e){
+        e.preventDefault();
+    })
+    $(".search_submit_button").click(function(){
+        console.log("triggered");
+        let query = $(".search_text_input").val();
+
+        if (query){
+            console.log("may query");
+            window.location.href = `/search/${query}`;
+        }
+    });
 
 })

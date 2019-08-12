@@ -29,6 +29,19 @@ window.onload = function(){
         
     });
 
+    $(".nav_search_form").submit(function(e){
+        e.preventDefault();
+    })
+    $(".search_submit_button").click(function(){
+        console.log("triggered");
+        let query = $(".search_text_input").val();
+
+        if (query){
+            console.log("may query");
+            window.location.href = `/search/${query}`;
+        }
+    });
+
 
 
 };
