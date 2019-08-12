@@ -76,18 +76,32 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on("click", "#follow_button", function(){
+    $(document).on("click", "#follow_button", async function(){
         if($(this).attr("data-following") == "notfollowing") {
-            $(this).children().text("Following");
-            this.className = "profile_unfollow_user_button";
-            $(this).attr("data-following", "following");
             // follow it here
+            let id = $(this).attr("data-id");
+            let follow = this;
+
+            await $.post(`/social/follow_account/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(follow).children().text("Following");
+                    follow.className = "profile_unfollow_user_button";
+                    $(follow).attr("data-following", "following");
+                }
+            });
         }
         else {
-            $(this).children().text("Follow");
-            this.className = "profile_follow_user_button";
-            $(this).attr("data-following", "notfollowing");
             // unfollow it here
+            let id = $(this).attr("data-id");
+            let follow = this;
+
+            await $.post(`/social/unfollow_account/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(follow).children().text("Follow");
+                    follow.className = "profile_follow_user_button";
+                    $(follow).attr("data-following", "notfollowing");
+                }
+            });
         }
     });
 
