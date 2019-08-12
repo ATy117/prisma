@@ -22,6 +22,7 @@ router.get("/", async function(req,res){
 
     let account = req.account;
     
+    // get liked palettes
     let paletteResults = await account.getLikedPalettes();
     let palettes = [];
     let palettesCount = 0;
@@ -48,6 +49,26 @@ router.get("/", async function(req,res){
         palettes.push(soloPalette);
         palettesCount++;
     }
+
+    // get accounts YOU ARE FOLLOWING
+    let followingResults = await account.getFollowed();
+    let followings = [];
+    let followingCount = 0;
+    for (let i= 0; i< followingResults.length; i++){
+        // User json object
+        let oneResult = followingResults[i];
+
+
+        // The user info to be rendered
+        let soloUser = {
+            "id" : oneResult._id,
+            "firstname": oneResult.firstname,
+            "lastname" : oneResult.lastname,
+            "username" : oneResult.username
+        };
+        followings.push(soloUser);
+        followingCount++;
+    }
     // render the profile
     res.render("myprofile.hbs", {
         username: req.account.username,
@@ -55,6 +76,8 @@ router.get("/", async function(req,res){
         lastname: req.account.lastname,
         likedCount: palettesCount,
         palettes: palettes,
+        followingCount: followingCount,
+        followings: followings
     });
 });
 

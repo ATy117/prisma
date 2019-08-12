@@ -39,7 +39,7 @@
             </div>
             <p class="profile_details_divider">|</p>
             <div class="profile_details_container"id="following_container">
-                <p class="profile_details_num" > 23 </p>
+                <p class="profile_details_num" > {{followingCount}} </p>
                 <p class="profile_details_word">following</p>
             </div>
             <p class="profile_details_divider">|</p>
@@ -81,64 +81,29 @@
     <!--Modal Content Following -->
     <div id="myModal_followers" class="modal">
         <div class="modal-content-followers">
-          <span class="close" id="close">&times;</span>
-          <p class="modal_header"> Followers</p>
-          <div class="list_followers_container">
-              <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_follow_user_button" id="follow_button" data-following="notfollowing"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
-                  </div>
-              </div>
-              <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_follow_user_button" id="follow_button" data-following="notfollowing"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
-                  </div>
-              </div>
-              <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_follow_user_button" id="follow_button" data-following="notfollowing"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
-                  </div>
-              </div>
-          </div>
+        <span class="close" id="close">&times;</span>
+        <p class="modal_header"> Followers</p>
+        <div class="list_followers_container">
+            
+        </div>
         </div>  
     </div>
 
     <div id="myModal_following" class="modal">
         <div class="modal-content-followers">
-          <span class="close" id="close_following">&times;</span>
-          <p class="modal_header"> Following</p>
-          <div class="list_followers_container">
-              <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_unfollow_user_button" id="follow_button" data-following="following"><span class="follow_user_button_text" id="follow_span">Following</span></div>
-                  </div>
-                  
-              </div>
-             <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_unfollow_user_button" id="follow_button" data-following="following"><span class="follow_user_button_text" id="follow_span">Following</span></div>
-                  </div>
-                  
-              </div>
-              <div class="list_indiv_follower">
-                  <p class="follower_name"> Rebecalyn Lao </p>
-                  <div class="folow_button_profile">
-                       <p class="follower_username"> @rebecabecalyn</p>
-                        <div class="profile_unfollow_user_button" id="follow_button"data-following="following"><span class="follow_user_button_text" id="follow_span">Following</span></div>
-                  </div>
-                  
-              </div>
-          </div>
+        <span class="close" id="close_following">&times;</span>
+        <p class="modal_header"> Following</p>
+        <div class="list_followers_container">
+            {{#each followings}}
+            <div class="list_indiv_follower">
+                <p class="follower_name"> {{firstname}} {{lastname}} </p>
+                <div class="folow_button_profile">
+                    <p class="follower_username"> @{{username}}</p>
+                    <div class="profile_unfollow_user_button" id="follow_button" data-following="following" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Following</span></div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
         </div>  
     </div>
 </body>
