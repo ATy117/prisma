@@ -130,6 +130,7 @@ body{
 
     padding: 0.5rem 1rem;
     margin-left: 2rem;
+    cursor: pointer;
 }
 
 .register_button:hover{
@@ -732,5 +733,9 @@ body{
     border-width: 1.5px;
     margin-left: 6rem;
     margin-right: 6rem;
+}
+
+.green_text{
+    color: green;
 }
 

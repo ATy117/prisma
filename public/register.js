@@ -18,7 +18,7 @@ window.onload = function(){
             if (data =="Available"){
                 userExists = false;
                 // Create the error message div here
-                $(".input_username_register").after('<span class="register_username_message">Username is goods for use.</span>');
+                $(".input_username_register").after('<span class="register_username_message green_text">Username is available.</span>');
             } else if (data == "Exists"){
                 userExists = true;
                 //Create the error message div here
