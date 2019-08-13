@@ -1,14 +1,28 @@
 $(document).ready(function(){
-    $(document).on("click", "#like_palette_id", function(){
+    $(document).on("click", "#like_palette_id", async function(){
         if($(this).attr("data-liked") == "liked") {
-            $(this).attr("src","/assets/heartGray.png");
-            $(this).attr("data-liked", "unliked");
             // unlike it here
+            let id = $(this).attr("data-id");
+            let like = this;
+
+            await $.post(`/social/unlike_palette/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(like).attr("src","/assets/heartGray.png");
+                    $(like).attr("data-liked", "unliked");
+                }
+            });
         }
         else {
-            $(this).attr("src","/assets/hearPink.png");
-            $(this).attr("data-liked", "liked");
             // like it here
+            let id = $(this).attr("data-id");
+            let like = this;
+
+            await $.post(`/social/like_palette/${id}`, function(data, status){
+                if (data == "Success"){
+                    $(like).attr("src","/assets/hearPink.png");
+                    $(like).attr("data-liked", "liked");
+                }
+            });
         }
     });
 
