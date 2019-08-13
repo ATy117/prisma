@@ -1,5 +1,4 @@
 
-
 $(document).ready(function(){
     
     var modal = document.getElementById("myModal");
@@ -63,5 +62,87 @@ $(document).ready(function(){
             window.location.href = `/search/${query}`;
         }
     });
+
+
+    // $("#color_1").mouseover(function(){
+    //     $("#color_1_hex").css("display", "block");
+    // })
+
+    // $("#color_1").mouseleave(function(){
+    //     $("#color_1_hex").hide();
+    // })
+
+    // $("#color_2").mouseover(function(){
+    //     $("#color_2_hex").css("display", "block");
+    // })
+
+    // $("#color_2").mouseleave(function(){
+    //     $("#color_2_hex").hide();
+    // })
+    // $("#color_3").mouseover(function(){
+    //     $("#color_3_hex").css("display", "block");
+    // })
+
+    // $("#color_3").mouseleave(function(){
+    //     $("#color_3_hex").hide();
+    // })
+    // $("#color_4").mouseover(function(){
+    //     $("#color_4_hex").css("display", "block");
+    // })
+
+    // $("#color_4").mouseleave(function(){
+    //     $("#color_4_hex").hide();
+    // })
+    // $("#color_5").mouseover(function(){
+    //     $("#color_5_hex").css("display", "block");
+    // })
+
+    // $("#color_5").mouseleave(function(){
+    //     $("#color_5_hex").hide();
+    // })
+
+    $(document).on("mouseover", "#color_1", function(){
+        $("#color_1_hex").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_1", function(){
+        $("#color_1_hex").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_2", function(){
+        $("#color_2_hex").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_2", function(){
+        $("#color_2_hex").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_3", function(){
+        $("#color_3_hex").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_3", function(){
+        $("#color_3_hex").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_4", function(){
+        $("#color_4_hex").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_4", function(){
+        $("#color_4_hex").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_5", function(){
+        $("#color_5_hex").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_5", function(){
+        $("#color_5_hex").css("display", "none");
+    })
 
 })

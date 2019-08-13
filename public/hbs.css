@@ -1099,3 +1099,13 @@ body{
   .bold_util{
       font-weight: bold;
   }
+
+  .color_hex{
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      margin-top: 48%;
+
+      background-color: white;
+      display: none;
+  }
