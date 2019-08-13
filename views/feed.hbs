@@ -25,27 +25,33 @@
         </ul>
     </div>
     <div class="all_palettes_container">
+            {{#each feedPalettes}}
             <div class="feed_indiv_palette">
                 <div class="header_information">
-                    <p class="palette_name">Rainbow</p>
+                    <p class="palette_name">{{name}}</p>
                     <div class="palette_icons" id="icons_container">
-                        <img src="./assets/heartGray.png" class="like_palette" id="like_palette_id">
+                        {{#if liked}}
+                        <img src="/assets/hearPink.png" class="like_palette" id="like_palette_id" data-liked="liked" data-id="{{id}}">
+                        {{else}}
+                        <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id" data-liked="unliked" data-id="{{id}}">
+                        {{/if}}
                     </div>
                 </div>
                 <div class="palette_color_container">
-                    <div class="left_color_container_feed" id="color_1"></div>
-                    <div class="left_color_container_feed" id="color_1"></div>
-                    <div class="left_color_container_feed" id="color_1"></div>
-                    <div class="left_color_container_feed" id="color_1"></div>
-                    <div class="left_color_container_feed" id="color_1"></div>
+                    <div class="left_color_container_feed" id="color_1" style="background-color:{{color1}};"></div>
+                    <div class="left_color_container_feed" id="color_1" style="background-color:{{color2}};"></div>
+                    <div class="left_color_container_feed" id="color_1" style="background-color:{{color3}};"></div>
+                    <div class="left_color_container_feed" id="color_1" style="background-color:{{color4}};"></div>
+                    <div class="left_color_container_feed" id="color_1" style="background-color:{{color5}};"></div>
                 </div>
                 <div class="other_information">
-                    <p class="created_by">by Rebecalyn Lao</p>
-                    <p class="date_created"> Aug 01, 2019</p>
+                    <p class="created_by">by {{firstname}} {{lastname}}</p>
+                    <p class="date_created"> {{dateCreated}}</p>
                 </div>
             </div>
+            {{/each}}
        
-            <div class="feed_indiv_palette">
+            {{!-- <div class="feed_indiv_palette">
                 <div class="header_information">
                     <p class="palette_name">Rainbow</p>
                     <div class="palette_icons" id="icons_container">
@@ -63,7 +69,7 @@
                     <p class="created_by">by Rebecalyn Lao</p>
                     <p class="date_created"> Aug 01, 2019</p>
                 </div>
-        
-        </div>
+            </div> --}}
+    </div>
 </body>
 </html>

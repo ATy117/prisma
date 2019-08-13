@@ -111,6 +111,13 @@ accountSchema.methods.getFollowed = async function(){
     });
 };
 
+//Used for rerieving all palettes given an ID
+accountSchema.methods.getPalettes = async function(){
+    return await Palette.find({
+        creator: this._id
+    });
+};
+
 // Check if following
 accountSchema.methods.checkIfFollowing = async function(accountID){
     return await Account.findOne({
