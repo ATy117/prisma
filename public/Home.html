@@ -10,6 +10,7 @@
     <script src="anime.min.js"></script>
     <script src="jscolor.js"></script>
     <script src="jquery.js"></script>
+    <script src="home.js"></script>
 </head>
 <body>
     <div class="navbar" id="#navbar_id">
@@ -33,7 +34,7 @@
             </div>
             -->
             <div class="title_register_container">
-                <a href="register" class="register_button_link" id="save_palette"> Save Palette </a>
+                <span class="register_button_link" id="save_palette"> Save Palette </span>
                 <a class="register_button_link" id="palette_randomize"> Randomize!</a>
             </div>
             
@@ -42,14 +43,19 @@
     <div class="display_rainbow_container">
         <button id="red_display" class="jscolor
         {valueElement:'red_display_value', styleElement:'red_display', hash:true}" ></button>
+        <input name="color1" type="hidden" id="red_display_value" value="FFFFFF">
         <button class="jscolor
-        {valueElement:'red_display_value', styleElement:'orange_display', hash:true}" id="orange_display"></button>
+        {valueElement:'orange_display_value', styleElement:'orange_display', hash:true}" id="orange_display"></button>
+        <input name="color2" type="hidden" id="orange_display_value" value="FFFFFF">
         <button class="jscolor
-        {valueElement:'red_display_value', styleElement:'yellow_display', hash:true}" id="yellow_display"></button>
+        {valueElement:'yellow_display_value', styleElement:'yellow_display', hash:true}" id="yellow_display"></button>
+        <input name="color3" type="hidden" id="yellow_display_value" value="FFFFFF">
         <button class="jscolor
-        {valueElement:'red_display_value', styleElement:'green_display', hash:true}" id="green_display"></button>
+        {valueElement:'green_display_value', styleElement:'green_display', hash:true}" id="green_display"></button>
+        <input name="color4" type="hidden" id="green_display_value" value="FFFFFF">
         <button class="jscolor
-        {valueElement:'red_display_value', styleElement:'blue_display', hash:true}" id="blue_display"></button>
+        {valueElement:'blue_display_value', styleElement:'blue_display', hash:true}" id="blue_display"></button>
+        <input name="color5" type="hidden" id="blue_display_value" value="FFFFFF">
     </div>
     <div class="stats_display_container">
         <div class="indiv_stats" id="user_stats">
