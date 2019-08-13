@@ -132,7 +132,7 @@ router.post("/:palette_id/edit_process", urlencoder, (req, res)=>{
 
 
 // Delete a palette
-router.post("/:palette_id/delete", (req, res)=>{ 
+router.post("/:palette_id/delete", async function(req, res){ 
     let palette_id = req.params.palette_id;
 
     // return the results here (close the modal)
@@ -143,7 +143,21 @@ router.post("/:palette_id/delete", (req, res)=>{
             res.send("Success");
         }
     });
+
+    let results = await Palette.deletePalette(palette_id);
+    if (results){
+        let final = await Account.deleteFromEverywhere(results._id);
+        if (final){
+            res.send("Success");
+        } else {
+            res.send(error);
+        }
+        
+    } else {
+        res.send(error);
+    }
 });
+
 
 
 

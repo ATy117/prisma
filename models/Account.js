@@ -85,6 +85,19 @@ accountSchema.statics.searchAccount = async function(query){
         ]});
 };
 
+// Delete this palette from everywhere
+accountSchema.statics.deleteFromEverywhere = async function(paletteID){
+    return await this.updateMany({
+        likedPalettes: {
+            "$in": [paletteID]
+        }
+    }, {
+        $pull: {
+            likedPalettes: paletteID
+        }
+    });
+}
+
 
 
 // METHODS ---------------------------------------------------------------

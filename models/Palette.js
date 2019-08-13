@@ -77,11 +77,11 @@ paletteSchema.statics.updatePalette = function(paletteID, updated, callback){
 };
 
 //Delete a palette
-paletteSchema.statics.deletePalette = function(paletteID, callback){
+paletteSchema.statics.deletePalette = async function(paletteID){
     // remember to delete this from the liked palettes as well where it exists.
-    this.deleteOne({
+    return await this.deleteOne({
         _id : paletteID
-    }, callback); // callback is error and document
+    }); // callback is error and document
 };
 
 // METHODS ---------------------------------------------------------------
