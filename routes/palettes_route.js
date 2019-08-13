@@ -43,6 +43,21 @@ router.get("/add", (req, res)=>{
     });
 });
 
+//Special add
+router.get("/special_add", function(req,res){
+    let username = req.session.username;
+    let firstname = req.account.firstname;
+    res.render("specialAdd.hbs",{
+        username: username,
+        firstname: firstname,
+        color1: req.session.colors_from_home.color1,
+        color2: req.session.colors_from_home.color2,
+        color3: req.session.colors_from_home.color3,
+        color4: req.session.colors_from_home.color4,
+        color5: req.session.colors_from_home.color5
+    });
+});
+
 
 // Processing in adding a palette
 router.post("/add_process", urlencoder, function(req,res){
@@ -69,7 +84,6 @@ router.post("/add_process", urlencoder, function(req,res){
     });
 
     Palette.addPalette(palette, function(palette){
-        console.log(palette._id);
         res.send({
             message: "Success",
             redirect: "/palettes"

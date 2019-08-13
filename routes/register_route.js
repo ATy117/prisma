@@ -45,10 +45,26 @@ router.post("/process", urlencoder, function (req, res){
 
     Account.addAccount(account, function(account){
         req.session.username = account.username;
-        res.redirect("/");
+        if (req.session.colors_from_home){
+            res.redirect("/palettes/special_add");
+        } else {
+            res.redirect("/");
+        }
+        
     }, (error)=>{
         res.send(error);
     })
+});
+
+router.post("/save_from_home", urlencoder, function(req,res){
+    req.session.colors_from_home = {
+        "color1" : req.body.color1,
+        "color2" : req.body.color2,
+        "color3" : req.body.color3,
+        "color4" : req.body.color4,
+        "color5" : req.body.color5
+    }
+    res.send("Saved");
 });
 
 module.exports = router;
