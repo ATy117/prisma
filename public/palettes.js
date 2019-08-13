@@ -102,47 +102,47 @@ $(document).ready(function(){
     // })
 
     $(document).on("mouseover", "#color_1", function(){
-        $("#color_1_hex").css("display", "flex");
+        $(this).children("#color_1_hex").css("display", "flex");
     })
 
     $(document).on("mouseleave", "#color_1", function(){
-        $("#color_1_hex").css("display", "none");
+        $(this).children("#color_1_hex").css("display", "none");
     })
 
     
     $(document).on("mouseover", "#color_2", function(){
-        $("#color_2_hex").css("display", "flex");
+        $(this).children("#color_2_hex").css("display", "flex");
     })
 
     $(document).on("mouseleave", "#color_2", function(){
-        $("#color_2_hex").css("display", "none");
+        $(this).children("#color_2_hex").css("display", "none");
     })
 
     
     $(document).on("mouseover", "#color_3", function(){
-        $("#color_3_hex").css("display", "flex");
+        $(this).children("#color_3_hex").css("display", "flex");
     })
 
     $(document).on("mouseleave", "#color_3", function(){
-        $("#color_3_hex").css("display", "none");
+        $(this).children("#color_3_hex").css("display", "none");
     })
 
     
     $(document).on("mouseover", "#color_4", function(){
-        $("#color_4_hex").css("display", "flex");
+        $(this).children("#color_4_hex").css("display", "flex");
     })
 
     $(document).on("mouseleave", "#color_4", function(){
-        $("#color_4_hex").css("display", "none");
+        $(this).children("#color_4_hex").css("display", "none");
     })
 
     
     $(document).on("mouseover", "#color_5", function(){
-        $("#color_5_hex").css("display", "flex");
+        $(this).children("#color_5_hex").css("display", "flex");
     })
 
     $(document).on("mouseleave", "#color_5", function(){
-        $("#color_5_hex").css("display", "none");
+        $(this).children("#color_5_hex").css("display", "none");
     })
 
 })
