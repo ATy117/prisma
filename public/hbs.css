@@ -88,7 +88,7 @@ body{
 /* MY PALETTES */
 /*-- Add Palette Button --*/
 .add_palette_button{
-
+    cursor: pointer;
     font-family: "font";
     display: flex;
 }
@@ -111,6 +111,7 @@ body{
     margin-top: 43%;
     margin-left: 82%;
     filter: drop-shadow(0px 1px 2px #0000004d);
+    cursor: pointer;
 }
 
 .add_button:hover{
