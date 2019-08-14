@@ -64,6 +64,8 @@ window.onload = function(){
         event.stopPropagation();
     });
 
+};
 
-
+function changeDetected(){
+    $("#palette_done_button").removeClass("no_changes");
 };

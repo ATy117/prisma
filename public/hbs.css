@@ -91,6 +91,7 @@ body{
     cursor: pointer;
     font-family: "font";
     display: flex;
+    z-index: 1999;
 }
 
 .add_button{
@@ -505,6 +506,10 @@ body{
 .palette_generate_button:hover{
     cursor: pointer;
     background-color: var(--gray-hover);
+}
+
+.no_changes{
+    opacity: 0.3;
 }
 
 /* MY PROFILE */
