@@ -53,6 +53,17 @@ window.onload = function(){
         event.stopPropagation();
     });
 
+    $(".palette_name_field").keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            $("#palette_done_button").trigger("click");
+        }
+        //Stop the event from propogation to other handlers
+        //If this line will be removed, then keypress event handler attached
+        //at document level will also be triggered
+        event.stopPropagation();
+    });
+
 
 
 };
