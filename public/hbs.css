@@ -311,13 +311,15 @@ body{
 /* ADD PALETTE */
 .color_palette_container{
     width: 100%;
-    height: 34rem;
+    height: 31.5rem;
     display: flex;
+    background-color: white;
 }
 
 .indiv_color_container{
     margin-left: 0.3rem;
     text-align: center;
+    height: 10rem;
 }
 
 .color_container{
@@ -429,7 +431,7 @@ body{
     background-color: var(--gray-dark);
     border: none;
     height: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
@@ -446,7 +448,8 @@ body{
 .palette_details_container{
     width: 100%;
     height: auto;
-    padding-top: 3rem;
+    padding-top: 4rem;
+    background-color: white;
 }
 
 .palette_name_label{
@@ -1101,11 +1104,12 @@ body{
   }
 
   .color_hex{
-      font-size: 14px;
-      display: flex;
+      font-size: 12.7px;
       justify-content: center;
-      margin-top: 48%;
+      margin-top: 40%;
+      text-align: center;
 
       background-color: white;
+      cursor: pointer;
       display: none;
   }
