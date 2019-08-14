@@ -48,6 +48,32 @@ $(document).ready(function(){
         //at document level will also be triggered
         event.stopPropagation();
     });
+    
+    $(".color_hex").click(function(){
+        let thingy = this;
+        let hex = $(this).attr("data-color");
+        let original = $(this).text();
+        console.log(hex);
+
+        //Copies
+        var $temp = $("<textarea>");
+        $("body").append($temp);
+        $temp.val(hex).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        // Future stuff pag naayos na ung look nito
+        // // Set Text to Copied!
+        // $(this).text("Copied!");
+        // $(this).css("display", "flex");
+
+        // setTimeout(function(){ 
+        //     $(thingy).html(hex+ "<br>Click to Copy!" );
+        //     $(thingy).css("display", "none");
+        // }, 1500);
+        
+
+    });
 
     $(document).on("mouseover", "#color_1", function(){
         $(this).children("#color_1_hex").css("display", "flex");
