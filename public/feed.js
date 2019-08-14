@@ -51,8 +51,8 @@ $(document).ready(function(){
     
     $(".color_hex").click(function(){
         let thingy = this;
-        let hex = $(this).attr("data-color");
         let original = $(this).text();
+        let hex = original.substring(0,7);
         console.log(hex);
 
         //Copies
