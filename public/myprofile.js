@@ -128,4 +128,15 @@ $(document).ready(function(){
 
         $("#liked_count").text(number);
     };
+
+    $(".search_text_input").keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            $(".search_submit_button").trigger("click");
+        }
+        //Stop the event from propogation to other handlers
+        //If this line will be removed, then keypress event handler attached
+        //at document level will also be triggered
+        event.stopPropagation();
+    });
 })
