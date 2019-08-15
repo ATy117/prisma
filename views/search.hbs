@@ -27,71 +27,141 @@
     </div>
     <div class="search_min_navbar">
         <ul class="search_list_navbar">
-            <p class="search_nav_setting bold_util" id="search_nav_palette"> Palettes </p>
-            <p class="search_nav_setting"> | </p>
-            <p class="search_nav_setting" id="search_nav_user"> Users </p>
+            {{#unless palettes}}
+                <p class="search_nav_setting" id="search_nav_palette"> Palettes </p>
+                <p class="search_nav_setting"> | </p>
+                <p class="search_nav_setting  bold_util" id="search_nav_user"> Users </p>
+            {{else}}
+                <p class="search_nav_setting bold_util" id="search_nav_palette"> Palettes </p>
+                <p class="search_nav_setting"> | </p>
+                <p class="search_nav_setting" id="search_nav_user"> Users </p>
+            {{/unless}}
         </ul>
     </div>
     <div class="search_results_container" id="results_container">
-        <div class="search_results_header" id="palette_results_header"> Found {{palettesCount}} results for "{{query}}" Palettes</div>
-        <div class="search_results_header" id="user_results_header" style="display:none;"> Found {{usersCount}} results for "{{query}}" Users</div>
+        {{#if palettes}}
+            <div class="search_results_header" id="palette_results_header"> Found {{palettesCount}} results for "{{query}}" Palettes</div>
+            <div class="search_results_header" id="user_results_header" style="display:none;"> Found {{usersCount}} results for "{{query}}" Users</div>
+        {{else}}
+            <div class="search_results_header" id="palette_results_header"  style="display:none;"> Found {{palettesCount}} results for "{{query}}" Palettes</div>
+            <div class="search_results_header" id="user_results_header"> Found {{usersCount}} results for "{{query}}" Users</div>
+        {{/if}}
         <div class="search_results_user_container">
-            {{#each users}}
-            <div class="search_user_results" style="display:none;">
-                <div class="user_information">
-                    <p class="search_user_firstname">{{firstname}} {{lastname}}</p>
-                    <p class="search_user_username">@{{username}}</p>
-                </div>
-                {{#unless your_account}}
-                    {{#if following}}
-                        <div class="unfollow_user_button" id="follow_button" data-following="following" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Following</span></div>
-                    {{else}}
-                        <div class="follow_user_button" id="follow_button" data-following="notfollowing" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
-                    {{/if}}
-                {{/unless}}
-            </div>
-            {{/each}}
-
-            {{#each palettes}}
-            <div class="search_indiv_palette">
-                <div class="header_information">
-                    <p class="palette_name">{{name}}</p>
-                    <div class="palette_icons" id="icons_container">
-                        {{#if liked}}
-                        <img src="/assets/hearPink.png" class="like_palette" id="like_palette_id" data-liked="liked" data-id="{{id}}">
+            {{#if palettes}}
+                {{#each users}}
+                <div class="search_user_results" style="display:none;">
+                    <div class="user_information">
+                        <p class="search_user_firstname">{{firstname}} {{lastname}}</p>
+                        <p class="search_user_username">@{{username}}</p>
+                    </div>
+                    {{#unless your_account}}
+                        {{#if following}}
+                            <div class="unfollow_user_button" id="follow_button" data-following="following" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Following</span></div>
                         {{else}}
-                        <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id" data-liked="unliked" data-id="{{id}}">
+                            <div class="follow_user_button" id="follow_button" data-following="notfollowing" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
                         {{/if}}
+                    {{/unless}}
+                </div>
+                {{/each}}
+
+                {{#each palettes}}
+                <div class="search_indiv_palette">
+                    <div class="header_information">
+                        <p class="palette_name">{{name}}</p>
+                        <div class="palette_icons" id="icons_container">
+                            {{#if liked}}
+                            <img src="/assets/hearPink.png" class="like_palette" id="like_palette_id" data-liked="liked" data-id="{{id}}">
+                            {{else}}
+                            <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id" data-liked="unliked" data-id="{{id}}">
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="palette_color_container">
+                        <div class="search_color_container" id="color_1" style="background-color:{{color1}};">
+                            <span class="color_hex" id="color_1_hex">{{color1}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_2" style="background-color:{{color2}};">
+                            <span class="color_hex" id="color_2_hex">{{color2}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_3" style="background-color:{{color3}};">
+                            <span class="color_hex" id="color_3_hex">{{color3}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_4" style="background-color:{{color4}};">
+                            <span class="color_hex" id="color_4_hex">{{color4}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_5" style="background-color:{{color5}};">
+                            <span class="color_hex" id="color_5_hex">{{color5}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                    </div>
+                    <div class="other_information">
+                        <p class="created_by">by {{firstname}} {{lastname}}</p>
+                        <p class="date_created"> {{dateCreated}}</p>
                     </div>
                 </div>
-                <div class="palette_color_container">
-                    <div class="search_color_container" id="color_1" style="background-color:{{color1}};">
-                        <span class="color_hex" id="color_1_hex">{{color1}}</span>
-                        <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                {{/each}}
+            {{else}}
+                {{#each users}}
+                <div class="search_user_results">
+                    <div class="user_information">
+                        <p class="search_user_firstname">{{firstname}} {{lastname}}</p>
+                        <p class="search_user_username">@{{username}}</p>
                     </div>
-                    <div class="search_color_container" id="color_2" style="background-color:{{color2}};">
-                        <span class="color_hex" id="color_2_hex">{{color2}}</span>
-                        <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                    {{#unless your_account}}
+                        {{#if following}}
+                            <div class="unfollow_user_button" id="follow_button" data-following="following" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Following</span></div>
+                        {{else}}
+                            <div class="follow_user_button" id="follow_button" data-following="notfollowing" data-id="{{id}}"><span class="follow_user_button_text" id="follow_span">Follow</span></div>
+                        {{/if}}
+                    {{/unless}}
+                </div>
+                {{/each}}
+
+                {{#each palettes}}
+                <div class="search_indiv_palette"  style="display:none;">
+                    <div class="header_information">
+                        <p class="palette_name">{{name}}</p>
+                        <div class="palette_icons" id="icons_container">
+                            {{#if liked}}
+                            <img src="/assets/hearPink.png" class="like_palette" id="like_palette_id" data-liked="liked" data-id="{{id}}">
+                            {{else}}
+                            <img src="/assets/heartGray.png" class="like_palette" id="like_palette_id" data-liked="unliked" data-id="{{id}}">
+                            {{/if}}
+                        </div>
                     </div>
-                    <div class="search_color_container" id="color_3" style="background-color:{{color3}};">
-                        <span class="color_hex" id="color_3_hex">{{color3}}</span>
-                        <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                    <div class="palette_color_container">
+                        <div class="search_color_container" id="color_1" style="background-color:{{color1}};">
+                            <span class="color_hex" id="color_1_hex">{{color1}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_2" style="background-color:{{color2}};">
+                            <span class="color_hex" id="color_2_hex">{{color2}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_3" style="background-color:{{color3}};">
+                            <span class="color_hex" id="color_3_hex">{{color3}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_4" style="background-color:{{color4}};">
+                            <span class="color_hex" id="color_4_hex">{{color4}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
+                        <div class="search_color_container" id="color_5" style="background-color:{{color5}};">
+                            <span class="color_hex" id="color_5_hex">{{color5}}</span>
+                            <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                        </div>
                     </div>
-                    <div class="search_color_container" id="color_4" style="background-color:{{color4}};">
-                        <span class="color_hex" id="color_4_hex">{{color4}}</span>
-                        <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
-                    </div>
-                    <div class="search_color_container" id="color_5" style="background-color:{{color5}};">
-                        <span class="color_hex" id="color_5_hex">{{color5}}</span>
-                        <img src="/assets/copy-pngrepo-com.png" class="copy_icon" id="copy_icon_id">
+                    <div class="other_information">
+                        <p class="created_by">by {{firstname}} {{lastname}}</p>
+                        <p class="date_created"> {{dateCreated}}</p>
                     </div>
                 </div>
-                <div class="other_information">
-                    <p class="created_by">by {{firstname}} {{lastname}}</p>
-                    <p class="date_created"> {{dateCreated}}</p>
-                </div>
-            </div>
-            {{/each}}
+                {{/each}}
+            {{/if}}
         </div>
     </div>
 </body>
