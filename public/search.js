@@ -119,5 +119,81 @@ $(document).ready(function(){
         event.stopPropagation();
     });
 
+    $(".copy_icon").click(function(){
+        let sibling = $(this).prev();
+        let original_hex = $(sibling).text();
+
+        //Copies
+        var $temp = $("<textarea>");
+        $("body").append($temp);
+        $temp.val(original_hex).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        //Future stuff pag naayos na ung look nito
+        // Set Text to Copied!
+        $(sibling).text("Copied!");
+
+        setTimeout(function(){ 
+            $(sibling).text(original_hex);
+        }, 1500);
+        
+
+    });
+
+    $(document).on("mouseover", "#color_1", function(){
+        $(this).children("#color_1_hex").css("display", "flex");
+        $(this).children("#copy_icon_id").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_1", function(){
+        $(this).children("#color_1_hex").css("display", "none");
+        $(this).children("#copy_icon_id").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_2", function(){
+        $(this).children("#color_2_hex").css("display", "flex");
+        $(this).children("#copy_icon_id").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_2", function(){
+        $(this).children("#color_2_hex").css("display", "none");
+        $(this).children("#copy_icon_id").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_3", function(){
+        $(this).children("#color_3_hex").css("display", "flex");
+        $(this).children("#copy_icon_id").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_3", function(){
+        $(this).children("#color_3_hex").css("display", "none");
+        $(this).children("#copy_icon_id").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_4", function(){
+        $(this).children("#color_4_hex").css("display", "flex");
+        $(this).children("#copy_icon_id").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_4", function(){
+        $(this).children("#color_4_hex").css("display", "none");
+        $(this).children("#copy_icon_id").css("display", "none");
+    })
+
+    
+    $(document).on("mouseover", "#color_5", function(){
+        $(this).children("#color_5_hex").css("display", "flex");
+        $(this).children("#copy_icon_id").css("display", "flex");
+    })
+
+    $(document).on("mouseleave", "#color_5", function(){
+        $(this).children("#color_5_hex").css("display", "none");
+        $(this).children("#copy_icon_id").css("display", "none");
+    })
+
 
 })
