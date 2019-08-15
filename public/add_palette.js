@@ -73,50 +73,60 @@ window.onload = function(){
         event.stopPropagation();
     });
 
-     // $("#palette_randomize").click(function(){
-    //     var min=1; 
-    //     var max=50;  
-    //     var random = Math.floor(Math.random() * (+max - +min)) + +min; 
-    //     console.log(random);
+    $("#palette_randomize").click(function(){
+        var min=1; 
+        var max=50;  
+        var random = Math.floor(Math.random() * (+max - +min)) + +min; 
+        console.log(random);
 
-    //     let larray = ["bright", "dark", "bright", "dark", "bright", "dark", "bright", "dark"];
-    //     var lmin=0; 
-    //     var lmax= larray.length;  
-    //     var lrandom = Math.floor(Math.random() * (+lmax - +lmin)) + +lmin;
+        let larray = ["bright", "dark", "bright", "dark", "bright", "dark", "bright", "dark"];
+        var lmin=0; 
+        var lmax= larray.length;  
+        var lrandom = Math.floor(Math.random() * (+lmax - +lmin)) + +lmin;
 
-    //     let lumin;
-    //     let hue;
+        let lumin;
+        let hue;
 
-    //     if (random == 1){
-    //         hue = 'random';
-    //         lumin = larray[lrandom];
-    //         let randomColors = randomColor({
-    //             luminosity: lumin,
-    //             hue: hue,
-    //             count: 5
-    //         });
-    //         $("#styleInput4").css("background-color",randomColors[0]);
-    //         $("#styleInput3").css("background-color",randomColors[1]);
-    //         $("#styleInput2").css("background-color",randomColors[2]);
-    //         $("#styleInput1").css("background-color",randomColors[3]);
-    //         $("#styleInput").css("background-color",randomColors[4]);
-    //     } else {
-    //         hue = '#' + Math.floor(Math.random()*16777215).toString(16);
-    //         lumin = larray[lrandom];
-    //         let randomColors = randomColor({
-    //             luminosity: lumin,
-    //             hue: hue,
-    //             count: 5
-    //         });
-    //         $("#styleInput4").css("background-color",randomColors[0]);
-    //         $("#styleInput3").css("background-color",randomColors[1]);
-    //         $("#styleInput2").css("background-color",randomColors[2]);
-    //         $("#styleInput1").css("background-color",randomColors[3]);
-    //         $("#styleInput").css("background-color",randomColors[4]);
-    //     }
+        if (random == 1){
+            hue = 'random';
+            lumin = larray[lrandom];
+            let randomColors = randomColor({
+                luminosity: lumin,
+                hue: hue,
+                count: 5
+            });
+            $("#red_display").css("background-color",randomColors[0]);
+            $("#orange_display").css("background-color",randomColors[1]);
+            $("#yellow_display").css("background-color",randomColors[2]);
+            $("#green_display").css("background-color",randomColors[3]);
+            $("#blue_display").css("background-color",randomColors[4]);
+            $("#red_display_value").val(randomColors[0]);
+            $("#orange_display_value").val(randomColors[1]);
+            $("#yellow_display_value").val(randomColors[2]);
+            $("#green_display_value").val(randomColors[3]);
+            $("#blue_display_value").val(randomColors[4]);
+        } else {
+            hue = '#' + Math.floor(Math.random()*16777215).toString(16);
+            lumin = larray[lrandom];
+            let randomColors = randomColor({
+                luminosity: lumin,
+                hue: hue,
+                count: 5
+            });
+            $("#red_display").css("background-color",randomColors[0]);
+            $("#orange_display").css("background-color",randomColors[1]);
+            $("#yellow_display").css("background-color",randomColors[2]);
+            $("#green_display").css("background-color",randomColors[3]);
+            $("#blue_display").css("background-color",randomColors[4]);
+            $("#red_display_value").val(randomColors[0]);
+            $("#orange_display_value").val(randomColors[1]);
+            $("#yellow_display_value").val(randomColors[2]);
+            $("#green_display_value").val(randomColors[3]);
+            $("#blue_display_value").val(randomColors[4]);
+        }
 
         
-    // });
+    });
 
 
 };
