@@ -49,28 +49,24 @@ $(document).ready(function(){
         event.stopPropagation();
     });
     
-    $(".color_hex").click(function(){
-        let thingy = this;
-        let original = $(this).text();
-        let hex = original.substring(0,7);
-        console.log(hex);
+    $(".copy_icon").click(function(){
+        let sibling = $(this).prev();
+        let original_hex = $(sibling).text();
 
         //Copies
         var $temp = $("<textarea>");
         $("body").append($temp);
-        $temp.val(hex).select();
+        $temp.val(original_hex).select();
         document.execCommand("copy");
         $temp.remove();
 
-        // Future stuff pag naayos na ung look nito
-        // // Set Text to Copied!
-        // $(this).text("Copied!");
-        // $(this).css("display", "flex");
+        //Future stuff pag naayos na ung look nito
+        // Set Text to Copied!
+        $(sibling).text("Copied!");
 
-        // setTimeout(function(){ 
-        //     $(thingy).html(hex+ "<br>Click to Copy!" );
-        //     $(thingy).css("display", "none");
-        // }, 1500);
+        setTimeout(function(){ 
+            $(sibling).text(original_hex);
+        }, 1500);
         
 
     });

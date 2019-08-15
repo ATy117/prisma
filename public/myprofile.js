@@ -139,6 +139,28 @@ $(document).ready(function(){
         //at document level will also be triggered
         event.stopPropagation();
     });
+
+    $(".copy_icon").click(function(){
+        let sibling = $(this).prev();
+        let original_hex = $(sibling).text();
+
+        //Copies
+        var $temp = $("<textarea>");
+        $("body").append($temp);
+        $temp.val(original_hex).select();
+        document.execCommand("copy");
+        $temp.remove();
+
+        //Future stuff pag naayos na ung look nito
+        // Set Text to Copied!
+        $(sibling).text("Copied!");
+
+        setTimeout(function(){ 
+            $(sibling).text(original_hex);
+        }, 1500);
+        
+
+    });
     
     $(document).on("mouseover", "#color_1", function(){
         $(this).children("#color_1_hex").css("display", "flex");

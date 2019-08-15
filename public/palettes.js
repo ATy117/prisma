@@ -63,43 +63,27 @@ $(document).ready(function(){
         }
     });
 
+    $(".copy_icon").click(function(){
+        let sibling = $(this).prev();
+        let original_hex = $(sibling).text();
 
-    // $("#color_1").mouseover(function(){
-    //     $("#color_1_hex").css("display", "block");
-    // })
+        //Copies
+        var $temp = $("<textarea>");
+        $("body").append($temp);
+        $temp.val(original_hex).select();
+        document.execCommand("copy");
+        $temp.remove();
 
-    // $("#color_1").mouseleave(function(){
-    //     $("#color_1_hex").hide();
-    // })
+        //Future stuff pag naayos na ung look nito
+        // Set Text to Copied!
+        $(sibling).text("Copied!");
 
-    // $("#color_2").mouseover(function(){
-    //     $("#color_2_hex").css("display", "block");
-    // })
+        setTimeout(function(){ 
+            $(sibling).text(original_hex);
+        }, 1500);
+        
 
-    // $("#color_2").mouseleave(function(){
-    //     $("#color_2_hex").hide();
-    // })
-    // $("#color_3").mouseover(function(){
-    //     $("#color_3_hex").css("display", "block");
-    // })
-
-    // $("#color_3").mouseleave(function(){
-    //     $("#color_3_hex").hide();
-    // })
-    // $("#color_4").mouseover(function(){
-    //     $("#color_4_hex").css("display", "block");
-    // })
-
-    // $("#color_4").mouseleave(function(){
-    //     $("#color_4_hex").hide();
-    // })
-    // $("#color_5").mouseover(function(){
-    //     $("#color_5_hex").css("display", "block");
-    // })
-
-    // $("#color_5").mouseleave(function(){
-    //     $("#color_5_hex").hide();
-    // })
+    });
 
     $(document).on("mouseover", "#color_1", function(){
         $(this).children("#color_1_hex").css("display", "flex");
