@@ -23,7 +23,8 @@ router.get("/", function(req,res){
  
     let creator = req.account._id;
 
-    Palette.getPalettes(creator, function(error, palette){    
+    Palette.getPalettes(creator, function(error, palette){   
+        palette = palette.reverse(); 
 
         res.render("palettes.hbs",{
             username: username,

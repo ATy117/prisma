@@ -24,6 +24,7 @@ router.get("/", async function(req,res){
     
     // get liked palettes
     let paletteResults = await account.getLikedPalettes();
+    paletteResults = paletteResults.reverse();
     let palettes = [];
     let palettesCount = 0;
     for (let i= 0; i< paletteResults.length; i++){
