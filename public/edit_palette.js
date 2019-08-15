@@ -95,6 +95,7 @@ window.onload = function(){
             $("#valueInput2").val(randomColors[2].toUpperCase());
             $("#valueInput1").val(randomColors[3].toUpperCase());
             $("#valueInput").val(randomColors[4].toUpperCase());
+            changeDetected();
         } else {
             hue = '#' + Math.floor(Math.random()*16777215).toString(16);
             lumin = larray[lrandom];
@@ -113,6 +114,7 @@ window.onload = function(){
             $("#valueInput2").val(randomColors[2].toUpperCase());
             $("#valueInput1").val(randomColors[3].toUpperCase());
             $("#valueInput").val(randomColors[4].toUpperCase());
+            changeDetected();
         }
 
         
