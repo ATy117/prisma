@@ -55,6 +55,11 @@ window.onload = function(){
             $("#yellow_display").css("background-color",randomColors[2]);
             $("#green_display").css("background-color",randomColors[3]);
             $("#blue_display").css("background-color",randomColors[4]);
+            $("#red_display_value").val(randomColors[0]);
+            $("#orange_display_value").val(randomColors[1]);
+            $("#yellow_display_value").val(randomColors[2]);
+            $("#green_display_value").val(randomColors[3]);
+            $("#blue_display_value").val(randomColors[4]);
         } else {
             hue = '#' + Math.floor(Math.random()*16777215).toString(16);
             lumin = larray[lrandom];
@@ -68,6 +73,11 @@ window.onload = function(){
             $("#yellow_display").css("background-color",randomColors[2]);
             $("#green_display").css("background-color",randomColors[3]);
             $("#blue_display").css("background-color",randomColors[4]);
+            $("#red_display_value").val(randomColors[0]);
+            $("#orange_display_value").val(randomColors[1]);
+            $("#yellow_display_value").val(randomColors[2]);
+            $("#green_display_value").val(randomColors[3]);
+            $("#blue_display_value").val(randomColors[4]);
         }
 
         
