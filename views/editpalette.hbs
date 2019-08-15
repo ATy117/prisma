@@ -11,6 +11,7 @@
     <script src="/jquery.js"></script>
     <script src="/edit_palette.js"></script>
     <script src="/moment.js"></script>
+    <script src="/randomColor.js"></script>
 </head>
 <body style="background-color: white">
     <div class="navbar" id="#navbar_id">
@@ -29,7 +30,7 @@
     <div class="palette_details_container">
         <p class="palette_name_label"> Palette Name: </p>
         <div class="extra_buttons_filed">
-            <input type="text" class="palette_name_field" onchange="changeDetected()" value={{paletteName}}>
+            <input type="text" class="palette_name_field" onchange="changeDetected()" value="{{paletteName}}">
             <div class="palette_generate_button no_changes" id="palette_done_button">Save</div>
             <a href="/palettes" class="palette_generate_button" id="palette_cancel_button"> Cancel </a>
         </div>
