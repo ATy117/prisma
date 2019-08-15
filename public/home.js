@@ -32,7 +32,6 @@ window.onload = function(){
         var min=1; 
         var max=50;  
         var random = Math.floor(Math.random() * (+max - +min)) + +min; 
-        console.log(random);
 
         let larray = ["bright", "dark", "bright", "dark", "bright", "dark", "bright", "dark"];
         var lmin=0; 
