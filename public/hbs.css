@@ -142,6 +142,12 @@ body{
 }
 
 /*--Display of Palettes --*/
+.overlay_feed{
+    padding-top: 3.8rem;
+    width: 100%;
+    height: 100%;
+}
+
 .all_palettes_container{
     width: 100%;
     display: flex;
