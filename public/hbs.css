@@ -539,7 +539,7 @@ body{
 }
 
 .profile_information_container{
-    width: 50%;
+    width: 30%;
     display:flex;
 }
 
@@ -826,18 +826,19 @@ body{
   }
 
   .folow_button_profile{
-      display: flex;
+      display: inline-flex;
       height: 2.3rem;
   }
 
   .profile_follow_user_button{
+    position: absolute;
     background-color: var(--gray-bg);
     height: 1.4rem;
     width: 6rem;
 
     text-align: center;
-    margin-left: 3.8rem;
     margin-top: 0rem;
+    right: 0.5rem;
     padding-top: 0.2rem;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
@@ -845,13 +846,14 @@ body{
 }
 
 .profile_unfollow_user_button{
+    position: absolute;
     background-color: var(--accent-light-pink);
-    height: 1.6rem;
+    height: 1.4rem;
     width: 6rem;
 
     text-align: center;
-    margin-left: 3.8rem;
     margin-top: 0rem;
+    right: 0.5rem;
     padding-top: 0.2rem;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
@@ -859,12 +861,13 @@ body{
   }
 
   .follow_user_button{
+      position: absolute;
       background-color: var(--gray-bg);
       height: 1.6rem;
       width: 6rem;
 
       text-align: center;
-      margin-left: 5rem;
+      margin-left: 14rem;
       margin-top: 0.7rem;
       padding-top: 0.5rem;
 
@@ -873,12 +876,13 @@ body{
   }
 
   .unfollow_user_button{
+      position: absolute;
       background-color: var(--accent-light-pink);
       height: 1.6rem;
       width: 6rem;
 
       text-align: center;
-      margin-left: 5rem;
+      margin-left: 14rem;
       margin-top: 0.7rem;
       padding-top: 0.5rem;
 
@@ -952,15 +956,31 @@ body{
     /*margin-left: 0.1rem;*/
 }
 
+.logout_button_container{
+    height: 1.5rem;
+    width: auto;
+    margin-left: 13rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.logout_button_container:hover{
+    opacity: 1;
+}
+
 .logout_button{
-    font-family: "font";
+    /* font-family: "font";
     color: var(--font-color);
     background-color: var(--gray-dark);
     filter:drop-shadow(0px 1px 2px #0000005d);
     margin-left: 50%;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    text-decoration: none;
+    text-decoration: none; */
+
+    background-image: url("./assets/logout.png");
+
 }
 
 .generate_button{
@@ -1111,7 +1131,7 @@ body{
   .color_hex{
       font-size: 12.7px;
       justify-content: center;
-      margin-top: 50%;
+      margin-top: 40%;
       margin-left: 14%;
       text-align: center;
       color: white;
@@ -1120,4 +1140,14 @@ body{
       background-color: #0000006c;
       cursor: pointer;
       display: none;
+  }
+
+  .copy_icon{
+      height: 1.5rem;
+      width: auto;
+      margin-left: 34%;
+      margin-top: 0.2rem;
+      filter: drop-shadow(0px 1px 2px #00000065);
+      display: none;
+      cursor: pointer;
   }
