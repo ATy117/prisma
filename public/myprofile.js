@@ -215,4 +215,8 @@ $(document).ready(function(){
         $(this).children("#color_5_hex").css("display", "none");
         $(this).children("#copy_icon_id").css("display", "none");
     })
+
+    $(".logout_button_container").click(function(){
+        window.location.href = "/logout";
+    })
 })
