@@ -6,11 +6,23 @@ $(document).ready(function(){
 
         index = shuffle(index);
 
-        $("#red_display").css("background-color", colors[index[0]]);
-        $("#orange_display").css("background-color", colors[index[1]]);
-        $("#yellow_display").css("background-color", colors[index[2]]);
-        $("#green_display").css("background-color", colors[index[3]]);
-        $("#blue_display").css("background-color", colors[index[4]]);
+        $("#red_box").css("background-color", colors[index[0]]);
+        $("#orange_box").css("background-color", colors[index[1]]);
+        $("#yellow_box").css("background-color", colors[index[2]]);
+        $("#green_box").css("background-color", colors[index[3]]);
+        $("#blue_box").css("background-color", colors[index[4]]);
+
+        $("#red_box1").css("background-color", colors[index[0]]);
+        $("#orange_box1").css("background-color", colors[index[1]]);
+        $("#yellow_box1").css("background-color", colors[index[2]]);
+        $("#green_box1").css("background-color", colors[index[3]]);
+        $("#blue_box1").css("background-color", colors[index[4]]);
+
+        $("#red_box2").css("background-color", colors[index[0]]);
+        $("#orange_box2").css("background-color", colors[index[1]]);
+        $("#yellow_box2").css("background-color", colors[index[2]]);
+        $("#green_box2").css("background-color", colors[index[3]]);
+        $("#blue_box2").css("background-color", colors[index[4]]);
     }, 1500)
 
     function shuffle(array) {
@@ -32,3 +44,9 @@ $(document).ready(function(){
         return array;
       }
 })
+
+anime({
+  targets: '#nav_list_id',
+  duration: 2000,
+  translateX: 20,
+});
