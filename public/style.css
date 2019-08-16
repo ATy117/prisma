@@ -92,7 +92,7 @@ body{
     font-family: "font";
 
     margin-top: 3rem;
-    margin-left: 5.2rem;
+    margin-left: 10rem;
 }
 
 .tagline{
@@ -176,6 +176,7 @@ body{
 
     margin-left: 1.5rem;
     transition: all 0.5s;
+    cursor: pointer;
 }
 #orange_display{
     width: 13rem;
@@ -187,6 +188,7 @@ body{
 
     margin-left: 1.5rem;
     transition: all 0.5s;
+    cursor: pointer;
 }
 #yellow_display{
     width: 13rem;
@@ -198,6 +200,7 @@ body{
 
     margin-left: 1.5rem;
     transition: all 0.5s;
+    cursor: pointer;
 }
 #green_display{
     width: 13rem;
@@ -209,6 +212,7 @@ body{
 
     margin-left: 1.5rem;
     transition: all 0.5s;
+    cursor: pointer;
 }
 #blue_display{
     width: 13rem;
@@ -220,6 +224,14 @@ body{
 
     margin-left: 1.5rem;
     transition: all 0.5s;
+    cursor: pointer;
+}
+
+.overlay_home{
+    position: absolute;
+    top: 0;
+    right: 4rem;
+    margin-top: 6rem;
 }
 
 /*-- Web App Stats --*/
