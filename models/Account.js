@@ -34,6 +34,10 @@ accountSchema.pre('save', function(next) {
     next();
 });
 
+accountSchema.statics.getAll = async function(){
+    return await this.find();
+}
+
 //Retrieve account given ID, navigation purposes
 accountSchema.statics.getAccountByUsername = function (username, callback){
     this.findOne({

@@ -40,6 +40,10 @@ paletteSchema.statics.getPaletteByID = function(id, callback){
     }, callback);
 };
 
+paletteSchema.statics.getAll = async function(){
+    return await this.find();
+}
+
 
 //Used for adding palettes given palette object, then return that object
 paletteSchema.statics.addPalette = function(palette, callback){

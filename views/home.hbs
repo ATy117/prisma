@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prisma | Home</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/assets/eyedropperLogoPink.png" type="image" sizes="16x16">
+    <script src="/anime.min.js"></script>
+    <script src="/jscolor.js"></script>
+    <script src="/jquery.js"></script>
+    <script src="/randomColor.js"></script>
+    <script src="/home.js"></script>
+</head>
+<body>
+    <div class="navbar" id="#navbar_id">
+        <ul class="nav_list" id="nav_list_id">
+            <a href="/" class="nav_settings" style="font-weight: bold;"> Prisma </a>
+            <p class="nav_settings" id="nav_wall"> | </p>
+            <a href="/about" class="nav_settings"> About </a>
+            <p class="nav_settings" id="nav_wall"> | </p>
+            <a href="/login" class="nav_settings"> Login </a>
+        </ul>
+    </div>
+    <div class="title_container">
+        <img src="/assets/PrismaShadow.png" class="logo">
+        <div class="title_details">
+            <div class="title_register_container">
+                <span class="register_button_link" id="palette_randomize"> Randomize!</span>
+                <span class="register_button_link" id="save_palette"> Save Palette </span>
+            </div>
+            
+        </div>
+    </div>
+    <div class="display_rainbow_container">
+        <button id="red_display" class="jscolor
+        {valueElement:'red_display_value', styleElement:'red_display', hash:true}" ></button>
+        <input name="color1" type="hidden" id="red_display_value" value="FFFFFF">
+        <button class="jscolor
+        {valueElement:'orange_display_value', styleElement:'orange_display', hash:true}" id="orange_display"></button>
+        <input name="color2" type="hidden" id="orange_display_value" value="FFFFFF">
+        <button class="jscolor
+        {valueElement:'yellow_display_value', styleElement:'yellow_display', hash:true}" id="yellow_display"></button>
+        <input name="color3" type="hidden" id="yellow_display_value" value="FFFFFF">
+        <button class="jscolor
+        {valueElement:'green_display_value', styleElement:'green_display', hash:true}" id="green_display"></button>
+        <input name="color4" type="hidden" id="green_display_value" value="FFFFFF">
+        <button class="jscolor
+        {valueElement:'blue_display_value', styleElement:'blue_display', hash:true}" id="blue_display"></button>
+        <input name="color5" type="hidden" id="blue_display_value" value="FFFFFF">
+    </div>
+    <div class="stats_display_container">
+        <div class="indiv_stats" id="user_stats">
+            <div class="indiv_num_stats"> {{users}} </div>
+            <div class="indiv_label_stats"> users </div>
+        </div>
+        <hr class="vertical_bars">
+        <div class="indiv_stats">
+            <div class="indiv_num_stats"> {{palettes}}</div>
+            <div class="indiv_label_stats"> palettes </div>
+        </div>
+    </div>
+    <div class="sample_palette_container">
+        <div class="sample_palette_details">
+            <div class="sample_details_top">
+                A color palette, or a set of colors, often define a certain pattern of colors, that when put together, create a visually pleasing impression and evoke an overall feel towards it.
+            </div>
+            <div class="sample_details_bottom">
+                Staring any artistic project? Whether it be a website, a poster, or simply a personal artwork, Prisma can help you define and create your color palette and share them to the world. You might even get some inspiration from others.
+            </div>
+        </div>
+        <div class="sample_palette_set">
+            <div class="sample_name"> Rainbow </div>
+            <div class="sample_rainbow">
+                <div class="red_sample"></div>
+                <div class="orange_sample"></div>
+                <div class="yellow_sample"></div>
+                <div class="green_sample"></div>
+                <div class="blue_sample"></div>
+            </div>
+            <div class="sample_made_by"> by @prisma </div>
+        </div>
+    </div>
+</body>
+</html>

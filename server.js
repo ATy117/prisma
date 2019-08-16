@@ -12,6 +12,10 @@ mongoose.connect("mongodb://localhost:27017/prisma", {
     useNewUrlParser: true
 });
 
+// Models
+const {Account} = require("./models/Account");
+const {Palette} = require("./models/Palette");
+
 //Middlewares
 const account_getter = require(__dirname+"/middleware/get_user");
 const login_checker = require(__dirname+"/middleware/check_user");
@@ -57,9 +61,14 @@ app.use('/home', require('./routes/home_route'));
 app.use('/social', require('./routes/social_route'));
 
 // Home Pages
-app.get("/", function(req,res){
+app.get("/", async function(req,res){
     if (!req.session.username){
-        res.sendFile(__dirname + "/public/Home.html");
+        let users = await Account.getAll();
+        let palettes = await Palette.getAll();
+        res.render("home.hbs",{
+            users: users.length,
+            palettes: palettes.length
+        });
     } else {
         res.redirect("/home");
     }
