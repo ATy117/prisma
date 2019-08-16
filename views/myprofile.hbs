@@ -26,7 +26,9 @@
         </ul>
     </div>
     
-    <img src="/assets/overlay_like.png" class="overlay_profile">
+    
+    {{#unless palettes}}
+        <img src="/assets/overlay_like.png" class="overlay_profile">
     <div class="profile_header_container">
         <div class="profile_name_container">
             <p class="profile_name" id="profile_firstname"> {{firstname}} {{lastname}} </p>
@@ -50,13 +52,41 @@
             </div>
         </div>
             <img src="/assets/logout.png" class="logout_button_container"> 
+        </div>
+        <div class="profile_body_container">
+            <div class="profile_body">
+                <p class="profile_body_header">Liked Palettes: </p>
+            </div>
+        </div>
+    {{else}}
+    <div class="profile_header_container">
+        <div class="profile_name_container">
+            <p class="profile_name" id="profile_firstname"> {{firstname}} {{lastname}} </p>
+            <p class="profile_name" id="profile_username"> @{{username}} </p>
+        </div>
         
-    </div>
-
-    <div class="profile_body_container">
-        <div class="profile_body">
-            <p class="profile_body_header">Liked Palettes: </p>
-            <div class="profile_palettes_container">
+        <div class="profile_information_container">
+            <div class="profile_details_container" id="followers_container">
+                <p class="profile_details_num"> {{followerCount}} </p>
+                <p class="profile_details_word">followers</p>
+            </div>
+            <p class="profile_details_divider">|</p>
+            <div class="profile_details_container"id="following_container">
+                <p class="profile_details_num" > {{followingCount}} </p>
+                <p class="profile_details_word">following</p>
+            </div>
+            <p class="profile_details_divider">|</p>
+            <div class="profile_details_container">
+                <p class="profile_details_num" id="liked_count"> {{likedCount}} </p>
+                <p class="profile_details_word">liked palettes</p>
+            </div>
+        </div>
+            <img src="/assets/logout.png" class="logout_button_container"> 
+        </div>
+        <div class="profile_body_container">
+            <div class="profile_body">
+                <p class="profile_body_header">Liked Palettes: </p>
+                <div class="profile_palettes_container">
                 {{#each palettes}}
                 <div class="profile_indiv_palette">
                     <div class="header_information">
@@ -94,8 +124,9 @@
                 </div>
                 {{/each}}
             </div>
+            </div>
         </div>
-    </div>
+    {{/unless}}
     <!--Modal Content Following -->
     <div id="myModal_followers" class="modal">
         <div class="modal-content-followers">

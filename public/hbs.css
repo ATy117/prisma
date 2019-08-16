@@ -359,6 +359,8 @@ body{
     width: 16rem;
 
     margin-top: 1rem;
+    
+    transition: all 0.45s;
 }
 
 #styleInput1{
@@ -370,6 +372,8 @@ body{
 
     height: 18rem;
     width: 16rem;
+    
+    transition: all 0.45s;
 
     margin-top: 1rem;
 }
@@ -383,6 +387,8 @@ body{
 
     height: 18rem;
     width: 16rem;
+    
+    transition: all 0.45s;
 
     margin-top: 1rem;
 }
@@ -398,6 +404,8 @@ body{
     width: 16rem;
 
     margin-top: 1rem;
+    
+    transition: all 0.45s;
 }
 
 #styleInput4{
@@ -411,6 +419,8 @@ body{
     width: 16rem;
 
     margin-top: 1rem;
+    
+    transition: all 0.45s;
 }
 
 #styleInput:hover{
@@ -585,6 +595,7 @@ body{
     margin-left: 1.2rem;
     margin-right: 1.2rem;
     margin-top: 0.7rem;
+    z-index: 999;
 }
 
 #followers_container:hover{
@@ -659,6 +670,7 @@ body{
     cursor: pointer;
     
     filter: drop-shadow(0px 2px 3px #0000004c);
+    transition: all 0.75s;
 }
 
 #like_palette_id{
@@ -867,6 +879,7 @@ body{
   .folow_button_profile{
       display: inline-flex;
       height: 2.3rem;
+      transition: all 0.75s;
   }
 
   .profile_follow_user_button{
@@ -882,6 +895,7 @@ body{
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;
+    transition: all 0.45s;
 }
 
 .profile_unfollow_user_button{
@@ -897,6 +911,7 @@ body{
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;
+    transition: all 0.45s;
   }
 
   .follow_user_button{
@@ -912,6 +927,7 @@ body{
 
       filter: drop-shadow(0px 1px 2px #0000002c);
       cursor: pointer;
+      transition: all 0.45s;
   }
 
   .unfollow_user_button{
@@ -927,6 +943,8 @@ body{
 
       filter: drop-shadow(0px 1px 2px #0000002c);
       cursor: pointer;
+      
+      transition: all 0.45s;
   }
 
   .unfollow_user_button:hover{
@@ -1002,6 +1020,7 @@ body{
     margin-top: 1rem;
     cursor: pointer;
     opacity: 0.3;
+    z-index: 999;
 }
 
 .logout_button_container:hover{
@@ -1179,6 +1198,8 @@ body{
       background-color: #0000006c;
       cursor: pointer;
       display: none;
+      
+    transition: all 0.45s;
   }
 
   .copy_icon{
@@ -1189,4 +1210,6 @@ body{
       filter: drop-shadow(0px 1px 2px #00000065);
       display: none;
       cursor: pointer;
+      
+    transition: all 0.45s;
   }
