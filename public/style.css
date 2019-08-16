@@ -37,7 +37,7 @@ body{
     filter: drop-shadow(3px 3px 3px #0000003d);
     z-index: 1000;
 
-    text-align: center;
+    text-align: right;
 }
 
 .navbar.scrolled{
@@ -48,9 +48,7 @@ body{
 .nav_list{
     display: flex;
     width: 300px;
-
     background-color: var(--gray-bg);
-    animation: slideIn .5s forwards;
 }
 
 .nav_settings{
@@ -91,8 +89,12 @@ body{
 .title_details{
     font-family: "font";
 
-    margin-top: 3rem;
-    margin-left: 10rem;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    background-image: url("/assets/overlay_home.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
 }
 
 .tagline{
@@ -109,8 +111,8 @@ body{
 .title_register_container{
     text-align: center;
     font-size: 20px;
-    margin-top: 10rem;
-    left: 0;
+    margin-top: 12rem;
+    
 }
 
 #save_palette{
@@ -682,6 +684,8 @@ body{
     height: 5rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
+    
+    transition: all 0.3s;
 }
 
 #red_box{
@@ -701,6 +705,46 @@ body{
 }
 
 #blue_box{
+    background-color: var(--box-B);
+}
+
+#red_box1{
+    background-color: var(--box-R);
+}
+
+#orange_box1{
+    background-color: var(--box-O);
+}
+
+#yellow_box1{
+    background-color: var(--box-Y);
+}
+
+#green_box1{
+    background-color: var(--box-G);
+}
+
+#blue_box1{
+    background-color: var(--box-B);
+}
+
+#red_box2{
+    background-color: var(--box-R);
+}
+
+#orange_box2{
+    background-color: var(--box-O);
+}
+
+#yellow_box2{
+    background-color: var(--box-Y);
+}
+
+#green_box2{
+    background-color: var(--box-G);
+}
+
+#blue_box2{
     background-color: var(--box-B);
 }
 
