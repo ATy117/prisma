@@ -44,9 +44,3 @@ $(document).ready(function(){
         return array;
       }
 })
-
-anime({
-  targets: '#nav_list_id',
-  duration: 2000,
-  translateX: 20,
-});
