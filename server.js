@@ -1,4 +1,6 @@
 const express = require("express");
+const CONNECTION_URI = process.env.MONGODB_URI || "mongodb://localhost/prisma";
+const PORT = process.env.PORT || 3000;
 const bodyparser = require("body-parser");
 const app = express();
 const urlencoder = bodyparser.urlencoded({
@@ -8,9 +10,11 @@ const urlencoder = bodyparser.urlencoded({
 //DBS and Mongoose
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/prisma", {
-    useNewUrlParser: true
-});
+mongoose.set("debug", true); 
+mongoose.connect(CONNECTION_URI, {
+    useNewUrlParser: true,
+    useMongoClient: true 
+}); 
 
 // Models
 const {Account} = require("./models/Account");
@@ -85,6 +89,6 @@ app.get("/about", function(req,res){
     res.sendFile(__dirname + "/public/About.html");
 });
 
-app.listen(3000, function(){
+app.listen(PORT, function(){
     console.log("Port is Live");
 });
