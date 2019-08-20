@@ -63,7 +63,7 @@ body{
     color: black;
     text-decoration: none;  
     text-align: center;
-    margin-left: 1.3rem;
+    margin-left: 20.8px;
 }
 
 #nav_wall{
@@ -79,7 +79,7 @@ body{
 
 .nav_search_form{
     display: inline-flex;
-    margin-left: 35rem;
+    margin-left: 560px;
 
 }
 
@@ -94,10 +94,10 @@ body{
 }
 
 .add_button{
-    width: 27rem;
-    height: 11.5rem;
+    width: 432px;
+    height: 184px;
     border-style: dashed;
-    border-width: 0.2rem;
+    border-width: 3.2px;
     border-color: #807f7f;
     background-color: var(--gray-dark);
 
@@ -115,7 +115,7 @@ body{
 
     border-radius: 2px;
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .add_button:hover{
@@ -143,7 +143,7 @@ body{
 
 /*--Display of Palettes --*/
 .overlay_feed{
-    padding-top: 3.8rem;
+    padding-top: 60.8px;
     width: 100%;
     height: 100%;
 }
@@ -151,17 +151,16 @@ body{
 .all_palettes_container{
     width: 100%;
     display: flex;
-    padding-top: 4rem;
+    padding-top: 64px;
 
     font-family: "font";
     flex-wrap: wrap;
-
 }
 
 .all_mypalettes_container{
     width: 100%;
     display: flex;
-    padding-top: 4rem;
+    padding-top: 64px;
 
     font-family: "font";
     flex-wrap: wrap;
@@ -170,30 +169,30 @@ body{
 
 .left_side_palettes{
     width: 33.33%;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .right_side_palettes{
     width: 33.33%;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .middle_side_palettes{
     width: 33.33%;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .header_information{
     display: flex;
-    padding-top: 0.5rem;
+    padding-top: 8px;
 }
 
 .indiv_palette{
     font-family: "font";
-    width: 27rem;
-    height: 11.5rem;
+    width: 432px;
+    height: 184px;
     border-style: solid;
-    border-width: 0.2rem;
+    border-width: 3.2px;
     border-color: white;
 
     background-color: white;
@@ -201,24 +200,24 @@ body{
     filter: drop-shadow(0px 2px 3px #0000004c);
 
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 .feed_indiv_palette{
     font-family: "font";
-    width: 27rem;
-    height: 13rem;
+    width: 432px;
+    height: 208px;
 
     background-color: white;
     border-radius: 2px;
     filter: drop-shadow(0px 2px 3px #0000004c);
 
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .right_indiv_palette{
-    width: 30rem;
-    height: 13rem;
+    width: 480px;
+    height: 208px;
 
     background-color: var(--gray-dark);
     border-radius: 2px;
@@ -230,20 +229,20 @@ body{
 .palette_icons{
     display: flex;
     margin-left: auto;
-    margin-right: 0.5rem;
+    margin-right: 8px;
 }
 
 .palette_name{
     font-size: 20px;
     font-weight: bold;
-    margin-top: 0.3rem;
-    margin-left: 0.4rem;
-    margin-bottom: 0.8rem;
+    margin-top: 4.8px;
+    margin-left: 6.4px;
+    margin-bottom: 12.8px;
 }
 
 .edit_button{
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 22.4px;
+    height: 22.4px;
     opacity: 0.8;
 
     cursor: pointer;
@@ -251,9 +250,9 @@ body{
 }
 
 .delete_button{
-    width: 1.4rem;
-    height: 1.4rem;
-    margin-left: 0.5rem;
+    width: 22.4px;
+    height: 22.4px;
+    margin-left: 8px;
     opacity: 0.7;
 
     cursor: pointer;
@@ -262,15 +261,15 @@ body{
 .delete_confirmation_button{
     font-family: "font";
     background-color: var(--gray-bg);
-    height: 2rem;
-    width: 6rem;
+    height: 32px;
+    width: 96px;
     text-align: center;
     font-weight: bold;
 
-    margin-top: 0.4rem;
-    margin-right: 0.6rem;
-    margin-left: 0.5rem;
-    padding-top: 1rem;
+    margin-top: 6.4px;
+    margin-right: 9.6px;
+    margin-left: 8px;
+    padding-top: 16px;
     filter: drop-shadow(0px 1px 2px #0000003b);
     
 
@@ -283,12 +282,12 @@ body{
 
 .palette_color_container{
     display: flex;
-    margin-left: 0.2rem;
+    margin-left: 3.2px;
 }
 
 .left_color_container{
-    width: 5.3rem;
-    height: 6.4rem;
+    width: 84.8px;
+    height: 102.4px;
     /*border: solid;
     border-width: 0.2rem;
     border-color: var(--gray-bg);*/
@@ -299,24 +298,24 @@ body{
 }
 
 .left_color_container_feed{
-    width: 5.3rem;
-    height: 7.3rem;
+    width: 84.8px;
+    height: 116.8px;
     background-color: var(--box-R);
     filter: drop-shadow(0px 1px 2px #0000002c);
 }
 
 .other_information{
     font-size: 14px;
-    margin-left: 0.4rem;
+    margin-left: 6.4px;
 }
 
 .created_by{
-    margin-top: 0.4rem;;
+    margin-top: 6.4px;
     margin-bottom: 0;
 }
 
 .date_created{
-    margin-top: 0.2rem;
+    margin-top: 3.2px;
 }
 
 /* END OF MY PALETTES */
@@ -330,35 +329,35 @@ body{
 }
 
 .indiv_color_container{
-    margin-left: 0.3rem;
+    margin-left: 4.8px;
     text-align: center;
-    height: 10rem;
+    height: 160px;
 }
 
 .color_container{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 23rem;
-    width: 14rem;
+    height: 368px;
+    width: 224px;
 
-    margin-top: 5rem;
+    margin-top: 80px;
 }
 
 #styleInput{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 18rem;
-    width: 16rem;
+    height: 288px;
+    width: 256px;
 
-    margin-top: 1rem;
+    margin-top: 16px;
     
     transition: all 0.45s;
 }
@@ -367,43 +366,43 @@ body{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 18rem;
-    width: 16rem;
+    height: 288px;
+    width: 256px;
     
     transition: all 0.45s;
 
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 #styleInput2{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 18rem;
-    width: 16rem;
+    height: 288px;
+    width: 256px;
     
     transition: all 0.45s;
 
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 #styleInput3{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 18rem;
-    width: 16rem;
+    height: 288px;
+    width: 256px;
 
-    margin-top: 1rem;
+    margin-top: 16px;
     
     transition: all 0.45s;
 }
@@ -412,13 +411,13 @@ body{
     background-color: #ffffff;
     border: solid;
     border-color: var(--gray-bg);
-    border-width: 0.5rem;
+    border-width: 8px;
     filter: drop-shadow(0px 1px 4px #0000002c);
 
-    height: 18rem;
-    width: 16rem;
+    height: 288px;
+    width: 256px;
 
-    margin-top: 1rem;
+    margin-top: 16px;
     
     transition: all 0.45s;
 }
@@ -453,8 +452,8 @@ body{
     font-size: 20px;
     background-color: var(--gray-dark);
     border: none;
-    height: 2rem;
-    margin-top: 1rem;
+    height: 32px;
+    margin-top: 16px;
     text-align: center;
 }
 
@@ -471,7 +470,7 @@ body{
 .palette_details_container{
     width: 100%;
     height: auto;
-    padding-top: 4rem;
+    padding-top: 64px;
     background-color: white;
 }
 
@@ -479,18 +478,18 @@ body{
     font-family: "font";
     font-size: 20px;
 
-    margin-left: 10rem;
-    margin-bottom: 0.5rem;
+    margin-left: 160px;
+    margin-bottom: 8px;
 }
 
 .palette_name_field{
     font-family: "font";
     font-size: 20px;
-    width: 30rem;
-    height: 2rem;
+    width: 480px;
+    height: 32px;
 
-    margin-left: 10rem;
-    margin-top: 0rem;   
+    margin-left: 160px;
+    margin-top: 0px;   
 }
 
 .extra_buttons_filed{
@@ -498,11 +497,11 @@ body{
 }
 
 #palette_done_button{
-    margin-left: 5rem;
+    margin-left: 80px;
 }
 
 #palette_cancel_button{
-    margin-left: 2rem;
+    margin-left: 32px;
     margin-right: 0;
 
     text-decoration: none;
@@ -519,9 +518,9 @@ body{
     font-family: "font";
     font-size: 20px;
     font-weight: bold;
-    width: 10rem;
+    width: 160px;
     text-align: center;
-    padding-top: 0.5rem;
+    padding-top: 8px;
     filter: drop-shadow(0px 1px 2px #0000002c);
 }
 
@@ -530,12 +529,12 @@ body{
     font-family: "font";
     font-size: 20px;
     font-weight: bold;
-    width: 10rem;
+    width: 160px;
     text-align: center;
-    padding-top: 0.6rem;
-    height: 2rem;
+    padding-top: 9.6px;
+    height: 32px;
     filter: drop-shadow(0px 1px 2px #0000002c);
-    margin-top: 2rem;
+    margin-top: 32px;
     margin-left: 45%;
 }
 
@@ -556,12 +555,12 @@ body{
 /* MY PROFILE */
 .overlay_profile{
     position: absolute;
-    padding-top: 1.7rem;
+    padding-top: 27.2px;
 }
 
 .profile_header_container{
     width: 100%;
-    height: 5rem;
+    height: 80px;
     display: flex;
 
     font-family: "font";
@@ -574,13 +573,13 @@ body{
     font-size: 20px;
     text-align: left;
 
-    margin-top: 0.7rem;
+    margin-top: 11.2px;
 }
 
 .profile_name{
     margin:0;
     padding-left: 50%;
-    padding-bottom: 0.5rem;
+    padding-bottom: 8px;
     
 }
 
@@ -592,9 +591,9 @@ body{
 .profile_details_container{
     text-align: center;
 
-    margin-left: 1.2rem;
-    margin-right: 1.2rem;
-    margin-top: 0.7rem;
+    margin-left: 19.2px;
+    margin-right: 19.2px;
+    margin-top: 11.2px;
     z-index: 999;
 }
 
@@ -646,27 +645,27 @@ body{
     display: flex;
 
     background-color: var(--gray-dark);
-    padding-top: 1rem;
+    padding-top: 16px;
     flex-wrap: wrap;
 }
 
 .profile_indiv_palette{
-    width: 27rem;
-    height: 13rem;
+    width: 432px;
+    height: 208px;
 
     background-color: white;
     border-radius: 2px;
     filter: drop-shadow(0px 2px 3px #0000004c);
 
     margin: 0 auto;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .like_palette{
-    width: 1.5rem;
+    width: 24px;
     height: auto;
 
-    padding-top: 0.3rem;
+    padding-top: 4.8px;
     cursor: pointer;
     
     filter: drop-shadow(0px 2px 3px #0000004c);
@@ -674,50 +673,50 @@ body{
 }
 
 #like_palette_id{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 
-    padding-top: 0.3rem;
+    padding-top: 4.8px;
     cursor: pointer;
     filter: drop-shadow(0px 2px 3px #0000004c);
 }
 
 .like_palette_color{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
 
-    padding-top: 0.3rem;
+    padding-top: 4.8px;
     cursor: pointer;
 }
 
 /* SEARCH PAGE */
 .search_logo_container{
     width: 100%;
-    height: 20rem;
-    padding-top: 5rem;
+    height: 320px;
+    padding-top: 80px;
 
     display: flex;
 }
 
 .search_logo_shadow{
-    height: 17rem;
+    height: 272px;
     width: auto;
 
-    margin-left: 10rem;
+    margin-left: 160px;
 }
 
 .search_logo_details{
     font-family: "font";
     font-size: 18px;
-    width: 25rem;
+    width: 400px;
 
     text-align: center;
-    margin-left: 10rem;
-    margin-top: 2rem;
+    margin-left: 160px;
+    margin-top: 32px;
 }
 
 .search_container{
-    padding-top: 6rem;
+    padding-top: 96px;
     text-align: center;
 }
 
@@ -725,18 +724,18 @@ body{
     font-family: "font";
     color: var(--font-color);
     font-size: 16px;
-    height:1.5rem;
-    width: 5rem;
+    height:24px;
+    width: 80px;
 
     border: none;
     border-radius: 10px;
 
     filter: drop-shadow(0px 1px 2px #00000034);
-    margin-right: 0.2rem;
+    margin-right: 3.2px;
 
     background-color: var(--gray-dark);
     text-decoration: none;
-    padding-top: 0.3rem;
+    padding-top: 4.8px;
 
     cursor: pointer;
 }
@@ -747,12 +746,12 @@ body{
 }
 
 .search_text_input{
-    width: 15rem;
-    height: 1.8rem;
+    width: 240px;
+    height: 32.4px;
 
     font-family: "font";
     font-size: 20px;
-    margin-left: 0.5rem;
+    margin-left: 8px;
 
     border-radius: 10px;
     border:none;
@@ -766,7 +765,7 @@ body{
     width: 60px;
     height: 34px;
 
-    margin-top: 2rem;
+    margin-top: 32px;
   }
   
   /* Hide default HTML checkbox */
@@ -820,24 +819,24 @@ body{
   .toggle_label{
       font-family: "font";
       font-size: 16px;
-      margin-top: 2.4rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin-top: 38.4px;
+      margin-left: 16px;
+      margin-right: 16px;
   }
 
   .search_results_container{
     width: 80%;
-    height: 40rem;
+    height: 640px;
     margin-left: 10%;
     margin-right: 10%;
-    padding-top: 1rem;
+    padding-top: 16px;
   }
 
   .search_results_header{
       font-family: "font";
       font-size: 16px;
       color: #646363;
-      margin-left: 1rem;
+      margin-left: 16px;
   }
 
   .search_results_user_container{
@@ -851,47 +850,47 @@ body{
       font-size: 16px;
       color:var(--font-color);
       background-color: var(--gray-dark);
-      width: 21rem;
-      height: 4rem;
+      width: 336px;
+      height: 64px;
 
       display: flex;
       border-radius: 10px;
       filter: drop-shadow(0px 1px 3px #0000004d);
-      margin-top: 0.5rem;
-      margin-left: 1rem;
+      margin-top: 8px;
+      margin-left: 16px;
   }
 
   .user_information{
-      padding-left: 0.7rem;
+      padding-left: 11.2px;
   }
 
   .search_user_firstname{
       font-weight: bold;
-      margin-top: 0.4rem;
+      margin-top: 6.4px;
       margin-bottom: 0;
   }
 
   .search_user_username{
-      margin-top: 0.2rem;
+      margin-top: 3.2px;
       margin-bottom: 0;
   }
 
   .folow_button_profile{
       display: inline-flex;
-      height: 2.3rem;
+      height: 36.8px;
       transition: all 0.75s;
   }
 
   .profile_follow_user_button{
     position: absolute;
     background-color: var(--gray-bg);
-    height: 1.4rem;
-    width: 6rem;
+    height: 22.4px;
+    width: 96px;
 
     text-align: center;
-    margin-top: 0rem;
-    right: 0.5rem;
-    padding-top: 0.2rem;
+    margin-top: 0px;
+    right: 8px;
+    padding-top: 3.2px;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;
@@ -901,13 +900,13 @@ body{
 .profile_unfollow_user_button{
     position: absolute;
     background-color: var(--accent-light-pink);
-    height: 1.4rem;
-    width: 6rem;
+    height: 22.4px;
+    width: 96px;
 
     text-align: center;
-    margin-top: 0rem;
-    right: 0.5rem;
-    padding-top: 0.2rem;
+    margin-top: 0px;
+    right: 8px;
+    padding-top: 3.2px;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;
@@ -917,13 +916,13 @@ body{
   .follow_user_button{
       position: absolute;
       background-color: var(--gray-bg);
-      height: 1.6rem;
-      width: 6rem;
+      height: 25.6px;
+      width: 96px;
 
       text-align: center;
-      margin-left: 14rem;
-      margin-top: 0.7rem;
-      padding-top: 0.5rem;
+      margin-left: 224px;
+      margin-top: 11.2px;
+      padding-top: 8px;
 
       filter: drop-shadow(0px 1px 2px #0000002c);
       cursor: pointer;
@@ -933,13 +932,13 @@ body{
   .unfollow_user_button{
       position: absolute;
       background-color: var(--accent-light-pink);
-      height: 1.6rem;
-      width: 6rem;
+      height: 25.6px;
+      width: 96px;
 
       text-align: center;
-      margin-left: 14rem;
-      margin-top: 0.7rem;
-      padding-top: 0.5rem;
+      margin-left: 224px;
+      margin-top: 11.2px;
+      padding-top: 8px;
 
       filter: drop-shadow(0px 1px 2px #0000002c);
       cursor: pointer;
@@ -970,13 +969,13 @@ body{
 
   .follow_user_button_clicked{
     background-color: var(--gray-hover);
-    height: 1.6rem;
-    width: 6rem;
+    height: 25.6px;
+    width: 96px;
 
     text-align: center;
-    margin-left: 5rem;
-    margin-top: 0.7rem;
-    padding-top: 0.5rem;
+    margin-left: 80px;
+    margin-top: 11.2px;
+    padding-top: 8px;
 
     filter: drop-shadow(0px 1px 2px #0000002c);
     cursor: pointer;
@@ -989,21 +988,21 @@ body{
 
   .search_indiv_palette{
     font-family: "font";
-    width: 27rem;
-    height: 13rem;
+    width: 432px;
+    height: 208px;
 
     background-color: white;
     border-radius: 2px;
     filter: drop-shadow(0px 2px 3px #0000004c);
 
     margin: 0 auto;
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .search_color_container{
 
-    width: 5.3rem;
-    height: 6.4rem;
+    width: 84.8px;
+    height: 102.4px;
     /*border: solid;
     border-width: 0.2rem;
     border-color: var(--gray-bg);*/
@@ -1014,10 +1013,10 @@ body{
 }
 
 .logout_button_container{
-    height: 1.5rem;
+    height: 24px;
     width: auto;
-    margin-left: 13rem;
-    margin-top: 1rem;
+    margin-left: 208px;
+    margin-top: 16px;
     cursor: pointer;
     opacity: 0.3;
     z-index: 999;
@@ -1042,10 +1041,10 @@ body{
 }
 
 .generate_button{
-    width: 6rem;
-    height: 3rem;
-    padding-top: 5rem;
-    margin-left: 5rem;
+    width: 96px;
+    height: 48px;
+    padding-top: 80px;
+    margin-left: 80px;
     font-family: "font";
     background-color: var(--gray-hover);
     filter:drop-shadow(0px 1px 2px #0000005d);
@@ -1146,7 +1145,7 @@ body{
   }
 
   .list_indiv_follower{
-      width: 20rem;
+      width: 320px;
       background-color: var(--gray-hover);
       font-family: "font";
       font-size: 18px;
@@ -1156,14 +1155,14 @@ body{
 
   .follower_name{
       margin-bottom: 0;
-      margin-left: 0.5rem;
-      padding-top: 0.5rem;
+      margin-left: 8px;
+      padding-top: 8px;
   }
 
   .follower_username{
-      margin-top: 0.5rem;
-      margin-left: 0.5rem;
-      padding-bottom: 0.5rem;
+      margin-top: 8px;
+      margin-left: 8px;
+      padding-bottom: 8px;
   }
 
   .search_list_navbar{
@@ -1171,14 +1170,14 @@ body{
   }
 
   .search_min_navbar{
-      padding-top: 4rem;
+      padding-top: 64px;
       font-family: "font";
       font-size: 20px;
       text-align: center;
   }
   
   .search_nav_setting{
-      padding-right: 2rem;
+      padding-right: 32px;
       cursor: pointer;
   }
 
@@ -1203,10 +1202,10 @@ body{
   }
 
   .copy_icon{
-      height: 1.5rem;
+      height: 24px;
       width: auto;
       margin-left: 34%;
-      margin-top: 0.2rem;
+      margin-top: 3.2px;
       filter: drop-shadow(0px 1px 2px #00000065);
       display: none;
       cursor: pointer;
